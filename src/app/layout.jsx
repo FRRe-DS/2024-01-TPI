@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
 import "./ui/globals.css";
+import Image from 'next/image';
+import Logo from "/public/BienalLogo.png";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,7 +22,19 @@ export const metadata = {
 export default function RootLayout({ children }){
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body>
+            <header>
+                <Image src={Logo} alt = "Bienal Logo" />
+                <div>
+                    <h1>Bienal del Chaco</h1>
+                    <p>Por amor al arte</p>
+                </div>
+            </header>
+              {children}
+              <footer>
+                  <p>© 2021 Bienal del Chaco</p>
+              </footer>
+              </body>
         </html>
     );
 }

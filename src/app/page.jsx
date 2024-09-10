@@ -1,16 +1,6 @@
-import Image from 'next/image'
-import Logo from "/public/BienalLogo.png"
-
 export default function Home(){
     return (
         <>
-            <header>
-                <Image src={Logo} alt = "Bienal Logo" />
-                <div>
-                    <h1>Bienal del Chaco</h1>
-                    <p>Por amor al arte</p>
-                </div>
-            </header>
             <main>
                 <section>
                     <h1>"Un certamen internacional único en el mundo"</h1>
@@ -27,7 +17,8 @@ export default function Home(){
                         para crear esculturas en vivo, muchas de las cuales se integran en el patrimonio cultural de la ciudad,
                         conocida como la "Ciudad de las Esculturas" debido a su vasto número de obras expuestas al aire libre
                     </p>
-
+                    <table>
+                    <tbody>
                     <tr id='row-1'>
                         <td id='colum-1.1'>
                             <p>
@@ -91,11 +82,10 @@ export default function Home(){
                             </p>
                         </td>
                     </tr>
+                    </tbody>
+                    </table>
                 </div>
             </main>
-            {/*<footer>
-                <a href="https://next.js.org">Next</a>
-            </footer>*/}
         </>
     )
 }
