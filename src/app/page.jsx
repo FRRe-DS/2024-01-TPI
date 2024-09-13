@@ -26,8 +26,8 @@ export default function Home() {
           </p>
           <table>
             <tbody>
-              <tr id="row-1">
-                <td id="colum-1.1">
+              <tr>
+                <td>
                   <p>
                     Escultura en vivo Los artistas, seleccionados a nivel
                     internacional, trabajan durante aproximadamente una semana
@@ -38,7 +38,7 @@ export default function Home() {
                     el evento en una experiencia educativa y dinámica.
                   </p>
                 </td>
-                <td id="colum-1.2">
+                <td>
                   <p>
                     Exposición permanente Resistencia es conocida como la
                     "Ciudad de las Esculturas" debido a la gran cantidad de
@@ -51,8 +51,8 @@ export default function Home() {
                   </p>
                 </td>
               </tr>
-              <tr id="row-2">
-                <td id="column-2.1">
+              <tr>
+                <td>
                   <p>
                     Talleres y actividades complementarias Durante la bienal,
                     además de la competencia de esculturas, se organizan
@@ -64,7 +64,7 @@ export default function Home() {
                     del arte.
                   </p>
                 </td>
-                <td id="column-2.2">
+                <td>
                   <p>
                     Temática Cada edición de la bienal tiene una temática que
                     guía a los escultores en la creación de sus obras. Las
