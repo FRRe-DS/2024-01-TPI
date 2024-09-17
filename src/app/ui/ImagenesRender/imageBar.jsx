@@ -11,39 +11,39 @@ import Link from "next/link";
 export default function ImageBar() {
   return (
     <>
-      <Card>
-        <CardBody>
+      <Card className="cardContenedor">
+        <CardBody className="cardCuerpo">
           <ImageAtracciones
             titulo={"Arte"}
             frase={"Creaciones que superan la imaginación"}
             imagen={arte}
           />
         </CardBody>
-        <CardFooter>
+        <CardFooter className="cardEnlace">
           <Link href="/art">Ver más</Link>
         </CardFooter>
       </Card>
-      <Card>
-        <CardBody>
+      <Card className="cardContenedor">
+        <CardBody className="cardCuerpo">
           <ImageAtracciones
             titulo={"Escultores"}
             frase={"Escultores de todo el mundo"}
             imagen={escult}
           />
         </CardBody>
-        <CardFooter>
+        <CardFooter className="cardEnlace">
           <Link href="/sculptors">Ver más</Link>
         </CardFooter>
       </Card>
-      <Card>
-        <CardBody>
+      <Card className="cardContenedor">
+        <CardBody className="cardCuerpo">
           <ImageAtracciones
             titulo={"Eventos"}
             frase={"La Bienal cuenta con una multitud de eventos"}
             imagen={evento}
           />
         </CardBody>
-        <CardFooter>
+        <CardFooter className="cardEnlace">
           <Link href="/events">Ver más</Link>
         </CardFooter>
       </Card>
