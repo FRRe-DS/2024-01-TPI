@@ -13,38 +13,50 @@ export default function ImageBar() {
     <>
       <Card className="cardContenedor">
         <CardBody className="cardCuerpo">
-          <ImageAtracciones
-            titulo={"Arte"}
-            frase={"Creaciones que superan la imaginación"}
-            imagen={arte}
-          />
+          <Link href="/art" rel="noopener noreferrer">
+            <ImageAtracciones
+              titulo={"Arte"}
+              frase={"Creaciones que superan la imaginación"}
+              imagen={arte}
+            />
+          </Link>
         </CardBody>
         <CardFooter className="cardEnlace">
-          <Link href="/art">Ver más</Link>
+          <p>
+            Click en la <b>imagen</b> para ver más
+          </p>
         </CardFooter>
       </Card>
       <Card className="cardContenedor">
         <CardBody className="cardCuerpo">
-          <ImageAtracciones
-            titulo={"Escultores"}
-            frase={"Escultores de todo el mundo"}
-            imagen={escult}
-          />
+          <Link href="/sculptor" rel="noopener noreferrer">
+            <ImageAtracciones
+              titulo={"Escultores"}
+              frase={"Escultores de todo el mundo"}
+              imagen={escult}
+            />
+          </Link>
         </CardBody>
         <CardFooter className="cardEnlace">
-          <Link href="/sculptors">Ver más</Link>
+          <p>
+            Click en la <b>imagen</b> para ver más
+          </p>
         </CardFooter>
       </Card>
       <Card className="cardContenedor">
         <CardBody className="cardCuerpo">
-          <ImageAtracciones
-            titulo={"Eventos"}
-            frase={"La Bienal cuenta con una multitud de eventos"}
-            imagen={evento}
-          />
+          <Link href="/events" rel="noopener noreferrer">
+            <ImageAtracciones
+              titulo={"Eventos"}
+              frase={"La Bienal cuenta con una multitud de eventos"}
+              imagen={evento}
+            />
+          </Link>
         </CardBody>
         <CardFooter className="cardEnlace">
-          <Link href="/events">Ver más</Link>
+          <p>
+            Click en la <b>imagen</b> para ver más
+          </p>
         </CardFooter>
       </Card>
     </>
