@@ -1,17 +1,20 @@
 import ImageBar from "./ui/ImagenesRender/imageBar";
+import "./ui/Styles/page.css";
 
 export default function Home() {
   return (
     <>
       <main>
         <section className="rootPageCita">
+
+          <div className="rootPageCitaBloque">
           <h1 className="rootCitaTitulo">
             "Un certamen internacional único en el mundo"
           </h1>
-
           <p className="rootCitaParrafo">
             - José Eidman, presidente de la Fundación Urunday
           </p>
+          </div>
         </section>
 
         <div>
