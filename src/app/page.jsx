@@ -4,6 +4,7 @@ export default function Home() {
   return (
     <>
       <main>
+        <h2> Por amor al Arte</h2>
         <section className="rootPageCita">
           <h1 className="rootCitaTitulo">
             "Un certamen internacional único en el mundo"
@@ -81,9 +82,9 @@ export default function Home() {
           </div>
         </div>
 
-        <section className="rootSeccionNavegacion">
+        <nav className="rootSeccionNavegacion">
           <ImageBar />
-        </section>
+        </nav>
       </main>
     </>
   );
