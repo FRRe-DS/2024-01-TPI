@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function ImagenArte({ titulo, imagen, dimensions }) {
+export default function ImagenArte({ titulo, imagen }) {
   return (
     <div>
       <h1 className="galleryNombreArte">{titulo}</h1>
@@ -8,8 +8,8 @@ export default function ImagenArte({ titulo, imagen, dimensions }) {
         className="galleryImagen"
         src={imagen}
         alt="Escultura"
-        width={dimensions}
-        height={dimensions}
+        width={350}
+        height={250}
       />
     </div>
   );
