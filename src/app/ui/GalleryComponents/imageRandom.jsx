@@ -1,15 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function ImagenArte({ titulo, imagen }) {
+export default function ImagenArte({ titulo, imagen, enlace }) {
   return (
     <div>
-      <h1 className="galleryNombreArte">{titulo}</h1>
+      <Link href={enlace} rel="noopener no referrer">
+        <h2 className="galleryNombreArte">{titulo}</h2>
+      </Link>
       <Image
         className="galleryImagen"
         src={imagen}
         alt="Escultura"
-        width={350}
-        height={250}
+        width={500}
+        height={500}
       />
     </div>
   );
