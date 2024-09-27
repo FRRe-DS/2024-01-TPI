@@ -10,6 +10,12 @@
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
+    ],
+    "/escultores/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/escultores/page.css",
+      "static/chunks/app/escultores/page.js"
     ]
   }
 }

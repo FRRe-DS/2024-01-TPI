@@ -1,4 +1,4 @@
-// File: E:\Repositorios\2024-01-TPI\src\app\layout.jsx
+// File: C:\VSC\TPI-DSW-BIENAL\2024-01-TPI\src\app\layout.jsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

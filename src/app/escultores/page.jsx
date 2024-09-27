@@ -7,14 +7,14 @@ imagen con su titulo y subtitulo
 export default function SculpPage() {
   return (
     <>
-      <div>
-        <h1>Artistas</h1>
-        <h2>Escultores Presentes</h2>
-        <p>
+      <div className="sculpHead">
+        <h1 className="sculpHead__sculpTitle">Artistas</h1>
+        <h2 className="sculpHead__sculpSubtitle">Escultores Presentes</h2>
+        <p className="sculpHead__sculpDescr">
          La Bienal ha contado con la participación de escultores de diversas partes del mundo. 
         </p>
       </div>
-      <div>
+      <div className="sculpImg">
         <ImagenArte
           titulo="Sculptor1"
           subtitulo="Country1"

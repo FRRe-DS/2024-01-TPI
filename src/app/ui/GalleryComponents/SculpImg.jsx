@@ -10,8 +10,8 @@ export default function ImagenArte({ titulo, subtitulo, imagen, dimensions }) {
         width={dimensions}
         height={dimensions}
       />
-      <h2 className="galleryNombreArte">{titulo}</h2>
-      <h3 className="galletyPaisEsc">{subtitulo}</h3>
+      <h2 className="galleryNmbSculp">{titulo}</h2>
+      <h3 className="galletyCountrySculp">{subtitulo}</h3>
     </div>
   );
 }
