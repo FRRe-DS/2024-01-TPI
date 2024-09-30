@@ -17,7 +17,11 @@ export default function ImageBar() {
         imagen={escult}
         enlace="/escultores"
       />
-      <ImagenesRedireccion titulo="Eventos" imagen={evento} enlace="/eventos" />
+      <ImagenesRedireccion 
+      titulo="Eventos" 
+      imagen={evento} 
+      enlace="/eventos" 
+      />
     </>
   );
 }

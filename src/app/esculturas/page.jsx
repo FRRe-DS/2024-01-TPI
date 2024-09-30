@@ -1,4 +1,5 @@
 import ImagenArte from "../ui/GalleryComponents/imageRandom";
+import "../ui/esculturas.css"; 
 
 import simpleza from "/public/GaleriaEsculturas/Despues_Simpleza.jpg";
 import introspec from "/public/GaleriaEsculturas/Despues_Introspec.jpg";
@@ -16,6 +17,7 @@ export default function ArtPage() {
     <>
       <section className="esculturasText">
         <p>
+          <h1 className= "esculturasHeader"> Esculturas </h1>
           Nuevamente, grandes escultores del mundo en escena y en acción,
           trabajando a cielo abierto y en público, esculpiendo piezas que tienen
           por destino las veredas de Resistencia

@@ -1,0 +1,22 @@
+.esculturasText {
+    font-style : justify;
+    margin-bottom : 20 px;
+    padding: 10 px;
+}
+
+.esculturasHeader {
+    font-style : center;
+    margin-top: 30 px;
+
+}
+
+
+.esculturasPortada {
+    flex-direction: column;
+
+}
+
+.esculturasSeleccionadas {
+    padding: 10 px; 
+    margin: 30 px ; 
+}
