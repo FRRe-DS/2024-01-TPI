@@ -11,18 +11,18 @@ export default function PlantillaPage({
   return (
     <>
       <div className="esculturaDescriptContainer">
-        <h1>{titulo}</h1>
+        <h1 className="esculturaDescriptTitulo">{titulo}</h1>
         <p>
-          <b>{descripcion}</b>
+          <b className= "esculturaDescription">{descripcion}</b>
         </p>
       </div>
-      <div className="esculturaEtapasContainer">
-        <p>Creada por {autor} a lo largo del transcurso de la Bienal</p>
-        <h2>Inicio</h2>
+      <div className="esculturaDescriptContainer">
+        <p>Escultura construida por {autor} a lo largo del transcurso de la Bienal</p>
+        <h2 className="esculturasEtapasText">Inicio</h2>
         <Image src={etapa1} alt="Antes" width={350} height={250} />
-        <h2>En Proceso</h2>
+        <h2 className="esculturasEtapasText">En Proceso</h2>
         <Image src={etapa2} alt="Durante" width={350} height={250} />
-        <h2>Final</h2>
+        <h2 className="esculturasEtapasText">Final</h2>
         <Image src={etapa3} alt="Despues" width={350} height={250} />
       </div>
     </>

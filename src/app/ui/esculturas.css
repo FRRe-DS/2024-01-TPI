@@ -1,22 +1,32 @@
 .esculturasText {
-    font-style : justify;
+    font-family: 'Lucida Sans';
+    width: 300 px;
+    height: 300 px;
+    box-sizing: border-box;
+    text-align : center;
+    margin: auto;
     margin-bottom : 20 px;
     padding: 10 px;
+
 }
 
 .esculturasHeader {
-    font-style : center;
-    margin-top: 30 px;
+    text-transform : uppercase;
+    color: #2e0f56;
+    margin-top: 20 px;
 
 }
 
 
 .esculturasPortada {
     flex-direction: column;
+    box-sizing: border-box;
+    padding: 10 px;
 
 }
 
-.esculturasSeleccionadas {
-    padding: 10 px; 
-    margin: 30 px ; 
+.esculturasSeleccionadas { 
+    margin: 10 px ; 
+    align-content: baseline;
+    border-bottom: 3px solid black;
 }
