@@ -1,4 +1,4 @@
-// File: C:\Users\matia\OneDrive\Escritorio\ProjectoBienal\2024-01-TPI\src\app\layout.jsx
+// File: C:\Users\ACER\Desktop\BienalProyect\2024-01-TPI\src\app\layout.jsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
