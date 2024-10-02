@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "../ui/esculturas.css";
+import "../../ui/esculturas.css";
 
 export default function PlantillaPage({
   titulo,
