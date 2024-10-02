@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import "../ui/imageRandom.css";
 
 export default function ImagenArte({ titulo, imagen, enlace }) {
   return (

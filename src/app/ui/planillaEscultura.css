@@ -5,7 +5,7 @@
 }
 
 .esculturaDescriptTitulo {
-    color: #2e0f56;
+    color: #23145b;
 }
 
 .esculturaDescription {
@@ -18,7 +18,10 @@
 
 
 .esculturasEtapasText{
+    font-family: 'Lucida Sans';
     margin-top: 10 px; 
     margin-bottom: 10 px;
+    text-align: center;
+    color: #23145b;
     border-bottom: 3 px solid black;
 }
