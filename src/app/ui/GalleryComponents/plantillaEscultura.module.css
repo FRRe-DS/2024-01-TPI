@@ -1,0 +1,28 @@
+.esculturaDescriptContainer {
+    padding: 30 px 40 px 10 px 20 px;
+    background: linear-gradient(#748988, #95abaa);
+    margin: auto;
+
+}
+
+.esculturaDescriptTitulo {
+    color: #23145b;
+}
+
+.esculturaDescription {
+    font-style:italic;
+    font-size: 20 px;
+    margin-top: 20 px;
+    text-align: justify;
+
+}
+
+
+.esculturasEtapasText{
+    font-family: 'Lucida Sans';
+    margin-top: 10 px; 
+    margin-bottom: 10 px;
+    text-align: center;
+    color: #23145b;
+    border-bottom: 3 px solid black;
+}

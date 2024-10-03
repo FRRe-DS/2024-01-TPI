@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import "../../ui/imageRandom.css";
+import styles from "./imageRandom.module.css";
 
 export default function ImagenArte({ titulo, imagen, enlace }) {
   return (
-    <div>
-      <Link href={enlace} rel="noopener no referrer">
-        <h2 className="galleryNombreArte">{titulo}</h2>
+    <div className={styles.galleryBox}>
+      <Link className={styles.galleryLink} href={enlace} rel="noopener no referrer">
+        <h2 className={styles.galleryNombreArte}>{titulo}</h2>
       </Link>
       <Image
-        className="galleryImagen"
+        className={styles.galleryImagen}
         src={imagen}
         alt="Escultura"
         width={500}

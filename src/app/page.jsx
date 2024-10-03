@@ -1,4 +1,5 @@
 import ImageBar from "./ui/ImagenesRender/imageBar";
+import "../app/ui/globals.css";
 
 export default function Home() {
   return (

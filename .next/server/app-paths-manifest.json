@@ -1,3 +1,4 @@
 {
-  "/page": "app/page.js"
+  "/esculturas/page": "app/esculturas/page.js",
+  "/esculturas/(imagenExpandidas)/mensaje/page": "app/esculturas/(imagenExpandidas)/mensaje/page.js"
 }

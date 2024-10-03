@@ -1,0 +1,27 @@
+.galleryBox{
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(#95abaa, #b7cccb);
+    margin: auto;
+    padding: 2% 2% 5% 2%;
+    margin-bottom: 5%;
+    box-sizing: border-box;
+    justify-content: stretch;
+    box-shadow: 20px 20px 10px #424242;
+}
+
+.galleryNombreArte {
+    font-family: 'Cambria';
+    font-size: 150%;
+    color: #536766;
+    margin-bottom: 5%;
+
+}
+
+.galleryLink{
+    color:#536766;
+}
+
+.galleryImagen {
+    justify-content: stretch;
+}
