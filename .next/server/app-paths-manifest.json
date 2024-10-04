@@ -1,4 +1,5 @@
 {
-  "/esculturas/page": "app/esculturas/page.js",
-  "/esculturas/(imagenExpandidas)/mensaje/page": "app/esculturas/(imagenExpandidas)/mensaje/page.js"
+  "/page": "app/page.js",
+  "/esculturas/(imagenExpandidas)/simpleza/page": "app/esculturas/(imagenExpandidas)/simpleza/page.js",
+  "/esculturas/page": "app/esculturas/page.js"
 }

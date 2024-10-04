@@ -17,11 +17,11 @@
       "static/css/app/esculturas/page.css",
       "static/chunks/app/esculturas/page.js"
     ],
-    "/esculturas/(imagenExpandidas)/mensaje/page": [
+    "/esculturas/(imagenExpandidas)/simpleza/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/esculturas/(imagenExpandidas)/mensaje/page.css",
-      "static/chunks/app/esculturas/(imagenExpandidas)/mensaje/page.js"
+      "static/css/app/esculturas/(imagenExpandidas)/simpleza/page.css",
+      "static/chunks/app/esculturas/(imagenExpandidas)/simpleza/page.js"
     ]
   }
 }
