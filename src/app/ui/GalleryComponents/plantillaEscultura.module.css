@@ -1,39 +1,46 @@
 
 .esculturaDescriptTitulo {
-    color: #136b9c;
+    font-family: system-ui;
+    font-size: 400%;
+    font-style:italic;
+    color: #4180ab;
     padding: 3% 2.5% 1.5% 5%;
+}
+
+.esculturaDescription {
+    font-family: system-ui;
+    font-style:italic;
+    font-size: 150%;
+    padding: 0 2.5% 1.5% 5%;
+    text-align: left;
+
 }
 
 .esculturaEtapasContainer {
     width: 90%;
-    padding: 2.5%;
+    padding: 3%;
     margin: 3% 2.5% 1.5% 5%;
     box-sizing: border-box;
-    display: grid;
-    gap: 50px;
-    background-color: #58a0d4 ;
-    margin-bottom: 7%;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 5%;
+    background: linear-gradient(to top,#d5ded9, #99b2b7);
 
 }
+
 
 .esculturasEtapasBox{
-    color: #022030;
-    width: 40%;
-    border: 2px solid #000;
-    padding: 2.5%;
+    color: #4180ab;
+    font-family: system-ui;
+    font-size: 800;
+    width: 30%;
+    padding: 1.5%;
     box-sizing: border-box;
-    display: flex;
-    gap: 20px;
-    
 
 }
 
-.esculturaDescription {
-    font-style:italic;
-    font-size: 150%;
-    padding: 3% 2.5% 1.5% 5%;
-    text-align: left;
-
+.esculturaEtapasTitulo {
+    margin-bottom: 20%; 
 }
 
 

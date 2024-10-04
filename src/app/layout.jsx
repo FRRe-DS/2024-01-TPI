@@ -3,6 +3,8 @@ import "./ui/globals.css";
 import { RootFooter } from "./ui/componentes/footer";
 import { RootHeader } from "./ui/componentes/header";
 
+
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -22,7 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="rootBody">
+      <body className={'${geistMono.variable} ${geistSans.variable}'}>
         <RootHeader />
         {children}
         <RootFooter />

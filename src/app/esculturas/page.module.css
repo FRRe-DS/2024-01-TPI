@@ -1,5 +1,7 @@
+
+
 .esculturasSect {
-    font-family: 'Cambria';
+    font-family: 'Roboto';
     width: 100% ;
     height: 50% ;
     box-sizing: border-box;
@@ -12,16 +14,14 @@
 .esculturasHeader {
     text-transform : uppercase;
     font-size: 250%;
-    color: #536766;
-    background-color: #e5eaea;
-    box-shadow: 20px 20px 12px #424242;
+    color: #005067;
     margin-top: 5%;
     margin-bottom: 4.5%;
 
 }
 
 .esculturasText {
-    font-size: 120%;
+    font-size: 150%;
 }
 
 .esculturasPortada {
