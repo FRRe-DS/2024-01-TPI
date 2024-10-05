@@ -19,15 +19,15 @@ export default function PlantillaPage({
       <div className={styles.esculturaEtapasContainer}>
         <div className={styles.esculturasEtapasBox}>
         <h2 className={styles.esculturaEtapasTitulo}>Inicio</h2>
-        <Image src={etapa1} alt="Antes" width={350} height={250} />
+        <Image className={styles.esculturasEtapasImg} src={etapa1} alt="Antes" width={350} height={250} />
         </div>
         <div className={styles.esculturasEtapasBox}>
         <h2 className={styles.esculturaEtapasTitulo}>En Proceso</h2>
-        <Image src={etapa2} alt="Durante" width={350} height={250} />
+        <Image className={styles.esculturasEtapasImg} src={etapa2} alt="Durante" width={350} height={250} />
         </div>
         <div className={styles.esculturasEtapasBox}>
         <h2 className={styles.esculturaEtapasTitulo}>Final</h2>
-        <Image src={etapa3} alt="Despues" width={350} height={250} />
+        <Image className={styles.esculturasEtapasImg} src={etapa3} alt="Despues" width={350} height={250} />
         </div>
       </div>
     </>
