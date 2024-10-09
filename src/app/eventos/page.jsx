@@ -27,7 +27,9 @@ export default function AgendaEventos() {
     // Filtrar eventos según la fecha seleccionada
     useEffect(() => {
         const selectedDateString = selectedDate.toISOString().split('T')[0];
-        const filtered = events.filter(event => event.date === selectedDateString);
+        console.log('Fecha seleccionada:', selectedDateString);
+        events.forEach(event => console.log('Fecha evento:', ));
+        const filtered = events.filter(event => event.date.toISOString().split('T')[0] == selectedDateString);
         setFilteredEvents(filtered);
         console.log('Eventos filtrados:', filtered);
     }, [selectedDate, events]);
