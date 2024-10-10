@@ -2,7 +2,7 @@ import antes from "/public/GaleriaEsculturas/Antes_Reflejo.jpg";
 import despues from "/public/GaleriaEsculturas/Despues_Reflejo.jpg";
 import durante from "/public/GaleriaEsculturas/Durante_Reflejo.jpg";
 
-import PlantillaPage from "@/app/ui/GalleryComponents/plantillaEscultura";
+import PlantillaPage from "../../../ui/GalleryComponents/plantillaEscultura";
 
 export default function ReflejoPage() {
   return (

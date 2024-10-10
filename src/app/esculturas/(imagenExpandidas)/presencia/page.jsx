@@ -2,7 +2,7 @@ import antes from "/public/GaleriaEsculturas/Antes_Presencia.jpg";
 import despues from "/public/GaleriaEsculturas/Despues_Presencia.jpg";
 import durante from "/public/GaleriaEsculturas/Durante_Presencia.jpg";
 
-import PlantillaPage from "@/app/ui/GalleryComponents/plantillaEscultura";
+import PlantillaPage from "../../../ui/GalleryComponents/plantillaEscultura";
 
 export default function PresenciaPage() {
   return (

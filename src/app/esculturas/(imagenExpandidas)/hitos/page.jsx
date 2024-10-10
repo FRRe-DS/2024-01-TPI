@@ -2,7 +2,7 @@ import antes from "/public/GaleriaEsculturas/Antes_Hitos.jpg";
 import despues from "/public/GaleriaEsculturas/Despues_Hitos.jpg";
 import durante from "/public/GaleriaEsculturas/Durante_Hitos.jpg";
 
-import PlantillaPage from "@/app/ui/GalleryComponents/plantillaEscultura";
+import PlantillaPage from "../../../ui/GalleryComponents/plantillaEscultura";
 
 export default function HitosPage() {
   return (

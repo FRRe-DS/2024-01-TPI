@@ -2,7 +2,7 @@ import antes from "/public/GaleriaEsculturas/Antes_Orbitando.jpg";
 import despues from "/public/GaleriaEsculturas/Despues_Orbitando.jpg";
 import durante from "/public/GaleriaEsculturas/Durante_Orbitando.jpg";
 
-import PlantillaPage from "@/app/ui/GalleryComponents/plantillaEscultura";
+import PlantillaPage from "../../../ui/GalleryComponents/plantillaEscultura";
 
 export default function OrbitandoPage() {
   return (
