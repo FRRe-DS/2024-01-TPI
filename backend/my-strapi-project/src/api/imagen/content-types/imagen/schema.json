@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "imagenes",
+  "info": {
+    "singularName": "imagen",
+    "pluralName": "imagenes",
+    "displayName": "Imagen"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fecha": {
+      "type": "date"
+    },
+    "imagen": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "estado": {
+      "type": "enumeration",
+      "enum": [
+        "antes",
+        "durante",
+        "despues"
+      ],
+      "required": true
+    },
+    "escultura": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::escultura.escultura"
+    },
+    "descripcion": {
+      "type": "string"
+    }
+  }
+}
