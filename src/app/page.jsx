@@ -1,5 +1,5 @@
 import ImageBar from "./ui/ImagenesRender/imageBar";
-import InfoExtra from "./eventos/components/InfoExtra";
+import InfoExtra from "./ui/componentes/InfoExtra";
 
 export default function Home() {
   return (
