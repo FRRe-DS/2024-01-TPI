@@ -1,4 +1,5 @@
 import ImageBar from "./ui/ImagenesRender/imageBar";
+import InfoExtra from "./ui/componentes/InfoExtra";
 
 export default function Home() {
   return (
@@ -85,6 +86,8 @@ export default function Home() {
         <nav className="rootSeccionNavegacion">
           <ImageBar />
         </nav>
+
+        <InfoExtra />
       </main>
     </>
   );

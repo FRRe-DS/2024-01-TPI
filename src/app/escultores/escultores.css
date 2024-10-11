@@ -1,0 +1,11 @@
+/*Estilos de la página escultores*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+};
+
+#sculpHead{
+    display: flex;
+    margin-left: 25%;
+};
