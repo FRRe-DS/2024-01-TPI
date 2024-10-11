@@ -2,7 +2,7 @@ import antes from "/public/GaleriaEsculturas/Antes_Introspec.jpg";
 import despues from "/public/GaleriaEsculturas/Despues_Introspec.jpg";
 import durante from "/public/GaleriaEsculturas/Durante_Introspec.jpg";
 
-import PlantillaPage from "../../../ui/GalleryComponents/plantillaEscultura";
+import PlantillaPage from "../../../ui/GalleryComponents/plantillaEscultura.jsx";
 
 export default function IntrospeccionPage() {
   return (

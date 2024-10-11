@@ -1,0 +1,39 @@
+
+
+.esculturasSect {
+    font-family: system-ui;
+    width: 100% ;
+    height: 50% ;
+    box-sizing: border-box;
+    text-align : center;
+    margin-bottom : 3.5%;
+    padding: 1.5% ;
+
+}
+
+.esculturasHeader {
+    text-transform : uppercase;
+    font-size: 250%;
+    color: #005067;
+    margin-top: 5%;
+    margin-bottom: 4.5%;
+
+}
+
+.esculturasText {
+    font-size: 150%;
+}
+
+.esculturasPortada {
+    width: 90%;
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 5%;
+    margin-bottom: 10%;
+
+}
+
+.esculturasSeleccionadas { 
+
+}

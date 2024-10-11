@@ -2,7 +2,7 @@ import antes from "/public/GaleriaEsculturas/Antes_Zarafet.jpg";
 import despues from "/public/GaleriaEsculturas/Despues_Zarafet.jpg";
 import durante from "/public/GaleriaEsculturas/Durante_Zarafet.jpg";
 
-import PlantillaPage from "../../../ui/GalleryComponents/plantillaEscultura";
+import PlantillaPage from "../../../ui/GalleryComponents/plantillaEscultura.jsx";
 
 export default function ZarafetPage() {
   return (

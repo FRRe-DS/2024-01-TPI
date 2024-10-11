@@ -2,7 +2,7 @@ import antes from "/public/GaleriaEsculturas/Antes_Mensaje.jpg";
 import despues from "/public/GaleriaEsculturas/Despues_Mensaje.jpg";
 import durante from "/public/GaleriaEsculturas/Durante_Mensaje.jpg";
 
-import PlantillaPage from "../../../ui/GalleryComponents/plantillaEscultura";
+import PlantillaPage from "../../../ui/GalleryComponents/plantillaEscultura.jsx";
 
 export default function MensajePage() {
   return (

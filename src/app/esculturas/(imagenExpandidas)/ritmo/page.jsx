@@ -2,7 +2,7 @@ import antes from "/public/GaleriaEsculturas/Antes_Ritmo.jpg";
 import despues from "/public/GaleriaEsculturas/Despues_Ritmo.jpg";
 import durante from "/public/GaleriaEsculturas/Durante_Ritmo.jpg";
 
-import PlantillaPage from "../../../ui/GalleryComponents/plantillaEscultura";
+import PlantillaPage from "../../../ui/GalleryComponents/plantillaEscultura.jsx";
 
 export default function RitmoPage() {
   return (

@@ -2,7 +2,7 @@ import antes from "/public/GaleriaEsculturas/Antes_Eucli.jpg";
 import despues from "/public/GaleriaEsculturas/Despues_Eucli.jpg";
 import durante from "/public/GaleriaEsculturas/Durante_Eucli.jpg";
 
-import PlantillaPage from "../../../ui/GalleryComponents/plantillaEscultura";
+import PlantillaPage from "../../../ui/GalleryComponents/plantillaEscultura.jsx";
 
 export default function EuclideaPage() {
   return (
