@@ -4,6 +4,7 @@
 
 import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/es/index.js'; //Importación de react-datepicker
 import 'react-datepicker/dist/react-datepicker.css'; //CSS de react-datepicker
 
 export default function AgendaEventos() {
@@ -27,11 +28,11 @@ export default function AgendaEventos() {
     // Filtrar eventos según la fecha seleccionada
     useEffect(() => {
         const selectedDateString = selectedDate.toISOString().split('T')[0];
-        console.log('Fecha seleccionada:', selectedDateString);
-        events.forEach(event => console.log('Fecha evento:', ));
+            //console.log('Fecha seleccionada:', selectedDateString);
+            //events.forEach(event => console.log('Fecha evento:', ));
         const filtered = events.filter(event => event.date.toISOString().split('T')[0] == selectedDateString);
         setFilteredEvents(filtered);
-        console.log('Eventos filtrados:', filtered);
+            //console.log('Eventos filtrados:', filtered);
     }, [selectedDate, events]);
 
     return (
