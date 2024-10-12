@@ -4,7 +4,8 @@
   "info": {
     "singularName": "imagen",
     "pluralName": "imagenes",
-    "displayName": "Imagen"
+    "displayName": "Imagen",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,12 +16,12 @@
       "type": "date"
     },
     "imagen": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "estado": {
       "type": "enumeration",
@@ -31,13 +32,17 @@
       ],
       "required": true
     },
+    "descripcion": {
+      "type": "string"
+    },
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
     "escultura": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::escultura.escultura"
-    },
-    "descripcion": {
-      "type": "string"
     }
   }
 }

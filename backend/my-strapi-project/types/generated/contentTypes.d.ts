@@ -605,6 +605,7 @@ export interface ApiImagenImagen extends Struct.CollectionTypeSchema {
     singularName: 'imagen';
     pluralName: 'imagenes';
     displayName: 'Imagen';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -614,11 +615,12 @@ export interface ApiImagenImagen extends Struct.CollectionTypeSchema {
     imagen: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     estado: Schema.Attribute.Enumeration<['antes', 'durante', 'despues']> &
       Schema.Attribute.Required;
+    descripcion: Schema.Attribute.String;
+    nombre: Schema.Attribute.String & Schema.Attribute.Required;
     escultura: Schema.Attribute.Relation<
       'oneToOne',
       'api::escultura.escultura'
     >;
-    descripcion: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
