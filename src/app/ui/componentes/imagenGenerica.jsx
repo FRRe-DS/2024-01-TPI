@@ -6,7 +6,7 @@ export default function ImgGeneric({ imagen, dimensions }) {
       <Image
         className="galleryImagen"
         src={imagen}
-        alt="Escultura"
+        alt="imagen"
         width={dimensions}
         height={dimensions}
       />
