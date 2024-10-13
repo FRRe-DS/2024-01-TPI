@@ -17,6 +17,7 @@ export default function IntrospeccionPage() {
       etapa2={durante}
       etapa3={despues}
       autor="Carlos Iglesias Faura"
+      enlaceEscultor={"/escultores/carlos"}
     />
   );
 }

@@ -17,6 +17,7 @@ export default function MensajePage() {
       etapa2={durante}
       etapa3={despues}
       autor="Anna Korver"
+      enlaceEscultor={"/escultores/anna"}
     />
   );
 }

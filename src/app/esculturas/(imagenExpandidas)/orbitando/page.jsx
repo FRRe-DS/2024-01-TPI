@@ -17,6 +17,7 @@ export default function OrbitandoPage() {
       etapa2={durante}
       etapa3={despues}
       autor="Solveiga Vasiljeva"
+      enlaceEscultor={"/escultores/solveiga"}
     />
   );
 }

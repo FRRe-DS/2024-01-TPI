@@ -17,6 +17,7 @@ export default function RitmoPage() {
       etapa2={durante}
       etapa3={despues}
       autor="Percy Raúl Zorrilla Soto"
+      enlaceEscultor={"/escultores/percy"}
     />
   );
 }

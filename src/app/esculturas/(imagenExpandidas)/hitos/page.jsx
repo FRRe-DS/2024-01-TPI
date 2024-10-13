@@ -17,6 +17,7 @@ export default function HitosPage() {
       etapa2={durante}
       etapa3={despues}
       autor="Billy Lee"
+      enlaceEscultor={"/escultores/billy"}
     />
   );
 }

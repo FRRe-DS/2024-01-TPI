@@ -17,6 +17,7 @@ export default function EuclideaPage() {
       etapa2={durante}
       etapa3={despues}
       autor="Alejandro Guillen"
+      enlaceEscultor={"/escultores/ale"}
     />
   );
 }

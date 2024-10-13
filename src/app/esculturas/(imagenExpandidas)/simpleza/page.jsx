@@ -13,6 +13,7 @@ export default function SimplezaPage() {
       etapa2={durante}
       etapa3={despues}
       autor="Luis Bernardi"
+      enlaceEscultor={"/escultores/luis"}
     />
   );
 }

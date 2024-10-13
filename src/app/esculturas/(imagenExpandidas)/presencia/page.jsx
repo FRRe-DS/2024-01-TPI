@@ -17,6 +17,7 @@ export default function PresenciaPage() {
       etapa2={durante}
       etapa3={despues}
       autor="Butrint Morina"
+      enlaceEscultor={"/escultores/butrint"}
     />
   );
 }

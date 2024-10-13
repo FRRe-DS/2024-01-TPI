@@ -1,47 +1,101 @@
-import ImgGeneric from "../ui/componentes/imagenGenerica.jsx";
-import Titulos from "../ui/componentes/paratexto.jsx";
+import ImagenEscultores from "../ui/GalleryComponents/imagenEscultores";
 import "./escultores.css";
-/*
-Cree SculpImg pero es parecida a ImageRandom, además para colocar el subtitulo y colocar a cada
-imagen con su titulo y subtitulo
-*/
-export default function SculpPage() {
+
+//Importar las imagenes y banderas
+import Luis from "/public/Escultores/LuisBernardi.png";
+import Ale from "/public/Escultores/AlejandroMardonesGuillen.png";
+import Anna from "/public/Escultores/AnnaKorver.png";
+import Billy from "/public/Escultores/BillyLee.png";
+import Bogdan from "/public/Escultores/BogdanAdrianLefter.png";
+import Butrint from "/public/Escultores/ButrintMorina.png";
+import Carlos from "/public/Escultores/CarlosIglesiasFaura.png";
+import Emrah from "/public/Escultores/EmrahÖnal.png";
+import Percy from "/public/Escultores/PercyRaulZorrillaSoto.png";
+import Solveiga from "/public/Escultores/SolveigaVasiljeva.png";
+
+import Arg from "/public/Banderas/ar.svg";
+import Cl from "/public/Banderas/cl.svg";
+import Es from "/public/Banderas/es.svg";
+import Nz from "/public/Banderas/nz.svg";
+import Usa from "/public/Banderas/us.svg";
+import Ro from "/public/Banderas/ro.svg";
+import Pr from "/public/Banderas/pe.svg";
+import Tr from "/public/Banderas/tr.svg";
+import Lv from "/public/Banderas/lv.svg";
+import Kos from "/public/Banderas/xk.svg";
+
+export default function EscultoresPage() {
   return (
     <>
-      <div className="sculpHead">
-        <h1 className="sculpHead__sculpTitle">Artistas</h1>
-        <h2 className="sculpHead__sculpSubtitle">Escultores Presentes</h2>
-        <p className="sculpHead__sculpDescr">
-          La Bienal ha contado con la participación de escultores de diversas
-          partes del mundo.
+      <div className="escultores_header">
+        <h1 className="escult_Header_Title"> Escultores Seleccionados </h1>
+        <p>
+          {" "}
+          De todas partes del mundo, escultores se congregan para competir con
+          sus obras
         </p>
       </div>
-      <div className="sculpImg">
-        <ImgGeneric
-          imagen="https://picsum.photos/800/400?random=1"
-          dimensions="200"
+      <div className="escultores_list">
+        <ImagenEscultores
+          titulo="Luis Bernardi"
+          foto={Luis}
+          bandera={Arg}
+          enlace="/escultores/luis"
         />
-        <Titulos titulo="Sculptor1" subtitulo="Country1" />
-        <ImgGeneric
-          imagen="https://picsum.photos/800/400?random=2"
-          dimensions="200"
+        <ImagenEscultores
+          titulo="Alejandro Mardones Guillen"
+          foto={Ale}
+          bandera={Cl}
+          enlace="/escultores/ale"
         />
-        <Titulos titulo="Sculptor2" subtitulo="Country2" />
-        <ImgGeneric
-          imagen="https://picsum.photos/800/400?random=3"
-          dimensions="200"
+        <ImagenEscultores
+          titulo="Carlos Iglesias Faura"
+          foto={Carlos}
+          bandera={Es}
+          enlace="/escultores/carlos"
         />
-        <Titulos titulo="Sculptor3" subtitulo="Country3" />
-        <ImgGeneric
-          imagen="https://picsum.photos/800/400?random=4"
-          dimensions="200"
+        <ImagenEscultores
+          titulo="Billy Lee"
+          foto={Billy}
+          bandera={Usa}
+          enlace="/escultores/billy"
         />
-        <Titulos titulo="Sculptor4" subtitulo="Country4" />
-        <ImgGeneric
-          imagen="https://picsum.photos/800/400?random=5"
-          dimensions="200"
+        <ImagenEscultores
+          titulo="Butrint Morina"
+          foto={Butrint}
+          bandera={Kos}
+          enlace="/escultores/butrint"
         />
-        <Titulos titulo="Sculptor5" subtitulo="Country5" />
+        <ImagenEscultores
+          titulo="Solveiga Vasiljeva"
+          foto={Solveiga}
+          bandera={Lv}
+          enlace="/escultores/solveiga"
+        />
+        <ImagenEscultores
+          titulo="Anna Korver"
+          foto={Anna}
+          bandera={Nz}
+          enlace="/escultores/anna"
+        />
+        <ImagenEscultores
+          titulo="Percy Raul Zorrilla Soto"
+          foto={Percy}
+          bandera={Pr}
+          enlace="/escultores/percy"
+        />
+        <ImagenEscultores
+          titulo="Bogdan Adrian Lefter"
+          foto={Bogdan}
+          bandera={Ro}
+          enlace="/escultores/bogdan"
+        />
+        <ImagenEscultores
+          titulo="Emrah Önal"
+          foto={Emrah}
+          bandera={Tr}
+          enlace="/escultores/emrah"
+        />
       </div>
     </>
   );

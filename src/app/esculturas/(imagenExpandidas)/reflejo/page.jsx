@@ -17,6 +17,7 @@ export default function ReflejoPage() {
       etapa2={durante}
       etapa3={despues}
       autor="Bogdan Adrian Lefter"
+      enlaceEscultor={"/escultores/bogdan"}
     />
   );
 }

@@ -17,6 +17,7 @@ export default function ZarafetPage() {
       etapa2={durante}
       etapa3={despues}
       autor="Emrah Önal"
+      enlaceEscultor={"/escultores/emrah"}
     />
   );
 }
