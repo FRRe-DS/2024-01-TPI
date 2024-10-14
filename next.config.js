@@ -2,9 +2,9 @@ module.exports = {
     images: {
       remotePatterns: [
         {
-          protocol: 'https',
-          hostname: 'picsum.photos',
-          port: '',
+          protocol: 'http',
+          hostname: 'localhost',
+          port: '1337',
           pathname: '/**',
         },
       ],

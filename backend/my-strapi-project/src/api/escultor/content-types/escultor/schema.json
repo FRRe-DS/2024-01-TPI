@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "escultores",
+  "info": {
+    "singularName": "escultor",
+    "pluralName": "escultores",
+    "displayName": "Escultor",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true,
+      "minLength": 5
+    },
+    "apellidos": {
+      "type": "string",
+      "required": true,
+      "minLength": 5
+    },
+    "pais": {
+      "type": "string",
+      "required": true
+    },
+    "biografia": {
+      "type": "text",
+      "required": false,
+      "minLength": 50
+    },
+    "contacto": {
+      "type": "string"
+    },
+    "obras_previas": {
+      "type": "json"
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

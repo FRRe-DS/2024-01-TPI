@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tematicas",
+  "info": {
+    "singularName": "tematica",
+    "pluralName": "tematicas",
+    "displayName": "Tematica"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "text"
+    }
+  }
+}

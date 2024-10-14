@@ -10,6 +10,10 @@ export function RootHeader() {
         alt="Bienal Logo"
         priority={true}
       />
+      <ul>
+            <li><a href="/login">Iniciar sesion</a></li>
+            <li><a href="/registrarse">Registrarse</a></li>
+      </ul>
       <div>
         <h1 className="rootHeaderTitulo">Bienal del Chaco</h1>
       </div>

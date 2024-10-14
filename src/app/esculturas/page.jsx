@@ -11,8 +11,11 @@ import reflejo from "/public/GaleriaEsculturas/Despues_Reflejo.jpg";
 import zarafet from "/public/GaleriaEsculturas/Despues_Zarafet.jpg";
 import ritmo from "/public/GaleriaEsculturas/Despues_Ritmo.jpg";
 import orbitando from "/public/GaleriaEsculturas/Despues_Orbitando.jpg";
+import { getEsculturas } from "../lib/getEsculturas";
 
-export default function ArtPage() {
+export default async function ArtPage() {
+  const esculturas = await getEsculturas();
+  console.log(esculturas);
   return (
     <>
       <section className={styles.esculturasSect}>
@@ -24,6 +27,16 @@ export default function ArtPage() {
         </p>
       </section>
       <div className={styles.esculturasPortada}>
+        {esculturas.map((escultura) => (
+          <ImagenArte
+          key={escultura.id}
+          className={styles.esculturasSeleccionadas}
+          titulo={escultura.nombre}
+          tematica={escultura.tematica}
+          imagen={escultura.imagen}
+          enlace={"/esculturas/" + escultura.id}
+          />
+        ))}
         <ImagenArte
           className={styles.esculturasSeleccionadas}
           titulo="Simpleza"

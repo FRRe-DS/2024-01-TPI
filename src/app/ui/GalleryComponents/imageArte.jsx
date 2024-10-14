@@ -2,10 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./imageArte.module.css";
 
-export default function ImagenArte({ titulo, imagen, enlace }) {
+export default function ImagenArte({ titulo, tematica, imagen, enlace }) {
   return (
     <div className={styles.galleryBox}>
       <h2 className={styles.galleryNombreArte}>{titulo}</h2>
+      <p>{tematica}</p>
       <Image
         className={styles.galleryImagen}
         src={imagen}
