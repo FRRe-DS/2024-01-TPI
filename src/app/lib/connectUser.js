@@ -3,7 +3,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 
 export async function connectUser(data){
-    return await fetch(`${API_URL}/auth/local`, {
+    return await fetch(`${API_URL}/api/auth/local`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

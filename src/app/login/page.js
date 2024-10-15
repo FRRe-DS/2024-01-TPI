@@ -2,12 +2,11 @@
 import { useState } from 'react';
 import { connectUser } from '../lib/connectUser';
 import {styles} from './styles.css'
-import { useRouter } from 'next/compat/router';
-
+import { useRouter } from 'next/navigation'
 
 export default function Login() {
-  const router = useRouter();
   const [message, setMessage] = useState(null);
+  const router = useRouter()
 
   const login = async (event) => {
     event.preventDefault();
@@ -24,8 +23,8 @@ export default function Login() {
 
     if (res.jwt && res.user) {
       setMessage('Inicio de sesion exitoso.');
-      router.push('/');
-
+      router.prefetch('/');
+      router.replace('/');
     }
   };
 

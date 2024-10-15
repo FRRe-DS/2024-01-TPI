@@ -497,24 +497,20 @@ export interface ApiEscultorEscultor extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    nombre: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        minLength: 5;
-      }>;
-    apellidos: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        minLength: 5;
-      }>;
+    nombre: Schema.Attribute.String & Schema.Attribute.Required;
+    apellidos: Schema.Attribute.String & Schema.Attribute.Required;
     pais: Schema.Attribute.String & Schema.Attribute.Required;
     biografia: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
-        minLength: 50;
+        minLength: 20;
       }>;
     contacto: Schema.Attribute.String;
     obras_previas: Schema.Attribute.JSON;
     imagen: Schema.Attribute.Media<'images'>;
+    escultura: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::escultura.escultura'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -547,7 +543,7 @@ export interface ApiEsculturaEscultura extends Struct.CollectionTypeSchema {
     fecha_inicio: Schema.Attribute.Date & Schema.Attribute.Required;
     fecha_finalizacion: Schema.Attribute.Date;
     escultor: Schema.Attribute.Relation<'oneToOne', 'api::escultor.escultor'>;
-    tematica: Schema.Attribute.Relation<'oneToOne', 'api::tematica.tematica'>;
+    tematica: Schema.Attribute.Relation<'manyToOne', 'api::tematica.tematica'>;
     imagen_antes: Schema.Attribute.Media<'images'>;
     imagen_durante: Schema.Attribute.Media<'images', true>;
     imagen_despues: Schema.Attribute.Media<'images'>;
@@ -583,7 +579,7 @@ export interface ApiEventoEvento extends Struct.CollectionTypeSchema {
     lugar: Schema.Attribute.String & Schema.Attribute.Required;
     descripcion: Schema.Attribute.Text & Schema.Attribute.Required;
     imagen: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    tematica: Schema.Attribute.Relation<'oneToOne', 'api::tematica.tematica'>;
+    tematica: Schema.Attribute.Relation<'manyToOne', 'api::tematica.tematica'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -609,6 +605,11 @@ export interface ApiTematicaTematica extends Struct.CollectionTypeSchema {
   attributes: {
     nombre: Schema.Attribute.String & Schema.Attribute.Required;
     descripcion: Schema.Attribute.Text;
+    esculturas: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::escultura.escultura'
+    >;
+    eventos: Schema.Attribute.Relation<'oneToMany', 'api::evento.evento'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

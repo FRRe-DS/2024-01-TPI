@@ -37,8 +37,9 @@
     },
     "tematica": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::tematica.tematica"
+      "relation": "manyToOne",
+      "target": "api::tematica.tematica",
+      "inversedBy": "eventos"
     }
   }
 }

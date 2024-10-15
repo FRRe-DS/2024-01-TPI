@@ -1,21 +1,16 @@
 {
   "pages": {
-    "/page": [
+    "/esculturas/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/css/app/esculturas/page.css",
+      "static/chunks/app/esculturas/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
-    ],
-    "/eventos/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/eventos/page.css",
-      "static/chunks/app/eventos/page.js"
     ]
   }
 }

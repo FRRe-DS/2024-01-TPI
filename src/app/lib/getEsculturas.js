@@ -6,10 +6,10 @@ export function getEsculturas(){
     return query('esculturas?fields[0]=nombre&populate[tematica][fields][0]=nombre&populate[imagen_despues][fields][0]=url')
         .then(res=> {
             return res.data.map(escultura=>{
-                const {id, nombre} = escultura;
+                const {documentId, nombre} = escultura;
                 const imagen = `${API_URL}${escultura.imagen_despues.url}`;
                 const tematica = escultura.tematica.nombre;
-                return {id, nombre, tematica, imagen};
+                return {documentId, nombre, tematica, imagen};
             })
         });
 }

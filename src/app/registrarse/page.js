@@ -2,15 +2,15 @@
 import { useState } from 'react';
 import {postUser} from '../lib/postUser';
 import {styles} from '../login/styles.css'
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export default function Registration() {
+  const router = useRouter();
   const [message, setMessage] = useState(null);
 
   const register = async (event) => {
     event.preventDefault();
     setMessage(null);
-    const router = useRouter();
 
     
     const formData = new FormData(event.target);
