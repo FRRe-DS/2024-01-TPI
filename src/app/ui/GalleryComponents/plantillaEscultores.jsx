@@ -20,13 +20,18 @@ export default function PlantillaEscultoresPage({
 
       <ImgGeneric imagen={foto} dimensions={400} />
       <ImgGeneric imagen={bandera} dimensions={50} />
-      <h1>{nombre}</h1>
-      <h2>
+      <h1 className={styles.escultoresNombre}>{nombre}</h1>
+      <h2 className={styles.escultoresPais}>
         <i>{pais}</i>
       </h2>
-      <p>{parrafo}</p>
-      <h2>Proyecto:</h2>
-      <ImagenArte titulo={proyNombre} imagen={proyImagen} enlace={proyEnlace} />
+      <p className={styles.escultoresBiografia}>{parrafo}</p>
+      <h2 className={styles.escultoresProyectoHeader}>Proyecto:</h2>
+      <ImagenArte
+        className={styles.escultores}
+        titulo={proyNombre}
+        imagen={proyImagen}
+        enlace={proyEnlace}
+      />
     </>
   );
 }
