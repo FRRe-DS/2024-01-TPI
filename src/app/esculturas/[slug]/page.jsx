@@ -1,6 +1,6 @@
 'use client'
 import PlantillaPage from "../../ui/GalleryComponents/plantillaEscultura.jsx";
-import {getElement} from "../../lib/getElement.js";
+import {getEscultura} from "../../lib/getElement.js";
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react';
 import { Suspense } from 'react'
@@ -11,7 +11,7 @@ export default function Page() {
     
     useEffect(() => {
         const getSculp = async () => {
-          const escult = await getElement('esculturas', pathname.split('/')[2]);
+          const escult = await getEscultura('esculturas', pathname.split('/')[2]);
           setEscultura(escult); // Guardamos el resultado en el estado
         };
     

@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.escultoresRetorno{
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    font-style:italic;
+    color: #000000;
+    padding: 3% 2.5% 1.5% 5%;
+}
+
+.escultoresContainer{
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    padding: 1%;
+    text-align: left;
+    margin: 1%;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.escultoresImg{
+    width: 90%;
+    height: 100%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.esculturesNombre {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.5rem;
+    font-style:italic;
+    color: #000000;
+    padding: 3% 2.5% 1.5% 5%;
+}
+
+.esculturesPais {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5rem;
+    font-style:italic;
+    color: #0e0c0c;
+    padding: 3% 2.5% 1.5% 5%;
+}
+
+.esculturesProyectoHeader {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.0rem;
+    font-style:bold;
+    color: #000000;
+    padding: 3% 2.5% 1.5% 5%;
+}
+
+.esculturesBiografia {
+    font-family: "Montserrat", sans-serif;
+    font-style:italic;
+    font-size: 1.5rem;
+    padding: 0 2.5% 1.5% 5%;
+    text-align: left;
+
+}
+
+.esculturesDistinciones {
+    width: 90%;
+    padding: 2%;
+    margin: 3% 2.5% 1.5% 5%;
+    box-sizing: border-box;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 5%;
+
+}
+
+
+.esculturesLista{
+    color: #000000;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-size: 800;
+    width: 30%;
+    padding: 1%;
+    box-sizing: border-box;
+
+}
+
+.escultoresItems{
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    padding: 1%;
+    text-align: left;
+    margin: 1%;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+
+@media (max-width: 1400px ) {
+    .esculturesDistinciones {
+        flex-direction: column;
+    }
+
+    .esculturesLista {
+        align-self: center;
+        width: 40%;
+    }
+
+
+}
+
+@media (max-width: 900px ) {
+    .esculturesDistinciones {
+        flex-direction: column;
+    }
+
+    .esculturesLista {
+        align-self: center;
+        width: 60%;
+    }
+
+}

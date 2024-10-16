@@ -3,9 +3,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    color: black;
 };
 
-#sculpHead{
+
+.sculpHead{
     display: flex;
-    margin-left: 25%;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
 };

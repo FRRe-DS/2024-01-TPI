@@ -5,7 +5,8 @@
 import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'; //CSS de react-datepicker
-import {getEventos} from '../lib/getEventos';
+import {getEventos} from '../lib/getElementos';
+import Link from 'next/link';
 
 export default function AgendaEventos() {
     const [selectedDate, setSelectedDate] = useState(new Date());
@@ -59,7 +60,7 @@ export default function AgendaEventos() {
                 {filteredEvents.length > 0 ? (
                     <ul>
                         {filteredEvents.map(event => (
-                            <li key={event.id}>{event.nombre}</li>
+                            <li key={event.documentId}><Link href={"eventos/"+event.documentId}>{event.nombre}</Link></li>
                         ))}
                     </ul>
                 ) : (

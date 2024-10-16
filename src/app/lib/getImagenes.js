@@ -1,1 +1,0 @@
-// esto es probablemente igual a getEsculturas.js

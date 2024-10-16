@@ -1,11 +1,11 @@
 import ImagenArte from "../ui/GalleryComponents/imageArte.jsx";
 import styles from "./page.module.css";
 
-import { getEsculturas } from "../lib/getEsculturas";
+import { getEsculturas } from "../lib/getElementos";
 
-export default async function ArtPage() {
+export default async function Page() {
   const esculturas = await getEsculturas();
-  console.log(esculturas);
+
   return (
     <>
       <section className={styles.esculturasSect}>

@@ -1,14 +1,14 @@
 import ImgGeneric from "../ui/componentes/imagenGenerica.jsx";
 import Titulos from "../ui/componentes/paratexto.jsx";
-import "./escultores.css";
-import { getEscultores } from '../lib/getEscultores';
+import "./escultores.css"
+import { getEscultores } from '../lib/getElementos';
+import Link from "next/link.js";
 /*
 Cree SculpImg pero es parecida a ImageRandom, además para colocar el subtitulo y colocar a cada
 imagen con su titulo y subtitulo
 */
-export default async function SculpPage() {
+export default async function Page() {
   const escultores = await getEscultores();
-  console.log(escultores);
 
   return (
     <>
@@ -21,13 +21,21 @@ export default async function SculpPage() {
         </p>
         <div className="sculpHead__sculpSection">
         {escultores.map((escultor) => (
-          <div key={escultor.id} className="sculpImg">
-            <Titulos titulo={escultor.nombre+' '+escultor.apellidos} subtitulo={escultor.pais} />
-            <ImgGeneric
-              imagen={escultor.imagen}
-              dimensions="200"
-            />
-          </div>
+          <Link href={"escultores/" + escultor.documentId} key={escultor.documentId} className="sculpLink">
+
+            <div  className="sculpImg">
+
+              <Titulos 
+                titulo={escultor.nombre+' '+escultor.apellidos} 
+                subtitulo={escultor.pais} 
+              />
+              <ImgGeneric
+                imagen={escultor.imagen}
+                dimensions="200"
+              />
+
+            </div>
+          </Link>
         ))}
         </div>
       </div>
