@@ -1,0 +1,125 @@
+/* InfoExtra */
+.rootSeccionNavegacion {
+    margin: 20px 0;
+}
+
+.menu {
+    margin-bottom: 20px;
+}
+
+.menu {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px; /* Limitar el ancho del menú */
+    margin: 0 auto; /* Centrar el menú */
+    border-bottom: 2px solid #ccc;
+}
+
+.menu li {
+    margin: 0 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.menu a.enlace__activo {
+    border-bottom: 2px solid black;
+    color: #000;
+}
+
+/* Otros estilos para las secciones */
+.info, .mapResponsive, .predio {
+    display: flex;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: var(--color-highlight);
+    border-radius: 8px;
+    height: 450px;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%; /* Limitar el ancho de las secciones */
+    margin: 20px auto; /* Centrar las secciones */
+}
+
+.info {
+    padding: 30px;
+}
+
+.info__instalaciones, .info__entradaTitulo {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 22px; /* Ajuste del tamaño del título */
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.info__entrada, .info__instalaciones__lista li {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #555;
+}
+
+.info__instalaciones__lista {
+    list-style: none;
+    padding-left: 20px;
+    text-align: left;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.info__instalaciones__lista li {
+    margin: 5px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.info__instalaciones__lista li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-size: 20px;
+    line-height: 20px;
+}
+
+/* Ajustes de iframe en la sección de mapa */
+.mapResponsive iframe {
+    width: 100%; /* Ajuste para que ocupe el ancho completo */
+    border-radius: 8px; /* Borde redondeado */
+    border: 1px solid #ccc;
+}
+
+.predio__imagen {
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+}
+
+/* Estilos para las secciones */
+.oculto {
+    display: none;
+}
+
+.visible {
+    display: block;
+}

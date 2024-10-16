@@ -1,4 +1,5 @@
 import SocialMediaFooter from "../SocialMediaBar/socialMedia";
+import "../globals.css";
 
 export function RootFooter() {
   return (
