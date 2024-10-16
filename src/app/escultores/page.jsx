@@ -1,5 +1,5 @@
 import ImagenEscultores from "../ui/GalleryComponents/imagenEscultores";
-import "./escultores.css";
+import styles from "./page.module.css";
 
 //Importar las imagenes y banderas
 import Luis from "/public/Escultores/LuisBernardi.png";

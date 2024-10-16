@@ -1,0 +1,155 @@
+/* styles.css */
+
+/* Estilos generales */
+.rootMain {
+  padding: 20px;
+}
+
+/* Header */
+.rootHeader {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.rootLogoPrincipal {
+  width: 50px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.rootHeaderTitulo {
+  font-size: 24px;
+}
+
+/* Sección de cita */
+.rootPageCita {
+  background-color: var(--color-highlight);
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 5px solid var(--color-primary);
+}
+
+.rootCitaTitulo {
+  font-size: 20px;
+  font-style: italic;
+  margin: 0 0 10px 0;
+}
+
+.rootCitaParrafo {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Texto principal */
+.rootTituloTexto1 {
+  display: table;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.rootTituloTexto {
+  font-size: 28px; /* Tamaño de fuente grande */
+  font-weight: bold; /* Negrita */
+  color: var(--color-primary); /* Color específico */
+  margin: 20px 0 10px 0;
+  flex: 1 1 100%;
+}
+
+.column {
+  display: table-column-group;
+  flex-direction: column;
+}
+
+.rootTexto {
+  font-size: 18px; /* Tamaño de fuente mediano */
+  color: var(--color-secondary); /* Color específico */
+  line-height: 1.6; /* Espaciado entre líneas */
+  margin: 10px 0;
+  flex: 1 1 calc(50% - 20px);
+}
+
+/* Navegación */
+.rootSeccionNavegacion {
+  margin: 20px 0;
+}
+
+/* InfoExtra */
+.menu {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 10px;
+}
+
+.enlaces {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.enlace__info,
+.enlace__map,
+.enlace__predio {
+  color: #fff;
+  text-decoration: none;
+}
+
+.info {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.info__entrada,
+.info__instalaciones {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.info__instalaciones__lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info__instalaciones__lista li {
+  margin: 5px 0;
+}
+
+/* Mapa */
+.mapResponsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.mapResponsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+/* Predio */
+.predio {
+  margin: 20px 0;
+}
+
+/* Footer */
+.rootFooter {
+  background-color: var(--color-primary);
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.rootFooter p {
+  margin: 0;
+}

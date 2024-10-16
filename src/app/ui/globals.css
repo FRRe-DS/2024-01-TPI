@@ -1,6 +1,9 @@
 /* Aqui se definen los estilos compartidos por todas las partes del sitio web */
-html, 
-body {
-    background-color: #b7cccb;
-}
+@import "../variables.css";
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
