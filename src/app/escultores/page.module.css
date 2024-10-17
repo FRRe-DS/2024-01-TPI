@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-.esculturesSect {
+.escultoresSect {
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     width: 100% ;
@@ -12,7 +12,8 @@
 
 }
 
-.esculturesHeader {
+.escultoresHeader {
+    font-family: "Montserrat", sans-serif;
     text-transform : uppercase;
     font-size: 3.5rem;
     color: #000000;
@@ -21,30 +22,27 @@
 
 }
 
-.esculturesText {
+.escultoresText {
+    font-family: "Montserrat", sans-serif;
     font-size: 150%;
 }
 
-.esculturesPortada {
+.escultoresPortada {
     width: 90%;
-    display: flex; 
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+gap: 20px;
     padding: 5%;
     margin-bottom: 10%;
+    box-sizing: border-box;
 
 }
 
 @media (max-width: 1400px ) {
-    .esculturesPortada {
+    .escultoresPortada {
         flex-direction: column;
         align-items: center;
     }
 }
 
 
-
-.esculturasSeleccionadas { 
-
-}

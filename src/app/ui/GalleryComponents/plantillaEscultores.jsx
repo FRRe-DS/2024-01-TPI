@@ -1,18 +1,18 @@
-import ImgGeneric from "../componentes/imagenGenerica";
-import ImagenArte from "./imageArte";
+import ImgGeneric from "./imagenGenerica";
+//import ImagenArte from "./imageArte";
 import Link from "next/link";
 import styles from "./plantillaEscultores.module.css";
 
 export default function PlantillaEscultoresPage({
   foto,
-  bandera,
+  //bandera,
   nombre,
   pais,
   parrafo,
   distinciones,
   proyNombre,
-  proyImagen,
-  proyEnlace,
+  //proyImagen,
+  //proyEnlace,
 }) {
   return (
     <>
@@ -29,11 +29,11 @@ export default function PlantillaEscultoresPage({
           imagen={foto}
           dimensions={400}
         />
-        <ImgGeneric
+        {/*<ImgGeneric
           className={styles.escultoresImg}
           imagen={bandera}
           dimensions={50}
-        />
+        />*/}
         <h1 className={styles.escultoresNombre}>{nombre}</h1>
         <h2 className={styles.escultoresPais}>
           <i>{pais}</i>
@@ -51,13 +51,15 @@ export default function PlantillaEscultoresPage({
             ))}
           </ul>
         </div>
-        <h2 className={styles.escultoresProyectoHeader}>Proyecto:</h2>
-        <ImagenArte
+        <h2 className={styles.escultoresProyectoHeader}>
+          Proyecto: <b>{proyNombre}</b>
+        </h2>
+        {/*<ImagenArte
           className={styles.escultores}
           titulo={proyNombre}
           imagen={proyImagen}
           enlace={proyEnlace}
-        />
+        />*/}
       </div>
     </>
   );

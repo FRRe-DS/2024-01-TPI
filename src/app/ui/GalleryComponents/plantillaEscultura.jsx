@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./plantillaEscultura.module.css";
-import Link from "next/link";
 
 export default function PlantillaPage({
   titulo,
@@ -9,7 +8,6 @@ export default function PlantillaPage({
   etapa2,
   etapa3,
   autor,
-  enlaceEscultor,
 }) {
   return (
     <>
@@ -18,11 +16,7 @@ export default function PlantillaPage({
         <b>{descripcion}</b>
       </p>
       <p className={styles.esculturaDescription}>
-        Escultura construida por{" "}
-        <Link href={enlaceEscultor} rel="noopener no referrer">
-          {autor}
-        </Link>{" "}
-        a lo largo del transcurso de la Bienal
+        Escultura construida por {autor} a lo largo del transcurso de la Bienal
       </p>
       <div className={styles.esculturaEtapasContainer}>
         <div className={styles.esculturasEtapasBox}>
