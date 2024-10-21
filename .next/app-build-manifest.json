@@ -23,28 +23,17 @@
       "static/css/app/esculturas/[slug]/page.css",
       "static/chunks/app/esculturas/[slug]/page.js"
     ],
-    "/escultores/page": [
+    "/registrarse/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/escultores/page.css",
-      "static/chunks/app/escultores/page.js"
+      "static/css/app/registrarse/page.css",
+      "static/chunks/app/registrarse/page.js"
     ],
-    "/escultores/[slug]/page": [
+    "/login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/escultores/[slug]/page.css",
-      "static/chunks/app/escultores/[slug]/page.js"
-    ],
-    "/eventos/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/eventos/page.css",
-      "static/chunks/app/eventos/page.js"
-    ],
-    "/eventos/[slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/eventos/[slug]/page.js"
+      "static/css/app/login/page.css",
+      "static/chunks/app/login/page.js"
     ]
   }
 }
