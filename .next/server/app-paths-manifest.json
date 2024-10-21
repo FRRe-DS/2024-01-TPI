@@ -1,3 +1,6 @@
 {
-  "/page": "app/page.js"
+  "/esculturas/page": "app/esculturas/page.js",
+  "/page": "app/page.js",
+  "/esculturas/[slug]/page": "app/esculturas/[slug]/page.js",
+  "/login/page": "app/login/page.js"
 }
