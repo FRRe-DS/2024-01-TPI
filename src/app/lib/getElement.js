@@ -22,10 +22,11 @@ export function getEscultor(documentId){
             const nombre = res.data.nombre + ' ' + res.data.apellidos;
             const imagen = res.data.imagen == null ? '' : `${API_URL}${res.data.imagen.url}`;
             const escultura = res.data.escultura.nombre;
-            const img_escultura = res.data.escultura.imagen_despues.url;
+            const img_escultura = `${API_URL}${res.data.escultura.imagen_despues.url}`;
+            const id_escultura = res.data.escultura.documentId;
             const pais = res.data.pais.nombre;
             const img_pais = res.data.pais.imagen.url;
-            return {nombre, biografia, imagen, escultura, img_escultura, obras_previas, pais, img_pais};
+            return {nombre, biografia, imagen, escultura, img_escultura, id_escultura, obras_previas, pais, img_pais};
         });
 }
 

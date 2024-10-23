@@ -29,14 +29,14 @@ export default function Page() {
         <Suspense fallback={<p>Cargando...</p>}>
             <PlantillaEscultoresPage
                 foto={escultor.imagen}
-                // bandera={Cl}
+                bandera={escultor.img_pais}
                 nombre={escultor.nombre}
                 pais={escultor.pais}
                 parrafo={escultor.biografia}
                 distinciones={escultor.obras_previas}
                 proyNombre={escultor.escultura}
-                // proyImagen={euclidea}
-                // proyEnlace="/esculturas/euclidea"
+                proyImagen={escultor.img_escultura}
+                proyEnlace={`esculturas/${escultor.id_escultura}`}
             />
         </Suspense>
         </section>
