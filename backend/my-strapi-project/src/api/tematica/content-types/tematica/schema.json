@@ -17,6 +17,18 @@
     },
     "descripcion": {
       "type": "text"
+    },
+    "esculturas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::escultura.escultura",
+      "mappedBy": "tematica"
+    },
+    "eventos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::evento.evento",
+      "mappedBy": "tematica"
     }
   }
 }

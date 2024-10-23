@@ -14,22 +14,16 @@
   "attributes": {
     "nombre": {
       "type": "string",
-      "required": true,
-      "minLength": 5
+      "required": true
     },
     "apellidos": {
-      "type": "string",
-      "required": true,
-      "minLength": 5
-    },
-    "pais": {
       "type": "string",
       "required": true
     },
     "biografia": {
       "type": "text",
       "required": false,
-      "minLength": 50
+      "minLength": 20
     },
     "contacto": {
       "type": "string"
@@ -44,6 +38,18 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "escultura": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::escultura.escultura",
+      "mappedBy": "escultor"
+    },
+    "pais": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::pais.pais",
+      "inversedBy": "escultores"
     }
   }
 }

@@ -30,27 +30,38 @@
     "escultor": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::escultor.escultor"
+      "target": "api::escultor.escultor",
+      "inversedBy": "escultura"
     },
     "tematica": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::tematica.tematica"
+      "relation": "manyToOne",
+      "target": "api::tematica.tematica",
+      "inversedBy": "esculturas"
     },
     "imagen_antes": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::imagen.imagen"
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
-    "imagen_durantes": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::imagen.imagen"
+    "imagen_durante": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "imagen_despues": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::imagen.imagen"
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
