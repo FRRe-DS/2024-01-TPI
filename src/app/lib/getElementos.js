@@ -23,13 +23,22 @@ export function getEsculturas(){
         });
 }
 
-export function getEscultores(){
-    return query('escultores?fields[0]=nombre&fields[1]=apellidos&fields[2]=pais&populate[imagen][fields][0]=url')
+export function getEscultores(pageSize, page){
+    let url = 'escultores?populate[imagen][fields][0]=url&populate[pais][populate][imagen][fields][0]=url';
+    if(page) url += `&pagination[page]=${page}`;
+    if(pageSize) url += `&pagination[pageSize]=${pageSize}`;
+
+    return query(url)
         .then(res=> {
-            return res.data.map(escultor=>{
-                const {documentId, nombre, apellidos, pais} = escultor;
+            const {data, meta} = res;
+
+            const escultores = data.map(escultor=>{
+                const {documentId, nombre, apellidos} = escultor;
                 const imagen = `${API_URL}${escultor.imagen.url}`;
-                return {documentId, nombre, apellidos, pais, imagen};
+                const bandera = `${API_URL}${escultor.pais.imagen.url}`;
+                return {documentId, nombre, apellidos, bandera, imagen};
             })
+            
+            return {escultores, meta : meta.pagination};
         });
 }

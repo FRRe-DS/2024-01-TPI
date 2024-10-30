@@ -12,6 +12,18 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/esculturas/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/esculturas/page.css",
+      "static/chunks/app/esculturas/page.js"
+    ],
+    "/esculturas/[slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/esculturas/[slug]/page.css",
+      "static/chunks/app/esculturas/[slug]/page.js"
+    ],
     "/escultores/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

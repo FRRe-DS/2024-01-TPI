@@ -1,19 +1,20 @@
 import ImgGeneric from "./imagenGenerica";
-//import ImagenArte from "./imageArte";
+import ImagenArte from "./imageArte";
 import Link from "next/link";
 import styles from "./plantillaEscultores.module.css";
 
 export default function PlantillaEscultoresPage({
   foto,
-  //bandera,
+  bandera,
   nombre,
   pais,
   parrafo,
   distinciones,
   proyNombre,
-  //proyImagen,
+  proyImagen,
   //proyEnlace,
 }) {
+  console.log(bandera);
   return (
     <>
       <Link
@@ -29,11 +30,11 @@ export default function PlantillaEscultoresPage({
           imagen={foto}
           dimensions={400}
         />
-        {/*<ImgGeneric
+        {<ImgGeneric
           className={styles.escultoresImg}
           imagen={bandera}
           dimensions={50}
-        />*/}
+        />}
         <h1 className={styles.escultoresNombre}>{nombre}</h1>
         <h2 className={styles.escultoresPais}>
           <i>{pais}</i>
@@ -44,7 +45,7 @@ export default function PlantillaEscultoresPage({
           <b>Distinciones</b>
           <br />
           <ul className={styles.escultoresLista}>
-            {distinciones.map((distincion, index) => (
+            {distinciones == null ? '' : distinciones.map((distincion, index) => (
               <li className={styles.escultoresItems} key={index}>
                 {distincion}
               </li>
@@ -54,12 +55,12 @@ export default function PlantillaEscultoresPage({
         <h2 className={styles.escultoresProyectoHeader}>
           Proyecto: <b>{proyNombre}</b>
         </h2>
-        {/*<ImagenArte
+        {<ImagenArte
           className={styles.escultores}
           titulo={proyNombre}
           imagen={proyImagen}
-          enlace={proyEnlace}
-        />*/}
+          //enlace={proyEnlace}
+        />}
       </div>
     </>
   );

@@ -1,9 +1,13 @@
 import ImagenEscultores from "../ui/GalleryComponents/imagenEscultores";
 import { getEscultores } from "../lib/getElementos";
 import styles from "./page.module.css";
+import { Pagination } from "../ui/componentes/Pagination";
+
+const PAGE_SIZE = 6;
 
 export default async function EscultoresPage() {
-  const escultores = await getEscultores();
+  const {escultores, meta} = await getEscultores(PAGE_SIZE, 1);
+
   return (
     <>
       <div className={styles.escultoresSect}>
@@ -18,12 +22,18 @@ export default async function EscultoresPage() {
           <ImagenEscultores
             titulo={escultor.nombre + " " + escultor.apellidos}
             foto={escultor.imagen}
-            bandera={escultor.pais}
+            bandera={escultor.bandera}
             enlace={"escultores/" + escultor.documentId}
             key={escultor.documentId}
           />
         ))}
       </div>
+        <Pagination
+          page={meta.page}
+          pageSize={meta.pageSize}
+          pageCount={meta.pageCount}
+          total={meta.total}
+          ></Pagination>
     </>
   );
 }

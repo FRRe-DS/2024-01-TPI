@@ -36,7 +36,7 @@ export default function Page() {
                 distinciones={escultor.obras_previas}
                 proyNombre={escultor.escultura}
                 proyImagen={escultor.img_escultura}
-                proyEnlace={`esculturas/${escultor.id_escultura}`}
+                //proyEnlace={`esculturas/${escultor.id_escultura}`}
             />
         </Suspense>
         </section>
