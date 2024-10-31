@@ -5,8 +5,9 @@ import { Pagination } from "../ui/componentes/Pagination";
 
 const PAGE_SIZE = 6;
 
-export default async function EscultoresPage() {
-  const {escultores, meta} = await getEscultores(PAGE_SIZE, 1);
+export default async function EscultoresPage({searchParams}) {
+  const { page } = searchParams;
+  const {escultores, meta} = await getEscultores(PAGE_SIZE, page);
 
   return (
     <>

@@ -11,15 +11,22 @@ export function getEventos(){
         });
 }
 
-export function getEsculturas(){
-    return query('esculturas?fields[0]=nombre&populate[tematica][fields][0]=nombre&populate[imagen_despues][fields][0]=url')
+export function getEsculturas(pageSize, page){
+    let url = 'esculturas?fields[0]=nombre&populate[tematica][fields][0]=nombre&populate[imagen_despues][fields][0]=url';
+    
+    if(page) url += `&pagination[page]=${page}`;
+    if(pageSize) url += `&pagination[pageSize]=${pageSize}`;
+
+    return query(url)
         .then(res=> {
-            return res.data.map(escultura=>{
+            const {data, meta} = res;
+            const esculturas =  data.map(escultura=>{
                 const {documentId, nombre} = escultura;
                 const imagen = `${API_URL}${escultura.imagen_despues.url}`;
                 const tematica = escultura.tematica.nombre;
                 return {documentId, nombre, tematica, imagen};
             })
+            return {esculturas, meta : meta.pagination};
         });
 }
 

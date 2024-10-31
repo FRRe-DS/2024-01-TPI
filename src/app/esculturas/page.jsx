@@ -1,10 +1,13 @@
 import ImagenArte from "../ui/GalleryComponents/imageArte.jsx";
 import styles from "./page.module.css";
-
 import { getEsculturas } from "../lib/getElementos";
+import { Pagination } from "../ui/componentes/Pagination";
 
-export default async function ArtPage() {
-  const esculturas = await getEsculturas();
+const PAGE_SIZE = 3;
+
+export default async function ArtPage({searchParams}) {
+  const { page } = searchParams;
+  const {esculturas, meta} = await getEsculturas(PAGE_SIZE, page);
 
   return (
     <>
@@ -28,6 +31,12 @@ export default async function ArtPage() {
           />
         ))}
       </div>
+      <Pagination
+          page={meta.page}
+          pageSize={meta.pageSize}
+          pageCount={meta.pageCount}
+          total={meta.total}
+          ></Pagination>
     </>
   );
 }
