@@ -1,12 +1,13 @@
-'use client';
-import { useState } from 'react';
-import { connectUser } from '../lib/connectUser';
-import {styles} from './styles.css'
-import { useRouter } from 'next/navigation'
+"use client";
+import { useState } from "react";
+import { connectUser } from "../lib/connectUser";
+import { styles } from "./styles.css";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Login() {
   const [message, setMessage] = useState(null);
-  const router = useRouter()
+  const router = useRouter();
 
   const login = async (event) => {
     event.preventDefault();
@@ -22,23 +23,28 @@ export default function Login() {
     }
 
     if (res.jwt && res.user) {
-      setMessage('Inicio de sesion exitoso.');
-      router.prefetch('/');
-      router.replace('/');
+      setMessage("Inicio de sesion exitoso.");
+      //router.prefetch("/");
+      //router.replace("/");
     }
   };
 
   return (
     <form onSubmit={login}>
-      <label htmlFor="identifier" className="block">Username/Email</label>
+      <label htmlFor="identifier" className="block">
+        Username/Email
+      </label>
       <input type="text" id="identifier" name="identifier" className="block" />
 
-      <label htmlFor="password" className="block">Password</label>
+      <label htmlFor="password" className="block">
+        Password
+      </label>
       <input type="password" id="password" name="password" className="block" />
+      <Link href="/">
+        <button type="submit">Submit</button>
+      </Link>
 
-      <button type="submit">Submit</button>
-
-      <div className='message'>{ message }</div>
+      <div className="message">{message}</div>
     </form>
   );
 }
