@@ -78,3 +78,9 @@ body {
 .rootFooter p {
     margin: 0;
 }
+
+.link-panel {
+    color: azure;
+    text-decoration: none;
+    border: 1px solid azure;
+  }

@@ -5,9 +5,12 @@ export default function Page({
   descripcion,
   foto,
   tematica,
+  esculturas
 }) {
   const fecha = fecha_hora.split("T");
   const hora = fecha[1].split(":");
+  console.log(esculturas);
+
 
   return (
     <div className="evento">
@@ -25,6 +28,17 @@ export default function Page({
       <p>
         <strong>Temática:</strong> {tematica}
       </p>
+      <div>
+        <h3>Esculturas relacionadas</h3>
+        <ul>
+          {esculturas.map((escultura) => (
+            <li key={escultura.documentId}>
+              <img src={escultura.imagen} alt={escultura.nombre} />
+              <p>{escultura.nombre}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
