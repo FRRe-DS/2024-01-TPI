@@ -1,0 +1,20 @@
+# http://localhost:1337/api/esculturas
+# Authorization: Bearer 7fe3baf407058e5ddd24479882d4ae2bc09388e423f9a5cbcdcec1af9a1f5f50e92a937b41807eeb89a135c44aaf34dc0619c6cf6192a4e11c65c0144b259cd50633bde97fb52e6c0ae9b9e3bb93f66b092aff9bbdde7bfab1ac47455292f60d9148d5738cd57ff607909758ecc5288773bfeebbfe312eb389658b4e141b04a8
+
+# http://localhost:1337/api/esculturas/itevklpng8yiym3kaahxr34g?populate[imagen_despues][fields][0]=url&populate[imagen_antes][fields][0]=url&populate[imagen_durante][fields][0]=url&populate[escultor][fields][0]=nombre&populate[escultor][fields][1]=apellidos&populate[escultor][pais][fields][0]=nombre&populate[tematica][fields][0]=nombre
+# Authorization: Bearer 7fe3baf407058e5ddd24479882d4ae2bc09388e423f9a5cbcdcec1af9a1f5f50e92a937b41807eeb89a135c44aaf34dc0619c6cf6192a4e11c65c0144b259cd50633bde97fb52e6c0ae9b9e3bb93f66b092aff9bbdde7bfab1ac47455292f60d9148d5738cd57ff607909758ecc5288773bfeebbfe312eb389658b4e141b04a8
+
+# http://localhost:1337/api/escultores?populate[imagen][fields][0]=url&populate[escultura][populate][imagen_despues][fields][0]=url&populate[pais][populate][imagen][fields][0]=url&populate[pais][fields][0]=nombre&populate[escultura][fields][0]=nombre&pagination[page]=1&pagination[pageSize]=10
+# Authorization: Bearer 7fe3baf407058e5ddd24479882d4ae2bc09388e423f9a5cbcdcec1af9a1f5f50e92a937b41807eeb89a135c44aaf34dc0619c6cf6192a4e11c65c0144b259cd50633bde97fb52e6c0ae9b9e3bb93f66b092aff9bbdde7bfab1ac47455292f60d9148d5738cd57ff607909758ecc5288773bfeebbfe312eb389658b4e141b04a8
+
+# http://localhost:1337/api/escultores/c5ktx8xmlobl9u25b45y2v4t?populate[imagen][fields][0]=url&populate[escultura][populate][imagen_despues][fields][0]=url&populate[pais][populate][imagen][fields][0]=url&populate[pais][fields][0]=nombre&populate[escultura][fields][0]=nombre
+# Authorization: Bearer 7fe3baf407058e5ddd24479882d4ae2bc09388e423f9a5cbcdcec1af9a1f5f50e92a937b41807eeb89a135c44aaf34dc0619c6cf6192a4e11c65c0144b259cd50633bde97fb52e6c0ae9b9e3bb93f66b092aff9bbdde7bfab1ac47455292f60d9148d5738cd57ff607909758ecc5288773bfeebbfe312eb389658b4e141b04a8
+
+# http://localhost:1337/api/users
+# Authorization: Bearer 7fe3baf407058e5ddd24479882d4ae2bc09388e423f9a5cbcdcec1af9a1f5f50e92a937b41807eeb89a135c44aaf34dc0619c6cf6192a4e11c65c0144b259cd50633bde97fb52e6c0ae9b9e3bb93f66b092aff9bbdde7bfab1ac47455292f60d9148d5738cd57ff607909758ecc5288773bfeebbfe312eb389658b4e141b04a8
+
+# http://localhost:1337/api/tematicas
+# Authorization: Bearer 7fe3baf407058e5ddd24479882d4ae2bc09388e423f9a5cbcdcec1af9a1f5f50e92a937b41807eeb89a135c44aaf34dc0619c6cf6192a4e11c65c0144b259cd50633bde97fb52e6c0ae9b9e3bb93f66b092aff9bbdde7bfab1ac47455292f60d9148d5738cd57ff607909758ecc5288773bfeebbfe312eb389658b4e141b04a8
+
+http://localhost:1337/api/esculturas?filters[tematica][nombre][$contains]=bellas+artes&populate[imagen_despues][fields][0]=url
+Authorization: Bearer 7fe3baf407058e5ddd24479882d4ae2bc09388e423f9a5cbcdcec1af9a1f5f50e92a937b41807eeb89a135c44aaf34dc0619c6cf6192a4e11c65c0144b259cd50633bde97fb52e6c0ae9b9e3bb93f66b092aff9bbdde7bfab1ac47455292f60d9148d5738cd57ff607909758ecc5288773bfeebbfe312eb389658b4e141b04a8

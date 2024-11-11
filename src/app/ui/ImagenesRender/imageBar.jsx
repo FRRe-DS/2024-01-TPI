@@ -16,7 +16,7 @@ export default function ImageBar() {
             enlace="/esculturas"
           />
         </div>
-        <div className={style.rootNavContenedor}>  
+        <div className={style.rootNavContenedor}>
           <ImagenesRedireccion
             titulo="Escultores"
             imagen={escult}
@@ -24,10 +24,10 @@ export default function ImageBar() {
           />
         </div>
         <div className={style.rootNavContenedor}>
-          <ImagenesRedireccion 
-            titulo="Eventos" 
-            imagen={evento} 
-            enlace="/eventos" 
+          <ImagenesRedireccion
+            titulo="Eventos"
+            imagen={evento}
+            enlace="/eventos"
           />
         </div>
       </div>

@@ -1,7 +1,8 @@
 @import "../estilosHome/variables.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -11,24 +12,59 @@ body {
 .rootMain {
     padding: 20px;
 }
+
+.rootHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 10px 20px;
+}
   
 .rootLogoPrincipal {
-    width: 50px;
+    width: 15%;
     height: auto;
-    margin-right: 20px;
+    order: 0;
 }
 
 /* Header */
 .rootHeaderTitulo {
-    font-size: 24px;
+    font-size: 30px;
 }
 
-.rootHeader {
-    display: flex;
-    align-items: center;
-    background-color: var(--color-primary);
+.rootHeaderFormContainer{
+    width: 20%;
+    order: 2;
+}
+
+.rootHeaderUsuario{
+    display: inline-block;
+    background-color: #f4f4f4;
+    color:black;
+    padding:1%;
+    border-radius: 5px;
+    text-decoration: none;
+    margin:2%;
+}
+
+.rootHeaderUsuario:hover{
+    border: none;
+    padding: 2%;
+    background-color: #afcae9;
+    color:black;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.rootHeaderRetorno{
     color: #fff;
-    padding: 10px 20px;
+    text-decoration: none;
+    order: 1;
+}
+
+.rootHeaderRetorno:hover{
+    text-decoration: none;
 }
 
   /* Footer */
@@ -42,3 +78,9 @@ body {
 .rootFooter p {
     margin: 0;
 }
+
+.link-panel {
+    color: azure;
+    text-decoration: none;
+    border: 1px solid azure;
+  }

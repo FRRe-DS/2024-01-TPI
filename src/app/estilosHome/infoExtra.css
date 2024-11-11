@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* InfoExtra */
 .rootSeccionNavegacion {
     margin: 20px 0;
@@ -63,7 +65,7 @@
 }
 
 .info__instalaciones, .info__entradaTitulo {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 22px; /* Ajuste del tamaño del título */
     margin-bottom: 10px;
@@ -74,7 +76,7 @@
     list-style: none;
     padding: 0;
     margin: 10px 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     color: #555;
 }
@@ -109,10 +111,19 @@
     border: 1px solid #ccc;
 }
 
+.predio_titulo{
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-size: 150%;
+    color: #000000;
+    margin-bottom: 1%;
+}
+
 .predio__imagen {
     width: 100%;
-    height: 450px;
-    border-radius: 8px;
+    height: 100%;
+    border-radius: 8px;;
+
 }
 
 /* Estilos para las secciones */
