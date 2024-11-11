@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Page({
   nombre,
   lugar,
@@ -9,6 +11,7 @@ export default function Page({
 }) {
   const fecha = fecha_hora.split("T");
   const hora = fecha[1].split(":");
+  const todasEsculturas = esculturas == null ? "" : esculturas.esculturas;
 
   return (
     <div className="evento">
@@ -29,14 +32,13 @@ export default function Page({
       <div>
         <h3>Esculturas relacionadas</h3>
         <ul>
-          {esculturas == null
-            ? ""
-            : esculturas.esculturas.map((escultura) => (
-                <li key={escultura.documentId}>
-                  <img src={escultura.imagen} alt={escultura.nombre} />
-                  <p>{escultura.nombre}</p>
-                </li>
-              ))}
+          {todasEsculturas == "" ? "" : todasEsculturas.map((escultura) => (
+            <li key={escultura.documentId}>
+              <img src={escultura.imagen} alt={escultura.nombre} />
+              <p>{escultura.nombre}</p>
+              <Link href={`/votaciones/${escultura.documentId}`}>Ir a votar</Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

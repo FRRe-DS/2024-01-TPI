@@ -23,23 +23,20 @@ export default function Page() {
     getSculp();
   }, [pathname]);
 
-  if (!evento) {
-    return <p>Cargando...</p>; // Muestra un mensaje de carga si no hay datos
-  }
-
-  return (
-    <section>
-      <Suspense fallback={<p>Cargando...</p>}>
-        <PlantillaEvento
-          nombre={evento.nombre}
-          lugar={evento.lugar}
-          fecha_hora={evento.fecha_hora}
-          descripcion={evento.descripcion}
-          foto={evento.imagen}
-          tematica={evento.tematica}
-          esculturas={esculturas}
-        />
-      </Suspense>
-    </section>
-  );
+    return (
+        <section>
+        <Suspense fallback={<p>Cargando...</p>}>
+            <PlantillaEvento
+                nombre={evento.nombre}
+                lugar={evento.lugar}
+                fecha_hora={evento.fecha_hora}
+                descripcion={evento.descripcion}
+                foto={evento.imagen}
+                tematica={evento.tematica}
+                esculturas={esculturas}
+            />
+        </Suspense>
+        </section>
+        
+    );
 }

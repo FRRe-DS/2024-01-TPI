@@ -1,8 +1,8 @@
 import {query} from './strapi';
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-export function getEscultura(collection, documentId){
-    return query(`${collection}/${documentId}?populate[imagen_despues][fields][0]=url&populate[imagen_antes][fields][0]=url&populate[imagen_durante][fields][0]=url&populate[escultor][fields][0]=nombre&populate[escultor][fields][1]=apellidos&populate[escultor][pais][fields][0]=nombre&populate[tematica][fields][0]=nombre`)
+export function getEscultura(documentId){
+    return query(`esculturas/${documentId}?populate[imagen_despues][fields][0]=url&populate[imagen_antes][fields][0]=url&populate[imagen_durante][fields][0]=url&populate[escultor][fields][0]=nombre&populate[escultor][fields][1]=apellidos&populate[escultor][pais][fields][0]=nombre&populate[tematica][fields][0]=nombre`)
         .then(res=> {
             const {nombre, descripcion, fecha_finalizacion} = res.data;
             const imagen_antes = res.data.imagen_antes == null ? '' : `${API_URL}${res.data.imagen_antes.url}`;
