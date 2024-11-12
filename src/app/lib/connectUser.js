@@ -1,25 +1,54 @@
-const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
+// const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 
 export async function connectUser(data){
-    return await fetch(`${API_URL}/api/auth/local`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${API_TOKEN}`
-        },
-        body: JSON.stringify(data)
-    }).then(res => res.json());
+    const response = await fetch(`${API_URL}/api/auth/local`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  const datos = await response.json();
+
+  if (datos.jwt) {
+    localStorage.setItem("jwt", datos.jwt);
+    localStorage.setItem("user", datos.user.username);
+    window.dispatchEvent(new Event("storage"));
+  }
+
+  return datos;
 }
 
 export async function postUser(data){
-    return await fetch(`${API_URL}/api/auth/local/register`, {
-        method: 'POST',
+    const response = await fetch(`${API_URL}/api/auth/local/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+    
+      const datos = await response.json();
+    
+      if (datos.jwt) {
+        localStorage.setItem("jwt", datos.jwt);
+        localStorage.setItem("user", datos.user.username);
+        window.dispatchEvent(new Event("storage"));
+      }
+        
+      return datos;
+}
+
+export async function getUser(jwt){
+    return await fetch(`${API_URL}/api/users/me`, {
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${API_TOKEN}`
-        },
-        body: JSON.stringify(data)
+            Authorization: `Bearer ${jwt}`
+        }
     }).then(res => res.json());
 }
+

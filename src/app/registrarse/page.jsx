@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import {postUser} from '../lib/connectUser';
+import {postUser, getUser } from '../lib/connectUser';
 import {styles} from '../login/styles.css'
 import { useRouter } from 'next/navigation';
 
@@ -11,7 +11,6 @@ export default function Registration() {
   const register = async (event) => {
     event.preventDefault();
     setMessage(null);
-
     
     const formData = new FormData(event.target);
     const jsonData = Object.fromEntries(formData);
@@ -25,7 +24,15 @@ export default function Registration() {
 
     if (res.jwt && res.user) {
       setMessage('Successfull registration.');
-      router.push('/login');
+
+      const response = await getUser(res.jwt);
+
+      if (response.error) {
+        setMessage(response.error.message);
+        return;
+      }
+
+      router.push('/');
     }
   };
 

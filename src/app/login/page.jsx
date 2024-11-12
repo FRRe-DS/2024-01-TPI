@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
 import { connectUser } from "../lib/connectUser";
-import { styles } from "./styles.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { styles } from "./styles.css";
 
 export default function Login() {
   const [message, setMessage] = useState(null);
@@ -24,8 +24,8 @@ export default function Login() {
 
     if (res.jwt && res.user) {
       setMessage("Inicio de sesion exitoso.");
-      //router.prefetch("/");
-      //router.replace("/");
+      router.prefetch("/");
+      router.replace("/");
     }
   };
 
@@ -40,9 +40,7 @@ export default function Login() {
         Password
       </label>
       <input type="password" id="password" name="password" className="block" />
-      <Link href="/">
-        <button type="submit">Submit</button>
-      </Link>
+      <button type="submit">Submit</button>
 
       <div className="message">{message}</div>
     </form>
