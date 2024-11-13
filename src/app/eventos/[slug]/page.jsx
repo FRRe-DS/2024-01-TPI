@@ -22,10 +22,11 @@ export default function Page() {
 
     getSculp();
   }, [pathname]);
-
+  if (!evento || !esculturas) {
+    return <p>Cargando...</p>;
+  } else {
     return (
         <section>
-        <Suspense fallback={<p>Cargando...</p>}>
             <PlantillaEvento
                 nombre={evento.nombre}
                 lugar={evento.lugar}
@@ -35,8 +36,8 @@ export default function Page() {
                 tematica={evento.tematica}
                 esculturas={esculturas}
             />
-        </Suspense>
         </section>
         
     );
+  }
 }

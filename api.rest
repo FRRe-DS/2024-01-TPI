@@ -24,10 +24,19 @@
 # Content-Type: application/json
 
 # {
-#   "username": "tu_usuario",
-#   "email": "tu_email@example.com",
-#   "password": "tu_contraseña"
+#   "username": "escultor",
+#   "email": "escultor@example.com",
+#   "password": "Escultor1234"
 # }
 
 GET http://localhost:1337/api/users/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiaWF0IjoxNzMxMzM3MDk4LCJleHAiOjE3MzM5MjkwOTh9._rXlthHJWZQxnSjMCOLTlmdfJhAC2Ovtl5PCkLmwfgU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTczMTUwOTY5NywiZXhwIjoxNzM0MTAxNjk3fQ.9Bggjq7tR-0HhFQr7Xar--c9BOsPE806usBVksbU500
+
+# POST http://localhost:1337/api/auth/local
+# Authorization: Bearer 7fe3baf407058e5ddd24479882d4ae2bc09388e423f9a5cbcdcec1af9a1f5f50e92a937b41807eeb89a135c44aaf34dc0619c6cf6192a4e11c65c0144b259cd50633bde97fb52e6c0ae9b9e3bb93f66b092aff9bbdde7bfab1ac47455292f60d9148d5738cd57ff607909758ecc5288773bfeebbfe312eb389658b4e141b04a8
+# Content-Type: application/json
+
+# {
+#   "identifier": "user22",
+#   "password": "12345678"
+}

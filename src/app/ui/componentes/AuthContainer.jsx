@@ -4,11 +4,15 @@ import Link from "next/link";
 
 export default function Page() {
     const [token, setToken] = useState(null);
-
+    const [role, setRole] = useState(null);
+    
     // Función para obtener el token del localStorage
     const getToken = () => {
         try {
             const user = localStorage.getItem("user");
+            const getRole = localStorage.getItem("role");
+            setRole(getRole);
+            console.log(role);
             if (user) {
                 setToken(user);
             } else {
@@ -36,14 +40,16 @@ export default function Page() {
     const logout = () => {
         localStorage.removeItem("jwt");
         localStorage.removeItem("user");
+        localStorage.removeItem("role");
         setToken(null);
-        window.location.reload();
+        window.location.reload("/");
     };
 
     if (token) {
         return (
             <>
                 <li>{token}</li>
+                <p><Link href={'/misEsculturas'}>{role !== 'null' ? 'Mis esculturas' : ''}</Link></p>
                 <button onClick={logout}>Cerrar sesión</button>
             </>
         );
