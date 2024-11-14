@@ -551,10 +551,6 @@ export interface ApiEsculturaEscultura extends Struct.CollectionTypeSchema {
     imagen_antes: Schema.Attribute.Media<'images'>;
     imagen_durante: Schema.Attribute.Media<'images', true>;
     imagen_despues: Schema.Attribute.Media<'images'>;
-    user: Schema.Attribute.Relation<
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

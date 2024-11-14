@@ -71,8 +71,7 @@
         "esculturas": {
             "type": "relation",
             "relation": "oneToMany",
-            "target": "api::escultura.escultura",
-            "mappedBy": "user"
+            "target": "api::escultura.escultura"
         }
     }
 }

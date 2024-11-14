@@ -55,3 +55,16 @@ export async function getUser(jwt){
     }).then(res => res.json());
 }
 
+export async function getSculptFromUser(jwt){
+  const user = await fetch(`${API_URL}/api/users/me?populate=esculturas`, {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${jwt}`
+    }
+  }).then(res => res.json());
+  console.log(user);
+
+  // obtener el documentId y nombre de cada escultura del usuario
+  return user.esculturas.map(escultura => ({id: escultura.documentId, nombre: escultura.nombre}));
+}
