@@ -1,0 +1,9 @@
+.estrellas{
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.seleccionadas {
+    color: #d4ae04;
+    
+}
