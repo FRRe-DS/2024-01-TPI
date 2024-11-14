@@ -12,22 +12,17 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/eventos/page": [
+    "/login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/eventos/page.css",
-      "static/chunks/app/eventos/page.js"
+      "static/css/app/login/page.css",
+      "static/chunks/app/login/page.js"
     ],
-    "/eventos/[slug]/page": [
+    "/registrarse/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/eventos/[slug]/page.js"
-    ],
-    "/esculturas/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/esculturas/page.css",
-      "static/chunks/app/esculturas/page.js"
+      "static/css/app/registrarse/page.css",
+      "static/chunks/app/registrarse/page.js"
     ]
   }
 }
