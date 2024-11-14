@@ -1,5 +1,6 @@
 'use client'
 import Link from "next/link";
+import styles from "./page.module.css";
 import { getEscultura } from "../../lib/getElement";
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react';
@@ -23,14 +24,14 @@ export default function Page() {
         return <p>Cargando...</p>; // Muestra un mensaje de carga si no hay datos
     } else {
         return (
-            <div>
+            <div className={styles.votacionCard}>
                 <Link href="/eventos">Volver</Link>
                 <h1>{escultura.nombre}</h1>
                 <p>{escultura.descripcion == null? '': escultura.descripcion}</p>
                 <p>Escultor: {escultura.escultor}</p>
                 <label htmlFor="puntaje">Puntaje: </label>
                 <input type="number" id="puntaje" name="puntaje" min="1" max="5" />
-                <button>Votar</button>
+                <button className={styles.votacionCardBoton} >Votar</button>
                 <br />
                 <img src={escultura.imagen_despues} alt="" />
             </div>
