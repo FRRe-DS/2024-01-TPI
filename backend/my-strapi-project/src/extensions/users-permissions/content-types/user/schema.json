@@ -67,6 +67,12 @@
     },
     "role_in_raw": {
       "type": "string"
+    },
+    "esculturas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::escultura.escultura",
+      "mappedBy": "user"
     }
   }
 }

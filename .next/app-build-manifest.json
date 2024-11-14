@@ -11,45 +11,6 @@
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
-    ],
-    "/eventos/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/eventos/page.css",
-      "static/chunks/app/eventos/page.js"
-    ],
-    "/eventos/[slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/eventos/[slug]/page.js"
-    ],
-    "/votaciones/[slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/votaciones/[slug]/page.js"
-    ],
-    "/login/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/login/page.css",
-      "static/chunks/app/login/page.js"
-    ],
-    "/registrarse/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/registrarse/page.css",
-      "static/chunks/app/registrarse/page.js"
-    ],
-    "/votaciones/exito/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/votaciones/exito/page.js"
-    ],
-    "/escultores/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/escultores/page.css",
-      "static/chunks/app/escultores/page.js"
     ]
   }
 }
