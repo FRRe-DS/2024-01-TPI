@@ -1,0 +1,21 @@
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+self["webpackHotUpdate_N_E"]("app/votaciones/[slug]/page",{
+
+/***/ "(app-pages-browser)/./src/app/votaciones/[slug]/page.module.css":
+/*!***************************************************!*\
+  !*** ./src/app/votaciones/[slug]/page.module.css ***!
+  \***************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+eval(__webpack_require__.ts("// extracted by mini-css-extract-plugin\nmodule.exports = {\"votacionCard\":\"page_votacionCard__XA35a\",\"votacionCardAviso\":\"page_votacionCardAviso__Z_D2J\",\"votacionCardDescrip\":\"page_votacionCardDescrip__gdsU3\",\"votacionCardEscultor\":\"page_votacionCardEscultor__acIVT\",\"votacionCardPuntaje\":\"page_votacionCardPuntaje___g8uZ\",\"votacionCardBoton\":\"page_votacionCardBoton__porM3\",\"votacionCardImg\":\"page_votacionCardImg__ocHk4\"};\n    if(true) {\n      // 1731607085229\n      var cssReload = __webpack_require__(/*! ./node_modules/.pnpm/next@14.2.15_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/mini-css-extract-plugin/hmr/hotModuleReplacement.js */ \"(app-pages-browser)/./node_modules/.pnpm/next@14.2.15_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/mini-css-extract-plugin/hmr/hotModuleReplacement.js\")(module.id, {\"publicPath\":\"/_next/\",\"esModule\":false,\"locals\":true});\n      module.hot.dispose(cssReload);\n      \n    }\n  \nmodule.exports.__checksum = \"ffb06a84ae84\"\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwcC1wYWdlcy1icm93c2VyKS8uL3NyYy9hcHAvdm90YWNpb25lcy9bc2x1Z10vcGFnZS5tb2R1bGUuY3NzIiwibWFwcGluZ3MiOiJBQUFBO0FBQ0Esa0JBQWtCO0FBQ2xCLE9BQU8sSUFBVTtBQUNqQjtBQUNBLHNCQUFzQixtQkFBTyxDQUFDLGdXQUFnTSxjQUFjLHNEQUFzRDtBQUNsUyxNQUFNLFVBQVU7QUFDaEI7QUFDQTtBQUNBO0FBQ0EseUJBQXlCIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vX05fRS8uL3NyYy9hcHAvdm90YWNpb25lcy9bc2x1Z10vcGFnZS5tb2R1bGUuY3NzP2ExMWEiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5tb2R1bGUuZXhwb3J0cyA9IHtcInZvdGFjaW9uQ2FyZFwiOlwicGFnZV92b3RhY2lvbkNhcmRfX1hBMzVhXCIsXCJ2b3RhY2lvbkNhcmRBdmlzb1wiOlwicGFnZV92b3RhY2lvbkNhcmRBdmlzb19fWl9EMkpcIixcInZvdGFjaW9uQ2FyZERlc2NyaXBcIjpcInBhZ2Vfdm90YWNpb25DYXJkRGVzY3JpcF9fZ2RzVTNcIixcInZvdGFjaW9uQ2FyZEVzY3VsdG9yXCI6XCJwYWdlX3ZvdGFjaW9uQ2FyZEVzY3VsdG9yX19hY0lWVFwiLFwidm90YWNpb25DYXJkUHVudGFqZVwiOlwicGFnZV92b3RhY2lvbkNhcmRQdW50YWplX19fZzh1WlwiLFwidm90YWNpb25DYXJkQm90b25cIjpcInBhZ2Vfdm90YWNpb25DYXJkQm90b25fX3Bvck0zXCIsXCJ2b3RhY2lvbkNhcmRJbWdcIjpcInBhZ2Vfdm90YWNpb25DYXJkSW1nX19vY0hrNFwifTtcbiAgICBpZihtb2R1bGUuaG90KSB7XG4gICAgICAvLyAxNzMxNjA3MDg1MjI5XG4gICAgICB2YXIgY3NzUmVsb2FkID0gcmVxdWlyZShcIkM6L0VzY3JpdG9yaW8vMjAyNC8yMDI0LTAxLVRQSS9ub2RlX21vZHVsZXMvLnBucG0vbmV4dEAxNC4yLjE1X3JlYWN0LWRvbUAxOC4zLjFfcmVhY3RAMTguMy4xX19yZWFjdEAxOC4zLjEvbm9kZV9tb2R1bGVzL25leHQvZGlzdC9jb21waWxlZC9taW5pLWNzcy1leHRyYWN0LXBsdWdpbi9obXIvaG90TW9kdWxlUmVwbGFjZW1lbnQuanNcIikobW9kdWxlLmlkLCB7XCJwdWJsaWNQYXRoXCI6XCIvX25leHQvXCIsXCJlc01vZHVsZVwiOmZhbHNlLFwibG9jYWxzXCI6dHJ1ZX0pO1xuICAgICAgbW9kdWxlLmhvdC5kaXNwb3NlKGNzc1JlbG9hZCk7XG4gICAgICBcbiAgICB9XG4gIFxubW9kdWxlLmV4cG9ydHMuX19jaGVja3N1bSA9IFwiZmZiMDZhODRhZTg0XCJcbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(app-pages-browser)/./src/app/votaciones/[slug]/page.module.css\n"));
+
+/***/ })
+
+});

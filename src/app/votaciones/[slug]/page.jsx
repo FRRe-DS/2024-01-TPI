@@ -38,15 +38,19 @@ export default function Page() {
         return (
             <div className={styles.votacionCard}>
                 <Link href="/eventos">Volver</Link>
-                <h1>{escultura.nombre}</h1>
-                <p style={{ color: 'red' }}>{jwt? '':'Debe estar registrado para emitir una votacion'}</p>
-                <p>{escultura.descripcion == null? '': escultura.descripcion}</p>
-                <p>Escultor: {escultura.escultor}</p>
-                <label htmlFor="puntaje">Puntaje: </label>
-                <input type="number" id="puntaje" name="puntaje" min="1" max="5" />
-                <button onClick={handleVote}>Votar</button>
+                <div className={styles.votacionCardImg}>
+                <img className={styles.votacionCardImagen} src={escultura.imagen_despues} alt="" /> 
+                </div>
+                <div className={styles.votacionCardInfoBox}>
+                <h1 className={styles.votacionCardNombre}>{escultura.nombre}</h1>
+                <p className={styles.votacionCardAviso}>{jwt? '':'Debe estar registrado para emitir una votacion'}</p>
+                <p className={styles.votacionCardDescrip}>{escultura.descripcion == null? '': escultura.descripcion}</p>
+                <p className={styles.votacionCardEscultor}>Escultor: {escultura.escultor}</p>
+                <label className={styles.votacionCardPuntaje} htmlFor="puntaje">Puntaje: </label>
+                <input className={styles.votacionCardInput} type="number" id="puntaje" name="puntaje" min="1" max="5" />
+                <button className={styles.votacionCardBoton} onClick={handleVote}>Votar</button>
                 <br />
-                <img src={escultura.imagen_despues} alt="" />
+                </div>
             </div>
         );
     }
