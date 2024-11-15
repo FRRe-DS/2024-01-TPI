@@ -16,6 +16,7 @@ export async function connectUser(data){
   if (datos.jwt) {
     localStorage.setItem("jwt", datos.jwt);
     localStorage.setItem("user", datos.user.username);
+    localStorage.setItem("role", datos.user.role_in_raw);
     window.dispatchEvent(new Event("storage"));
   }
 
@@ -36,6 +37,8 @@ export async function postUser(data){
       if (datos.jwt) {
         localStorage.setItem("jwt", datos.jwt);
         localStorage.setItem("user", datos.user.username);
+        localStorage.setItem("role", datos.user.role_in_raw);
+
         window.dispatchEvent(new Event("storage"));
       }
         

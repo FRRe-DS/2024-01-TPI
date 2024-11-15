@@ -441,7 +441,6 @@ export interface PluginUsersPermissionsUser
     displayName: 'User';
   };
   options: {
-    timestamps: true;
     draftAndPublish: false;
   };
   attributes: {
@@ -469,6 +468,11 @@ export interface PluginUsersPermissionsUser
     role: Schema.Attribute.Relation<
       'manyToOne',
       'plugin::users-permissions.role'
+    >;
+    role_in_raw: Schema.Attribute.String;
+    esculturas: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::escultura.escultura'
     >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -547,6 +551,10 @@ export interface ApiEsculturaEscultura extends Struct.CollectionTypeSchema {
     imagen_antes: Schema.Attribute.Media<'images'>;
     imagen_durante: Schema.Attribute.Media<'images', true>;
     imagen_despues: Schema.Attribute.Media<'images'>;
+    user: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

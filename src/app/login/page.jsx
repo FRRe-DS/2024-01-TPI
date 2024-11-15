@@ -41,7 +41,7 @@ export default function Login() {
       </label>
       <input type="password" id="password" name="password" className="block" />
       <button type="submit">Submit</button>
-
+      <div><Link href="/registrarse">Todavia no tienes una cuenta?</Link></div>
       <div className="message">{message}</div>
     </form>
   );
