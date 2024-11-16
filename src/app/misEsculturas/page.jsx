@@ -17,10 +17,6 @@ export default function Page() {
     getSculp();
     }, []);
 
-    // useEffect(() => {
-    //     Modal.setAppElement('#root'); // Cambia '#root' al ID del elemento padre
-    // }, [esculturas]);
-
     function openModal() {
         setModalIsOpen(true);
     }
@@ -40,15 +36,15 @@ export default function Page() {
             {esculturas.map((escultura) => (
                 <div key={escultura.id}>
                     <h2>{escultura.nombre}</h2>
-                    <button onClick={openModal}>QR</button>
+                    <QRCode value={`http://localhost:3000/votaciones/${escultura.id}`} />
+                    {/* <button onClick={openModal}>QR</button>
                     <Modal
                         isOpen={modalIsOpen}
                         onRequestClose={closeModal}
                         contentLabel="QR"
                     >
-                        <QRCode value={`http://localhost:3000/votaciones/${escultura.id}`} />
                         <button onClick={closeModal}>Cerrar</button>
-                    </Modal>
+                    </Modal> */}
                 </div>
             ))}
         </div>

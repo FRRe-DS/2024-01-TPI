@@ -659,6 +659,46 @@ export interface ApiTematicaTematica extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiVotoVoto extends Struct.CollectionTypeSchema {
+  collectionName: 'votos';
+  info: {
+    singularName: 'voto';
+    pluralName: 'votos';
+    displayName: 'Voto';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    evento: Schema.Attribute.Relation<'oneToOne', 'api::evento.evento'>;
+    user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    escultura: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::escultura.escultura'
+    >;
+    puntuacion: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 5;
+        },
+        number
+      >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::voto.voto'>;
+  };
+}
+
 export interface AdminPermission extends Struct.CollectionTypeSchema {
   collectionName: 'admin_permissions';
   info: {
@@ -1039,6 +1079,7 @@ declare module '@strapi/strapi' {
       'api::evento.evento': ApiEventoEvento;
       'api::pais.pais': ApiPaisPais;
       'api::tematica.tematica': ApiTematicaTematica;
+      'api::voto.voto': ApiVotoVoto;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;
