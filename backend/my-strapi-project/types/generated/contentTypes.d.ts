@@ -489,6 +489,31 @@ export interface PluginUsersPermissionsUser
   };
 }
 
+export interface ApiEmailEmail extends Struct.CollectionTypeSchema {
+  collectionName: 'emails';
+  info: {
+    singularName: 'email';
+    pluralName: 'emails';
+    displayName: 'Email';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    correo: Schema.Attribute.String & Schema.Attribute.Unique;
+    voto: Schema.Attribute.Relation<'oneToOne', 'api::voto.voto'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::email.email'>;
+  };
+}
+
 export interface ApiEscultorEscultor extends Struct.CollectionTypeSchema {
   collectionName: 'escultores';
   info: {
@@ -665,6 +690,7 @@ export interface ApiVotoVoto extends Struct.CollectionTypeSchema {
     singularName: 'voto';
     pluralName: 'votos';
     displayName: 'Voto';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -687,6 +713,7 @@ export interface ApiVotoVoto extends Struct.CollectionTypeSchema {
         },
         number
       >;
+    email: Schema.Attribute.Relation<'oneToOne', 'api::email.email'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1074,6 +1101,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::email.email': ApiEmailEmail;
       'api::escultor.escultor': ApiEscultorEscultor;
       'api::escultura.escultura': ApiEsculturaEscultura;
       'api::evento.evento': ApiEventoEvento;

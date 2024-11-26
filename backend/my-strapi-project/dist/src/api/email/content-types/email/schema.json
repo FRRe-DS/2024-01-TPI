@@ -1,0 +1,25 @@
+{
+    "kind": "collectionType",
+    "collectionName": "emails",
+    "info": {
+        "singularName": "email",
+        "pluralName": "emails",
+        "displayName": "Email"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "correo": {
+            "type": "string",
+            "unique": true
+        },
+        "voto": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::voto.voto",
+            "mappedBy": "email"
+        }
+    }
+}
