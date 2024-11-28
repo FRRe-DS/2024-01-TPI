@@ -576,6 +576,7 @@ export interface ApiEsculturaEscultura extends Struct.CollectionTypeSchema {
     imagen_antes: Schema.Attribute.Media<'images'>;
     imagen_durante: Schema.Attribute.Media<'images', true>;
     imagen_despues: Schema.Attribute.Media<'images'>;
+    evento: Schema.Attribute.Relation<'manyToOne', 'api::evento.evento'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -609,6 +610,10 @@ export interface ApiEventoEvento extends Struct.CollectionTypeSchema {
     descripcion: Schema.Attribute.Text & Schema.Attribute.Required;
     imagen: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     tematica: Schema.Attribute.Relation<'manyToOne', 'api::tematica.tematica'>;
+    esculturas: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::escultura.escultura'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

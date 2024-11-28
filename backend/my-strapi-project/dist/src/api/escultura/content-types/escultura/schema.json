@@ -62,6 +62,12 @@
             "allowedTypes": [
                 "images"
             ]
+        },
+        "evento": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::evento.evento",
+            "inversedBy": "esculturas"
         }
     }
 }

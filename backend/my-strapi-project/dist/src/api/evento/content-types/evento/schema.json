@@ -40,6 +40,12 @@
             "relation": "manyToOne",
             "target": "api::tematica.tematica",
             "inversedBy": "eventos"
+        },
+        "esculturas": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::escultura.escultura",
+            "mappedBy": "evento"
         }
     }
 }

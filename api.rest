@@ -45,12 +45,10 @@
 # Authorization: Bearer 7fe3baf407058e5ddd24479882d4ae2bc09388e423f9a5cbcdcec1af9a1f5f50e92a937b41807eeb89a135c44aaf34dc0619c6cf6192a4e11c65c0144b259cd50633bde97fb52e6c0ae9b9e3bb93f66b092aff9bbdde7bfab1ac47455292f60d9148d5738cd57ff607909758ecc5288773bfeebbfe312eb389658b4e141b04a8
 
 # Para crear un voto debo hacer lo siguiente:
-# Obtener el documentId para una escultura
-# GET http://localhost:1337/api/esculturas
-# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzMxNjAyNzA0LCJleHAiOjE3MzQxOTQ3MDR9.Oukt7q8naWPjmHpUwfdLhHVWyqWNLAOv0HcymSJLZxQ
-# Obtener el documentId para un evento
-# GET http://localhost:1337/api/eventos
-# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzMxNjAyNzA0LCJleHAiOjE3MzQxOTQ3MDR9.Oukt7q8naWPjmHpUwfdLhHVWyqWNLAOv0HcymSJLZxQ
+# Obtener el documentId para una escultura y el evento
+GET http://localhost:1337/api/esculturas/g9ewob8dx0bxw5m4by92srzd?populate=evento
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzMxNjAyNzA0LCJleHAiOjE3MzQxOTQ3MDR9.Oukt7q8naWPjmHpUwfdLhHVWyqWNLAOv0HcymSJLZxQ
+
 # POST http://localhost:1337/api/emails
 # Authorization: Bearer 7fe3baf407058e5ddd24479882d4ae2bc09388e423f9a5cbcdcec1af9a1f5f50e92a937b41807eeb89a135c44aaf34dc0619c6cf6192a4e11c65c0144b259cd50633bde97fb52e6c0ae9b9e3bb93f66b092aff9bbdde7bfab1ac47455292f60d9148d5738cd57ff607909758ecc5288773bfeebbfe312eb389658b4e141b04a8
 # Content-Type: application/json
@@ -61,16 +59,17 @@
 #     }
 # }
 
-# POST http://localhost:1337/api/votos
-# Authorization: Bearer 7fe3baf407058e5ddd24479882d4ae2bc09388e423f9a5cbcdcec1af9a1f5f50e92a937b41807eeb89a135c44aaf34dc0619c6cf6192a4e11c65c0144b259cd50633bde97fb52e6c0ae9b9e3bb93f66b092aff9bbdde7bfab1ac47455292f60d9148d5738cd57ff607909758ecc5288773bfeebbfe312eb389658b4e141b04a8
-# Content-Type: application/json
+POST http://localhost:1337/api/votos
+Authorization: Bearer 7fe3baf407058e5ddd24479882d4ae2bc09388e423f9a5cbcdcec1af9a1f5f50e92a937b41807eeb89a135c44aaf34dc0619c6cf6192a4e11c65c0144b259cd50633bde97fb52e6c0ae9b9e3bb93f66b092aff9bbdde7bfab1ac47455292f60d9148d5738cd57ff607909758ecc5288773bfeebbfe312eb389658b4e141b04a8
+Content-Type: application/json
 
-# {
-#     "data": {
-#       "email": "lnl9avqobpn7lsqbwzzjdzai",
-#       "escultura": "it9e7wz9xdej7dl0vvzog94m",
-#       "evento": "ksy6p27c5nn2b6xp5lxg2zqf",
-#       "puntuacion": 4
-#     }
-# }
+{
+    "data": {
+      "email": "borrego23@gmail.com",
+      "escultura": "g9ewob8dx0bxw5m4by92srzd",
+      "evento": "itevklpng8yiym3kaahxr34g",
+      "puntuacion": 3
+
+    }
+}
 

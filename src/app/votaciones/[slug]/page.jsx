@@ -2,6 +2,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { getEscultura } from "../../lib/getElement";
+import { postVote } from "../../lib/postVote";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -9,6 +10,9 @@ import { useRouter } from "next/navigation";
 // function to show the documentId of escultura to vote
 export default function Page() {
   const pathname = usePathname();
+  const ultimaParteURL = pathname.split("/")[2];
+  const esculturaId = ultimaParteURL.substring(0, 24);
+  const codigoAdicional = ultimaParteURL.length > 24 ? ultimaParteURL.substring(24) : null;
   const [escultura, setEscultura] = useState(null);
   const jwt = localStorage.getItem("jwt");
   const router = useRouter();
@@ -20,29 +24,51 @@ export default function Page() {
 
   const handleVote = (voteData) => {
     if (!jwt) {
-      // router.push("/login");
-      // aniadimos la escultura a votedata
-
-      voteData.escultura = pathname.split("/")[2];
-      console.log(voteData);
+      // logica para emitir un voto sin estar logeado
+      
+      postVote(voteData)
+        .then(() => {
+          router.push("/votaciones/exito");
+        })
+        .catch((err) => {
+          console.log("Error al votar", err);
+        });
     } else {
       // Lógica para emitir la votación
       router.push("/votaciones/exito");
     }
   };
+  const validarURL = () => {
+    if (codigoAdicional) {
+      const codigoAlmacenado = localStorage.getItem(esculturaId);
+      if (codigoAdicional !== codigoAlmacenado) {
+        console.error("URL no válida");
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
 
   useEffect(() => {
     const getSculp = async () => {
-      const escult = await getEscultura(pathname.split("/")[2]);
+      const escult = await getEscultura(esculturaId);
       setEscultura(escult); // Guardamos el resultado en el estado
     };
 
     getSculp();
   }, [pathname]);
 
+
   if (!escultura) {
     return <p>Cargando...</p>; // Muestra un mensaje de carga si no hay datos
-  } else {
+  } 
+  // else if(validarURL()){
+  //   return <p>URL no válida</p>;
+  // }
+  else {
     return (
       <div>
       <Link href="/eventos">Volver</Link>
@@ -52,8 +78,9 @@ export default function Page() {
         e.preventDefault();
         const email = e.target.email ? e.target.email.value : null;
         const voteData = {
-          puntaje: PuntajeSeleccionado,
-          correo: email,
+          puntuacion: PuntajeSeleccionado,
+          email: email,
+          escultura: esculturaId
         };
         handleVote(voteData);
         }}
