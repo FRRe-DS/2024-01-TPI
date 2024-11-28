@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // File: D:\2024-01-TPI\src\app\votaciones\[slug]\page.jsx
+=======
+// File: C:\Escritorio\2024\2024-01-TPI\src\app\votaciones\[slug]\page.jsx
+>>>>>>> d6ec23fc1f70652d73e0d60629a35e566fc8f32c
 import * as entry from '../../../../../src/app/votaciones/[slug]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

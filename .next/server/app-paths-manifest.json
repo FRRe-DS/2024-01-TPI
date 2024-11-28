@@ -1,7 +1,14 @@
 {
+<<<<<<< HEAD
   "/votaciones/exito/page": "app/votaciones/exito/page.js",
   "/page": "app/page.js",
   "/misEsculturas/page": "app/misEsculturas/page.js",
   "/votaciones/[slug]/page": "app/votaciones/[slug]/page.js",
   "/esculturas/page": "app/esculturas/page.js"
+=======
+  "/page": "app/page.js",
+  "/eventos/page": "app/eventos/page.js",
+  "/eventos/[slug]/page": "app/eventos/[slug]/page.js",
+  "/votaciones/[slug]/page": "app/votaciones/[slug]/page.js"
+>>>>>>> d6ec23fc1f70652d73e0d60629a35e566fc8f32c
 }

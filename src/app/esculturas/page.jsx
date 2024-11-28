@@ -31,7 +31,7 @@ export default async function ArtPage({searchParams}) {
           />
         ))}
       </div>
-      <Pagination
+      <Pagination 
           page={meta.page}
           pageSize={meta.pageSize}
           pageCount={meta.pageCount}

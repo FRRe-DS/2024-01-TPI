@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import styles from "./page.module.css";
+import styles from "./page.module.css";
 import { getEscultura } from "../../lib/getElement";
 import { postVote } from "../../lib/postVote";
 import { usePathname } from "next/navigation";
@@ -70,7 +71,7 @@ export default function Page() {
   // }
   else {
     return (
-      <div>
+      <div  className={styles.votacionCard}>
       <Link href="/eventos">Volver</Link>
       <h1>{escultura.nombre}</h1>
       <form
