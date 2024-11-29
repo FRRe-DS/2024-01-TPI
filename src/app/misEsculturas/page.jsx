@@ -3,30 +3,37 @@ import { useState, useEffect } from 'react';
 import { getSculptFromUser } from '../lib/connectUser';
 import Modal from 'react-modal';
 import QRCode from 'react-qr-code';
+import { v4 as uuidv4 } from 'uuid';
+import { createToken, getToken, deleteToken} from '../lib/tokens';
 
-function generarPalabraBasadaEnHora() {
-    const caracteres = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const caracteresLength = caracteres.length;
-    const ahora = new Date();
-    const semilla = ahora.getTime(); // Usamos el tiempo actual en milisegundos como semilla
-    let resultado = '';
 
-    for (let i = 0; i < 24; i++) {
-        const indice = Math.floor((Math.sin(semilla + i) * 10000) % caracteresLength);
-        resultado += caracteres.charAt(Math.abs(indice));
-    }
 
-    return resultado;
+async function generarToken(esculturaId) {
+    const token = uuidv4();
+    console.log(token);
+
+    await createToken(token, esculturaId);
+
+    return token;
 }
 
-function generarURL(esculturaId) {
-    return `http://localhost:3000/votaciones/${esculturaId + generarPalabraBasadaEnHora()}`;
+async function actualizarToken(id, nuevoToken){
+    const tokenId = await getToken(id);
+    if (tokenId){
+        await deleteToken(tokenId);
+        const response = await createToken(nuevoToken, id);
+    }
+}
+
+async function generarURL(esculturaId) {
+    return await `http://localhost:3000/votaciones/${esculturaId + generarToken(esculturaId)}`;
 }
 
 export default function Page() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [esculturas, setEsculturas] = useState(null);
     const [urls, setUrls] = useState({});
+    
 
   useEffect(() => {
     const getSculp = async () => {
@@ -34,12 +41,11 @@ export default function Page() {
         setEsculturas(escultu); // Guardamos el resultado en el estado
         // Inicializar URLs
         const initialUrls = {};
-        escultu.forEach(escultura => {
-                initialUrls[escultura.id] = generarURL(escultura.id);
-                localStorage.setItem(`${escultura.id}`, initialUrls[escultura.id].slice(-24));
-            });
-            setUrls(initialUrls);
-        };
+        for (const escultura of escultu) {
+            initialUrls[escultura.id] = await generarURL(escultura.id);
+        }
+        setUrls(initialUrls);
+    };
     getSculp();
 
     // Actualizar URLs cada 5 minutos
@@ -48,7 +54,7 @@ export default function Page() {
             const newUrls = {};
             for (const id in prevUrls) {
                 newUrls[id] = generarURL(id);
-                localStorage.setItem(`${id}`, newUrls[id].slice(-24));
+                actualizarToken(id, newUrls[id]);
             }
             return newUrls;
         });

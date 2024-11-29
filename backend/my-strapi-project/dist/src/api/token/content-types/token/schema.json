@@ -1,0 +1,30 @@
+{
+    "kind": "collectionType",
+    "collectionName": "tokens",
+    "info": {
+        "singularName": "token",
+        "pluralName": "tokens",
+        "displayName": "token"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "token": {
+            "type": "string",
+            "required": true,
+            "unique": true
+        },
+        "expiresAt": {
+            "type": "datetime"
+        },
+        "used": {
+            "type": "boolean",
+            "default": false
+        },
+        "escultura": {
+            "type": "string"
+        }
+    }
+}

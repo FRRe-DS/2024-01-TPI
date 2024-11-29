@@ -34,9 +34,9 @@
         },
         "email": {
             "type": "relation",
-            "relation": "oneToOne",
+            "relation": "manyToOne",
             "target": "api::email.email",
-            "inversedBy": "voto"
+            "inversedBy": "votos"
         }
     }
 }

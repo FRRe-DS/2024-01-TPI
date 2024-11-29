@@ -13,8 +13,8 @@ export default function Page() {
 
   useEffect(() => {
     const getSculp = async () => {
-      const escult = await getEvento(pathname.split("/")[2]);
-      setEvento(escult); // Guardamos el resultado en el estado
+      const event = await getEvento(pathname.split("/")[2]);
+      setEvento(event); // Guardamos el resultado en el estado
 
       const escultu = await filtrarEsculturas(escult.tematica);
       setEsculturas(escultu); // Guardamos el resultado en el estado

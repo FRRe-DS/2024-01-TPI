@@ -15,9 +15,9 @@
       "type": "string",
       "unique": true
     },
-    "voto": {
+    "votos": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::voto.voto",
       "mappedBy": "email"
     }

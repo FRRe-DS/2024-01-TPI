@@ -501,7 +501,7 @@ export interface ApiEmailEmail extends Struct.CollectionTypeSchema {
   };
   attributes: {
     correo: Schema.Attribute.String & Schema.Attribute.Unique;
-    voto: Schema.Attribute.Relation<'oneToOne', 'api::voto.voto'>;
+    votos: Schema.Attribute.Relation<'oneToMany', 'api::voto.voto'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -689,6 +689,35 @@ export interface ApiTematicaTematica extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiTokenToken extends Struct.CollectionTypeSchema {
+  collectionName: 'tokens';
+  info: {
+    singularName: 'token';
+    pluralName: 'tokens';
+    displayName: 'token';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    token: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    expiresAt: Schema.Attribute.DateTime;
+    used: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    escultura: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::token.token'>;
+  };
+}
+
 export interface ApiVotoVoto extends Struct.CollectionTypeSchema {
   collectionName: 'votos';
   info: {
@@ -718,7 +747,7 @@ export interface ApiVotoVoto extends Struct.CollectionTypeSchema {
         },
         number
       >;
-    email: Schema.Attribute.Relation<'oneToOne', 'api::email.email'>;
+    email: Schema.Attribute.Relation<'manyToOne', 'api::email.email'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1112,6 +1141,7 @@ declare module '@strapi/strapi' {
       'api::evento.evento': ApiEventoEvento;
       'api::pais.pais': ApiPaisPais;
       'api::tematica.tematica': ApiTematicaTematica;
+      'api::token.token': ApiTokenToken;
       'api::voto.voto': ApiVotoVoto;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;

@@ -1,10 +1,5 @@
 {
   "pages": {
-    "/votaciones/exito/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/votaciones/exito/page.js"
-    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -27,18 +22,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/misEsculturas/page.js"
-    ],
-    "/votaciones/[slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/votaciones/[slug]/page.css",
-      "static/chunks/app/votaciones/[slug]/page.js"
-    ],
-    "/esculturas/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/esculturas/page.css",
-      "static/chunks/app/esculturas/page.js"
     ]
   }
 }

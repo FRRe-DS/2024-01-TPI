@@ -17,3 +17,7 @@ export function filtrarEsculturas(tematica){
             return {esculturas, meta : meta.pagination};
         });
 }
+
+export async function obtenerEsculturasSegunEvento(eventoId){
+    const response = await query(`eventos/${eventoId}?populate=esculturas`);
+}
