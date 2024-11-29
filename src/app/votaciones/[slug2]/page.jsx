@@ -6,14 +6,15 @@ import { postVote } from "../../lib/postVote";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import {getToken} from "../../lib/tokens";
 
 // function to show the documentId of escultura to vote
 export default function Page() {
   
   const pathname = usePathname();
   const ultimaParteURL = pathname.split("/")[2];
-  const esculturaId = ultimaParteURL.substring(0, 24);
-  const codigoAdicional = ultimaParteURL.length > 24 ? ultimaParteURL.substring(24) : null;
+  const [esculturaId, codigoAdicional] = [ultimaParteURL.substring(0, 24), ultimaParteURL.substring(24)];
+  const [urlValida, setUrlValida] = useState(null);
   const [escultura, setEscultura] = useState(null);
   const jwt = localStorage.getItem("jwt");
   const router = useRouter();
@@ -39,19 +40,22 @@ export default function Page() {
       router.push("/votaciones/exito");
     }
   };
-  const validarURL = () => {
+  const validarURL = async () => {
     if (codigoAdicional) {
-      const codigoAlmacenado = localStorage.getItem(esculturaId);
+      console.log("codigoAdicional", codigoAdicional);
+      const infoToken = await getToken(esculturaId);
+      const codigoAlmacenado = infoToken ? infoToken.token : null;
+      console.log("codigoAlmacenado", codigoAlmacenado);
       if (codigoAdicional !== codigoAlmacenado) {
         console.error("URL no válida");
-        return true;
+        setUrlValida(false);
       } else {
-        return false;
+        setUrlValida(true);
       }
     } else {
-      return false;
+      setUrlValida(false);
     }
-  }
+  };
 
   useEffect(() => {
     const getSculp = async () => {
@@ -60,31 +64,37 @@ export default function Page() {
     };
 
     getSculp();
-  }, [pathname]);
+    validarURL();
+  }, [pathname, codigoAdicional]);
 
 
-  if (!escultura) {
-    return <p>Cargando...</p>; // Muestra un mensaje de carga si no hay datos
-  } 
-  // else if(validarURL()){
-  //   return <p>URL no válida</p>;
-  // }
+  if (urlValida === null || !escultura) {
+    // Mostrar mensaje de carga mientras se valida la URL o se obtiene la escultura
+    return <p>Cargando...</p>;
+  }
+
+  if (!urlValida) {
+    // Mostrar mensaje de URL no válida
+    return <p>URL no válida</p>;
+  }
+
   else {
     return (
       <div  className={styles.votacionCard}>
       <Link href="/eventos">Volver</Link>
-      <h1>{escultura.nombre}</h1>
+      <h1 className={styles.votacionCardNombre}>{escultura.nombre}</h1>
       <form
         onSubmit={(e) => {
-        e.preventDefault();
-        const email = e.target.email ? e.target.email.value : null;
-        const voteData = {
-          puntuacion: PuntajeSeleccionado,
-          email: email,
-          escultura: esculturaId
-        };
-        handleVote(voteData);
+          e.preventDefault();
+          const email = e.target.email ? e.target.email.value : null;
+          const voteData = {
+            puntuacion: PuntajeSeleccionado,
+            email: email,
+            escultura: esculturaId
+          };
+          handleVote(voteData);
         }}
+        className={styles.votacionCardInfoBox}
       >
         <div>
         {jwt ? (
@@ -94,9 +104,9 @@ export default function Page() {
           <input type="email" name="email" placeholder="Email" required />
         )}
         </div>
-        <p>{escultura.descripcion == null ? "" : escultura.descripcion}</p>
-        <p>Escultor: {escultura.escultor}</p>
-        <label htmlFor="puntaje">Puntaje: </label>
+        <p className={styles.votacionCardDescrip}>{escultura.descripcion == null ? "" : escultura.descripcion}</p>
+        <p className={styles.votacionCardEscultor}>Escultor: {escultura.escultor}</p>
+        <label className={styles.votacionCardPuntaje} htmlFor="puntaje">Puntaje: </label>
         <div className={styles.estrellas}>
         {[...Array(5)].map((_, index) => {
           return (
@@ -124,10 +134,12 @@ export default function Page() {
         })}
         </div>
         Votado: {PuntajeSeleccionado}
-        <button type="submit">Votar</button>
+        <button className={styles.votacionCardBoton} type="submit">Votar</button>
       </form>
       <br />
-      <img src={escultura.imagen_despues} alt="" />
+      <div className={styles.votacionCardImg}> 
+        <img className={styles.votacionCardImagen} src={escultura.imagen_despues} alt="" />
+      </div>
       </div>
     );
   }

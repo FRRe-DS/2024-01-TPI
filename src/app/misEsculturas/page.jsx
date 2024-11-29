@@ -3,28 +3,33 @@ import { useState, useEffect } from 'react';
 import { getSculptFromUser } from '../lib/connectUser';
 import QRCode from 'react-qr-code';
 import { v4 as uuidv4 } from 'uuid';
-import { createToken, getToken, deleteToken} from '../lib/tokens';
+import { createToken, getToken, updateToken} from '../lib/tokens';
 
 
 async function generarToken(esculturaId) {
     const token = uuidv4();
-    console.log(esculturaId);
-
-    await createToken(token, esculturaId);
+    const infoToken = await getToken(esculturaId);
+    const tokenId = infoToken ? infoToken.documentId : null;
+    if (tokenId){
+        await updateToken(tokenId, token);
+    } else {
+        await createToken(token, esculturaId);
+    }
 
     return token;
 }
 
 async function actualizarToken(id, nuevoToken){
-    const tokenId = await getToken(id);
+    const infoToken = await getToken(id);
+    const tokenId = infoToken ? infoToken.documentId : null;
     if (tokenId){
-        await deleteToken(tokenId);
-        const response = await createToken(nuevoToken, id);
+        await updateToken(tokenId, nuevoToken);
     }
 }
 
 async function generarURL(esculturaId) {
-    return await `http://localhost:3000/votaciones/${esculturaId + generarToken(esculturaId)}`;
+    const token = await generarToken(esculturaId); // Espera el token generado
+    return `http://localhost:3000/votaciones/${esculturaId}${token}`;
 }
 
 export default function Page() {
@@ -32,36 +37,57 @@ export default function Page() {
     const [urls, setUrls] = useState({});
     
 
-  useEffect(() => {
-    const getSculp = async () => {
-        const escultu = await getSculptFromUser(localStorage.getItem('jwt'));
-        setEsculturas(escultu); // Guardamos el resultado en el estado
-        // Inicializar URLs
-        const initialUrls = {};
-        for (const escultura of escultu) {
-            initialUrls[escultura.id] = await generarURL(escultura.id);
-        }
-        setUrls(initialUrls);
-    };
-    getSculp();
-
-    // Actualizar URLs cada 5 minutos
-    const interval = setInterval(() => {
-        setUrls(prevUrls => {
-            const newUrls = {};
-            for (const id in prevUrls) {
-                newUrls[id] = generarURL(id);
-                actualizarToken(id, newUrls[id]);
+    useEffect(() => {
+        const getSculp = async () => {
+            try {
+                const escultu = await getSculptFromUser(localStorage.getItem('jwt'));
+                setEsculturas(escultu); // Guardamos el resultado en el estado
+        
+                // Generar todas las URLs en paralelo
+                const urls = await Promise.all(
+                    escultu.map(async (escultura) => {
+                        const url = await generarURL(escultura.id);
+                        return { id: escultura.id, url };
+                    })
+                );
+        
+                // Convertir el resultado en un objeto con id como clave
+                const urlsObject = urls.reduce((acc, { id, url }) => {
+                    acc[id] = url;
+                    return acc;
+                }, {});
+                setUrls(urlsObject);
+            } catch (error) {
+                console.error("Error obteniendo las esculturas o generando URLs:", error);
             }
-            return newUrls;
-        });
-    }, 300000); // 300,000 milisegundos = 5 minutos
-
-    return () => clearInterval(interval);
-
+        };
+    
+        const actualizarURLs = async () => {
+            try {
+                const newUrls = {};
+                for (const id in urls) {
+                    const nuevaURL = await generarURL(id); // Genera nueva URL
+                    await actualizarToken(id, nuevaURL); // Actualiza el token en la base de datos
+                    newUrls[id] = nuevaURL; // Guarda la nueva URL
+                }
+                setUrls(newUrls);
+            } catch (error) {
+                console.error("Error actualizando las URLs:", error);
+            }
+        };
+    
+        getSculp();
+    
+        // Actualizar URLs cada 5 minutos
+        const interval = setInterval(() => {
+            actualizarURLs();
+        }, 300000); // 300,000 milisegundos = 5 minutos
+    
+        return () => clearInterval(interval);
     }, []);
+    
 
-    if (!esculturas) {
+    if (!esculturas || Object.keys(urls).length === 0) {
         return <p>Cargando...</p>;
     }
 

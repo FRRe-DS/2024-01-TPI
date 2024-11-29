@@ -12,7 +12,6 @@ export default function Page() {
             const user = localStorage.getItem("user");
             const getRole = localStorage.getItem("role");
             setRole(getRole);
-            console.log(role);
             if (user) {
                 setToken(user);
             } else {

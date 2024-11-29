@@ -62,7 +62,6 @@ export async function getSculptFromUser(jwt){
         Authorization: `Bearer ${jwt}`
     }
   }).then(res => res.json());
-  console.log(user);
 
   // obtener el documentId y nombre de cada escultura del usuario
   return user.esculturas.map(escultura => ({id: escultura.documentId, nombre: escultura.nombre}));
