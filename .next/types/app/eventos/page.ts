@@ -1,4 +1,4 @@
-// File: D:\2024-01-TPI\src\app\eventos\page.jsx
+// File: C:\Users\ACER\Desktop\BienalProyect\2024-01-TPI\src\app\eventos\page.jsx
 import * as entry from '../../../../src/app/eventos/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
