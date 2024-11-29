@@ -1,16 +1,14 @@
 'use client'
 import { useState, useEffect } from 'react';
 import { getSculptFromUser } from '../lib/connectUser';
-import Modal from 'react-modal';
 import QRCode from 'react-qr-code';
 import { v4 as uuidv4 } from 'uuid';
 import { createToken, getToken, deleteToken} from '../lib/tokens';
 
 
-
 async function generarToken(esculturaId) {
     const token = uuidv4();
-    console.log(token);
+    console.log(esculturaId);
 
     await createToken(token, esculturaId);
 
@@ -30,7 +28,6 @@ async function generarURL(esculturaId) {
 }
 
 export default function Page() {
-    const [modalIsOpen, setModalIsOpen] = useState(false);
     const [esculturas, setEsculturas] = useState(null);
     const [urls, setUrls] = useState({});
     
@@ -64,14 +61,6 @@ export default function Page() {
 
     }, []);
 
-    function openModal() {
-        setModalIsOpen(true);
-    }
-
-    function closeModal() {
-        setModalIsOpen(false);
-    }
-
     if (!esculturas) {
         return <p>Cargando...</p>;
     }
@@ -85,14 +74,6 @@ export default function Page() {
                     <h2>{escultura.nombre}</h2>
                     <p>{urls[escultura.id]}</p>
                     <QRCode value={urls[escultura.id]} />
-                    {/* <button onClick={openModal}>QR</button>
-                    <Modal
-                        isOpen={modalIsOpen}
-                        onRequestClose={closeModal}
-                        contentLabel="QR"
-                    >
-                        <button onClick={closeModal}>Cerrar</button>
-                    </Modal> */}
                 </div>
             ))}
         </div>
