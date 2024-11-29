@@ -6,7 +6,7 @@ import "./ui/globals.css";
 export default function Home() {
   return (
     <>
-      <main className={styles.rootMain}>
+      <main>
         <h2> Por amor al Arte</h2>
         <section className={styles.rootPageCita}>
           <h1 className={styles.rootCitaTitulo}>
