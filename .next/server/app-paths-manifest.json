@@ -1,8 +1,13 @@
 {
+<<<<<<< HEAD
   "/escultores/page": "app/escultores/page.js",
   "/esculturas/[slug]/page": "app/esculturas/[slug]/page.js",
   "/eventos/[slug]/page": "app/eventos/[slug]/page.js",
   "/eventos/page": "app/eventos/page.js",
   "/votaciones/[slug2]/page": "app/votaciones/[slug2]/page.js",
+=======
+  "/registrarse/page": "app/registrarse/page.js",
+  "/login/page": "app/login/page.js",
+>>>>>>> 08e347a1fca6e606f309ac07755a79326bf60c80
   "/page": "app/page.js"
 }

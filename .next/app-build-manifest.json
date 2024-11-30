@@ -12,6 +12,7 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+<<<<<<< HEAD
     "/escultores/[slug]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -52,6 +53,19 @@
       "static/chunks/main-app.js",
       "static/css/app/votaciones/[slug2]/page.css",
       "static/chunks/app/votaciones/[slug2]/page.js"
+=======
+    "/login/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/login/page.css",
+      "static/chunks/app/login/page.js"
+    ],
+    "/registrarse/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/registrarse/page.css",
+      "static/chunks/app/registrarse/page.js"
+>>>>>>> 08e347a1fca6e606f309ac07755a79326bf60c80
     ]
   }
 }
