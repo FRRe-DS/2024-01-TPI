@@ -13,6 +13,7 @@ export default async function ArtPage({searchParams}) {
     <>
       <section className={styles.esculturasSect}>
         <h1 className={styles.esculturasHeader}> Esculturas </h1>
+        <h2 className={styles.esculturasSubHeader}> Concurso Internacional de Escultura </h2>
         <p className={styles.esculturasText}>
           Nuevamente, grandes escultores del mundo en escena y en acción,
           trabajando a cielo abierto y en público, esculpiendo piezas que tienen
@@ -20,16 +21,16 @@ export default async function ArtPage({searchParams}) {
         </p>
       </section>
       <div className={styles.esculturasPortada}>
-        {esculturas.map((escultura) => (
-          <ImagenArte
-            key={escultura.documentId}
-            className={styles.esculturasSeleccionadas}
-            titulo={escultura.nombre}
-            tematica={escultura.tematica}
-            imagen={escultura.imagen}
-            enlace={"/esculturas/" + escultura.documentId}
-          />
-        ))}
+          {esculturas.map((escultura) => (
+            <div key={escultura.documentId} className={styles.esculturaCard}>
+              <ImagenArte
+                className={styles.esculturaImagen}
+                imagen={escultura.imagen}
+                enlace={"/esculturas/" + escultura.documentId}
+              />
+              <h3 className={styles.esculturaTitulo}>{escultura.nombre}</h3>
+            </div>
+          ))}
       </div>
       <Pagination 
           page={meta.page}

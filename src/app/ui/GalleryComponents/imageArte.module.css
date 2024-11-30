@@ -2,11 +2,11 @@
 
 
 .galleryBox{
-    width: 30%;
-    height: 40%;
+    width: 80%;
+    height: 65%;
     background: #ffffff;
     margin: auto;
-    padding: 3%;
+    padding: 0%;
     box-sizing: border-box;
     align-self: center;
 }
@@ -41,9 +41,10 @@
 }
 
 .galleryImagen {
-    object-fit: cover ;
+    object-fit: cover;
     width: 100%;
-    height: 80%;
+    height: 100%;
+    border-radius: 5px;
     filter: drop-shadow(0 2px 5px rgba(188, 185, 185, 0.7));
 }
 
