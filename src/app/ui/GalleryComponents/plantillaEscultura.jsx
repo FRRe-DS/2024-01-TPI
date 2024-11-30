@@ -13,41 +13,50 @@ export default function PlantillaPage({
     <>
       <h1 className={styles.esculturaDescriptTitulo}>{titulo}</h1>
       <p className={styles.esculturaDescription}>
-        <b>{descripcion}</b>
+        <span>{descripcion}</span>
       </p>
       <p className={styles.esculturaDescription}>
-        Escultura construida por {autor} a lo largo del transcurso de la Bienal
+        Escultura construida por <strong>{autor}</strong> a lo largo del transcurso de la Bienal
       </p>
       <div className={styles.esculturaEtapasContainer}>
         <div className={styles.esculturasEtapasBox}>
           <h2 className={styles.esculturaEtapasTitulo}>Inicio</h2>
-          <Image
-            className={styles.esculturasEtapasImg}
-            src={etapa1}
-            alt="Antes"
-            width={350}
-            height={250}
-          />
+          {etapa1 ? (
+            <Image
+              className={styles.esculturasEtapasImg}
+              src={etapa1}
+              alt="Antes"
+              width={350}
+              height={250}
+            />
+          ):
+          <p>Imagen no disponible</p>}  
         </div>
         <div className={styles.esculturasEtapasBox}>
           <h2 className={styles.esculturaEtapasTitulo}>En Proceso</h2>
-          <Image
-            className={styles.esculturasEtapasImg}
-            src={etapa2}
-            alt="Durante"
-            width={350}
-            height={250}
-          />
+          {etapa2 ? (
+            <Image
+              className={styles.esculturasEtapasImg}
+              src={etapa2}
+              alt="Durante"
+              width={350}
+              height={250}
+            />
+          ):
+          <p>Imagen no disponible</p>}  
         </div>
         <div className={styles.esculturasEtapasBox}>
           <h2 className={styles.esculturaEtapasTitulo}>Final</h2>
-          <Image
-            className={styles.esculturasEtapasImg}
-            src={etapa3}
-            alt="Despues"
-            width={350}
-            height={250}
-          />
+          {etapa3 ? (
+            <Image
+              className={styles.esculturasEtapasImg}
+              src={etapa3}
+              alt="Despues"
+              width={350}
+              height={250}
+            />
+          ):
+          <p>Imagen no disponible</p>}
         </div>
       </div>
     </>

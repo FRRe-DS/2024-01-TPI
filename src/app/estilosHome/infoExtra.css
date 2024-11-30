@@ -25,7 +25,6 @@
     width: 100%;
     max-width: 800px; /* Limitar el ancho del menú */
     margin: 0 auto; /* Centrar el menú */
-    border-bottom: 2px solid #ccc;
 }
 
 .menu li {

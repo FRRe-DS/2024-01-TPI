@@ -11,7 +11,7 @@ export default function Page() {
     
     useEffect(() => {
         const getSculp = async () => {
-          const escult = await getEscultura('esculturas', pathname.split('/')[2]);
+          const escult = await getEscultura(pathname.split('/')[2]);
           setEscultura(escult); // Guardamos el resultado en el estado
         };
     

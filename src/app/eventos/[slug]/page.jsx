@@ -1,7 +1,6 @@
 "use client";
 import PlantillaEvento from "../../ui/GalleryComponents/plantillaEvento";
 import { getEvento } from "../../lib/getElement";
-import { filtrarEsculturas } from "../../lib/filtrarEsculturas";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Suspense } from "react";
@@ -15,9 +14,9 @@ export default function Page() {
     const getSculp = async () => {
       const event = await getEvento(pathname.split("/")[2]);
       setEvento(event); // Guardamos el resultado en el estado
+      console.log(event.esculturas)
 
-      const escultu = await filtrarEsculturas(escult.tematica);
-      setEsculturas(escultu); // Guardamos el resultado en el estado
+      setEsculturas(event.esculturas); // Guardamos el resultado en el estado
     };
 
     getSculp();

@@ -38,6 +38,7 @@ export function getEscultores(pageSize, page){
     return query(url)
         .then(res=> {
             const {data, meta} = res;
+            
 
             const escultores = data.map(escultor=>{
                 const {documentId, nombre, apellidos} = escultor;

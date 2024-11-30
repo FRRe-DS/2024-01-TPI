@@ -31,13 +31,18 @@ export function getEscultor(documentId){
 }
 
 export function getEvento(documentId){
-    return query(`eventos/${documentId}?populate[imagen][fields][0]=url&populate[tematica][fields][0]=nombre`)
+    return query(`eventos/${documentId}?populate=esculturas&populate=esculturas.imagen_despues&populate=tematica&populate=imagen`)
         .then(res=> {
             const {documentId, nombre, descripcion, fecha_hora, lugar } = res.data;
             
             const imagen = res.data.imagen == null ? '' : `${API_URL}${res.data.imagen.url}`;
             const tematica = res.data.tematica.nombre;
+            const esculturas = res.data.esculturas.map(escultura=>{
+                const {documentId, nombre} = escultura;
+                const imagen = `${API_URL}${escultura.imagen_despues.url}`;
+                return {documentId, nombre, imagen};
+            });
             
-            return {documentId, nombre, descripcion, fecha_hora, lugar, imagen, tematica};
+            return {documentId, nombre, descripcion, fecha_hora, lugar, imagen, tematica, esculturas};
         });
 }

@@ -13,6 +13,7 @@ export default function Page() {
         const getSculp = async () => {
           const escult = await getEscultor(pathname.split('/')[2]);
           setEscultor(escult); // Guardamos el resultado en el estado
+          console.log(escult);
         };
     
         getSculp();
@@ -36,7 +37,7 @@ export default function Page() {
                 distinciones={escultor.obras_previas}
                 proyNombre={escultor.escultura}
                 proyImagen={escultor.img_escultura}
-                //proyEnlace={`esculturas/${escultor.id_escultura}`}
+                proyEnlace={`esculturas/${escultor.id_escultura}`}
             />
         </Suspense>
         </section>

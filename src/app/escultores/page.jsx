@@ -24,7 +24,7 @@ export default async function EscultoresPage({searchParams}) {
             titulo={escultor.nombre + " " + escultor.apellidos}
             foto={escultor.imagen}
             bandera={escultor.bandera}
-            enlace={"escultores/" + escultor.documentId}
+            enlace={`escultores/${escultor.documentId}`}
             key={escultor.documentId}
           />
         ))}

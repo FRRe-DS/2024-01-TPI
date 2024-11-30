@@ -12,7 +12,7 @@ export default function PlantillaEscultoresPage({
   distinciones,
   proyNombre,
   proyImagen,
-  //proyEnlace,
+  proyEnlace,
 }) {
   console.log(bandera);
   return (
@@ -59,7 +59,7 @@ export default function PlantillaEscultoresPage({
           className={styles.escultores}
           titulo={proyNombre}
           imagen={proyImagen}
-          //enlace={proyEnlace}
+          enlace={proyEnlace}
         />}
       </div>
     </>
