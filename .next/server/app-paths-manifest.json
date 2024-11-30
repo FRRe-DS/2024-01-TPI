@@ -1,7 +1,1 @@
-{
-  "/login/page": "app/login/page.js",
-  "/votaciones/[slug2]/page": "app/votaciones/[slug2]/page.js",
-  "/votaciones/exito/page": "app/votaciones/exito/page.js",
-  "/misEsculturas/page": "app/misEsculturas/page.js",
-  "/page": "app/page.js"
-}
+{}
