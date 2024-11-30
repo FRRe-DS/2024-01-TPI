@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import {postUser, getUser } from '../lib/connectUser';
-import {styles} from '../login/styles.css'
+import styles from './page.module.css';
 import { useRouter } from 'next/navigation';
 
 export default function Registration() {
@@ -37,19 +37,21 @@ export default function Registration() {
   };
 
   return (
-    <form onSubmit={register}>
-      <label htmlFor="username" className="block">Username</label>
-      <input type="text" id="username" name="username" className="block" />
+    <div className={styles.formContainer}>
+    <form className={styles.formBox} onSubmit={register}>
+      <label className={styles.formEtiqueta} htmlFor="username" >Nombre de Usuario</label>
+      <input className={styles.formInput} type="text" id="username" name="username"  />
 
-      <label htmlFor="email" className="block">Email</label>
-      <input type="email" id="email" name="email" className="block mb-2" />
+      <label className={styles.formEtiqueta} htmlFor="email" >Email</label>
+      <input className={styles.formInput} type="email" id="email" name="email" />
 
-      <label htmlFor="password" className="block">Password</label>
-      <input type="password" id="password" name="password" className="block" />
+      <label className={styles.formEtiqueta} htmlFor="password" >Contraseña</label>
+      <input className={styles.formInput} type="password" id="password" name="password" />
 
-      <button type="submit">Submit</button>
+      <button className={styles.formButton} type="submit">Registrarse</button>
 
-      <div>{ message }</div>
+      <div className={styles.formMensaje}>{ message }</div>
     </form>
+    </div>
   );
 }

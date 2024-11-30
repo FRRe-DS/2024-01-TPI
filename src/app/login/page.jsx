@@ -30,19 +30,19 @@ export default function Login() {
   };
 
   return (
-    <div className={styles.formContainer} >
+    <div className={styles.formContainer}>
     <form className={styles.formBox} onSubmit={login}>
       <label className={styles.formEtiqueta} htmlFor="identifier">
-        Username/Email
+        Nombre de Usuario/Email
       </label>
       <input className={styles.formInput} type="text" id="identifier" name="identifier"/>
 
       <label className={styles.formEtiqueta} htmlFor="password">
-        Password
+        Contraseña
       </label>
       <input className={styles.formInput} type="password" id="password" name="password" />
       <button className={styles.formButton} type="submit">Iniciar Sesión</button>
-      <div className={styles.formTexto}><Link href="/registrarse">Todavia no tienes una cuenta?</Link></div>
+      <div className={styles.formTexto}><Link href="/registrarse">Todavía no tienes una cuenta?</Link></div>
       <div className={styles.formMensaje} >{message}</div>
     </form>
     </div>
