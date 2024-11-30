@@ -3,7 +3,7 @@ import { useState } from "react";
 import { connectUser } from "../lib/connectUser";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { styles } from "./styles.css";
+import styles from "./page.module.css";
 
 export default function Login() {
   const [message, setMessage] = useState(null);
@@ -30,19 +30,21 @@ export default function Login() {
   };
 
   return (
-    <form onSubmit={login}>
-      <label htmlFor="identifier" className="block">
+    <div className={styles.formContainer} >
+    <form className={styles.formBox} onSubmit={login}>
+      <label className={styles.formEtiqueta} htmlFor="identifier">
         Username/Email
       </label>
-      <input type="text" id="identifier" name="identifier" className="block" />
+      <input className={styles.formInput} type="text" id="identifier" name="identifier"/>
 
-      <label htmlFor="password" className="block">
+      <label className={styles.formEtiqueta} htmlFor="password">
         Password
       </label>
-      <input type="password" id="password" name="password" className="block" />
-      <button type="submit">Submit</button>
-      <div><Link href="/registrarse">Todavia no tienes una cuenta?</Link></div>
-      <div className="message">{message}</div>
+      <input className={styles.formInput} type="password" id="password" name="password" />
+      <button className={styles.formButton} type="submit">Iniciar Sesión</button>
+      <div className={styles.formTexto}><Link href="/registrarse">Todavia no tienes una cuenta?</Link></div>
+      <div className={styles.formMensaje} >{message}</div>
     </form>
+    </div>
   );
 }

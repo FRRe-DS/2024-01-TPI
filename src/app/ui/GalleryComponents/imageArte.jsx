@@ -6,7 +6,7 @@ export default function ImagenArte({
   titulo, 
   tematica, 
   imagen, 
-  //enlace 
+  enlace 
   }) {
   return (
     <div className={styles.galleryBox}>
@@ -19,9 +19,9 @@ export default function ImagenArte({
         width={500}
         height={500}
       />
-      {/* <Link href={enlace} rel="noopener no referrer">
+      <Link href={enlace} rel="noopener no referrer">
         <button className={styles.galleryButton}> Ver más</button>
-      </Link> */}
+      </Link>
     </div>
   );
 }

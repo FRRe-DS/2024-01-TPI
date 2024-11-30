@@ -9,9 +9,11 @@ body {
 }
 
 /* Estilos generales */
-.rootMain {
-    padding: 20px;
-}
+main {
+    padding: 0 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+  }
 
 .rootHeader {
     display: flex;

@@ -120,9 +120,13 @@
 }
 
 .predio__imagen {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;;
+    display:flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+    height: 90%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
 
 }
 

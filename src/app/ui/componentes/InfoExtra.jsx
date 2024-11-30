@@ -87,7 +87,6 @@ export default function InfoExtra() {
         className={`predio ${active === "predio" ? "visible" : "oculto"}`}
         id="predio"
       >
-        {/*Acá solo qeudaría agregar la imagen del predio qeu esta en el canva*/}
         <ImgPredio titulo="Predio" imagen={predio} dimensions={200} />
       </div>
     </>
