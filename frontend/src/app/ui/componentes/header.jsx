@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo from "/public_imgs/BienalLogo.png";
+import Logo from "/public/BienalLogo.png";
 import Link from "next/link";
 import "../globals.css";
 import AuthContainer from "./AuthContainer";

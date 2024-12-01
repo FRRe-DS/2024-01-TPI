@@ -14,7 +14,6 @@ export default function Page() {
     const getSculp = async () => {
       const event = await getEvento(pathname.split("/")[2]);
       setEvento(event); // Guardamos el resultado en el estado
-      console.log(event.esculturas)
 
       setEsculturas(event.esculturas); // Guardamos el resultado en el estado
     };

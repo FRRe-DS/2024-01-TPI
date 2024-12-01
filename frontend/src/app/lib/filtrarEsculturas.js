@@ -19,5 +19,15 @@ export function filtrarEsculturas(tematica){
 }
 
 export async function obtenerEsculturasSegunEvento(eventoId){
-    const response = await query(`eventos/${eventoId}?populate=esculturas`);
+    const response = await query(`eventos/${eventoId}?populate=esculturas`)
+        .then(res=> {
+            const {data, meta} = res;
+            const esculturas =  data.map(escultura=>{
+                const {documentId, nombre} = escultura;
+                const imagen = escultura.img_despues;
+                return {documentId, nombre, imagen};
+            })
+            return {esculturas, meta : meta.pagination};
+        });
+    return response;
 }

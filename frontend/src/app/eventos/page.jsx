@@ -32,10 +32,6 @@ export default function AgendaEventos() {
   useEffect(() => {
     const selectedDateString = selectedDate.toISOString().split("T")[0];
 
-    events.forEach((event) =>
-      console.log("Fecha evento:", event.fecha_hora.split("T")[0])
-    );
-
     let filterEvents = events.filter(
       (event) => event.fecha_hora.split("T")[0] == selectedDateString
     );

@@ -23,7 +23,6 @@ export default function Page() {
         return <p>Cargando...</p>; // Muestra un mensaje de carga si no hay datos
     }
 
-    console.log(escultor);
 
     return (
         <section>
