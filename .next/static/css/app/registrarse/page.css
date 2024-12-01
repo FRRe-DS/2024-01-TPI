@@ -1,0 +1,64 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/app/registrarse/page.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+.page_formContainer__opWP9 {
+    background-color: #ffffff;
+    padding: 5%;
+}
+
+.page_formBox__91Vla{
+    background-color: #ffffff; /* Fondo blanco para el formulario */
+    padding: 3% 1%;
+    width: 40%;
+    height: 80%;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 0.5px solid #626161;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.page_formEtiqueta__fb7iQ {
+    margin-bottom: 1.5%;
+    margin-left: 18%;
+}
+
+.page_formInput__TIXPh {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
+    align-self: center;
+    margin-bottom: 24px;
+}
+
+.page_formButton__DU_PR {
+    padding: 2%;
+    margin-top: 4%;
+    font-size: 14px; 
+    width: 40%;
+    align-self: center;
+    color:#ffffff;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
+    background: #585757;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    
+}
+
+.page_formButton__DU_PR:hover {
+    background: #717070 ;
+}
+
+.page_formMensaje__rCNKr {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px;
+}
+
+

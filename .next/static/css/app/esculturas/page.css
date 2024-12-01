@@ -1,0 +1,207 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/app/ui/GalleryComponents/imageArte.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.imageArte_galleryBox__zKTOp{
+    width: 80%;
+    height: 65%;
+    background: #ffffff;
+    margin: auto;
+    padding: 0%;
+    box-sizing: border-box;
+    align-self: center;
+}
+
+.imageArte_galleryNombreArte__CPMbO {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-size: 150%;
+    color: #000000;
+    margin-bottom: 7%;
+
+}
+
+.imageArte_galleryButton__Z02sz {
+    color: #000000;
+    width: 25%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 150;
+    font-weight: 500;
+    margin-left: 75%;
+    margin-top: 3%;
+    cursor: pointer;
+    padding: 1%;
+    border: none;
+
+}
+
+.imageArte_galleryButton__Z02sz:hover {
+    color: #b7cccb;
+    background-color: #000000;
+    box-shadow: 0px 0px 10px #767474;
+}
+
+.imageArte_galleryImagen__TurPO {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    filter: drop-shadow(0 2px 5px rgba(188, 185, 185, 0.7));
+}
+
+@media (max-width: 900px ) {
+    .imageArte_galleryButton__Z02sz {
+        font-size: 100;
+        width: 50%;
+        margin-left: 50%;
+    }
+
+    .imageArte_galleryNombreArte__CPMbO{
+        text-align: center;
+    }
+    
+}
+
+@media (max-width: 1400px ) {
+    .imageArte_galleryButton__Z02sz {
+        font-size: 100;
+        width: 30%;
+        margin-left: 40%;
+    }
+
+    .imageArte_galleryNombreArte__CPMbO{
+        text-align: center;
+    }
+    
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/app/esculturas/page.module.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.page_esculturasSect__njs4Y {
+    font-family: "Montserrat", sans-serif;
+    text-align: left;
+    font-size: 0.75rem;
+    margin-bottom: 2rem;
+    padding: 0 20px;
+}
+
+.page_esculturasHeader__Hffw3 {
+    font-family: Playfair Display, serif;
+    text-align: left;
+    font-size: 3.5rem;
+    color: #000000;
+    margin-top: 5%;
+    margin-bottom: 3.5%;
+
+}
+
+.page_escuturasSubHeader__IdF4z {
+    color: #000000;
+    margin-bottom: 3.5%;
+}
+
+.page_esculturasText__ZjnKj {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.page_esculturasPortada__ighBS {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center; /* Centra los elementos */
+    padding: 0 5%;
+    margin-bottom: 3rem;
+}
+
+.page_esculturaCard__sxQyD {
+    text-align: center;
+    width: calc(33.333% - 30px); /* Ajusta el ancho para adaptarse al contenedor */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: auto;
+    padding: 5px;
+}
+
+/* Estilo de la imagen dentro de cada tarjeta */
+.page_esculturaImagen__J7kL0 {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    display: block;
+}
+
+/* Títulos debajo de las imágenes */
+.page_esculturaTitulo__4pmQv {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #444;
+    margin: 10px 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .page_esculturaCard__sxQyD {
+        width: calc(50% - 20px);
+    }
+}
+  
+@media (max-width: 480px) {
+    .page_esculturaCard__sxQyD {
+        width: 100%;
+    }
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/app/ui/componentes/paginacion.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+
+
+.paginacion_paginationContainer__RVsqU {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espaciado entre elementos */
+    margin: 20px 0;
+}
+
+.paginacion_paginationButton__1rGBd {
+    padding: 8px 16px;
+    background-color: #070d14;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.paginacion_paginationButton__1rGBd:hover {
+    background-color: #070d14;
+}
+
+.paginacion_paginationButton__1rGBd.paginacion_disabled__ODL2Z,
+.paginacion_paginationButton__1rGBd[aria-disabled="true"] {
+    background-color: #cccccc;
+    pointer-events: none; /* Desactiva clics */
+    cursor: default;
+}
+
+.paginacion_paginationText__cZh9f {
+    font-size: 16px;
+    font-weight: bold;
+}
+
