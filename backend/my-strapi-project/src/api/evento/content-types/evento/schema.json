@@ -27,14 +27,6 @@
       "type": "text",
       "required": true
     },
-    "imagen": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "tematica": {
       "type": "relation",
       "relation": "manyToOne",
@@ -46,6 +38,9 @@
       "relation": "oneToMany",
       "target": "api::escultura.escultura",
       "mappedBy": "evento"
+    },
+    "imagen": {
+      "type": "string"
     }
   }
 }

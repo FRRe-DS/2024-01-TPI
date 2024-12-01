@@ -16,19 +16,14 @@
       "type": "string",
       "required": true
     },
-    "imagen": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "escultores": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::escultor.escultor",
       "mappedBy": "pais"
+    },
+    "url": {
+      "type": "string"
     }
   }
 }

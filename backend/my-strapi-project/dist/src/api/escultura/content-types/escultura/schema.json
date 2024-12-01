@@ -39,35 +39,20 @@
             "target": "api::tematica.tematica",
             "inversedBy": "esculturas"
         },
-        "imagen_antes": {
-            "type": "media",
-            "multiple": false,
-            "required": false,
-            "allowedTypes": [
-                "images"
-            ]
-        },
-        "imagen_durante": {
-            "type": "media",
-            "multiple": true,
-            "required": false,
-            "allowedTypes": [
-                "images"
-            ]
-        },
-        "imagen_despues": {
-            "type": "media",
-            "multiple": false,
-            "required": false,
-            "allowedTypes": [
-                "images"
-            ]
-        },
         "evento": {
             "type": "relation",
             "relation": "manyToOne",
             "target": "api::evento.evento",
             "inversedBy": "esculturas"
+        },
+        "img_antes": {
+            "type": "string"
+        },
+        "img_despues": {
+            "type": "string"
+        },
+        "img_durante": {
+            "type": "string"
         }
     }
 }

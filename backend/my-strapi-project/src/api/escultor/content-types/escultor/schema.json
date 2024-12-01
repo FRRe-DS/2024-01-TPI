@@ -31,14 +31,6 @@
     "obras_previas": {
       "type": "json"
     },
-    "imagen": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "escultura": {
       "type": "relation",
       "relation": "oneToOne",
@@ -50,6 +42,9 @@
       "relation": "manyToOne",
       "target": "api::pais.pais",
       "inversedBy": "escultores"
+    },
+    "foto": {
+      "type": "string"
     }
   }
 }
