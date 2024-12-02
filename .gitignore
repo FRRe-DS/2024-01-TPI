@@ -3,7 +3,8 @@
 !README.md
 
 # dependencies
-/node_modules
+node_modules/
+.next/
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -15,3 +16,9 @@
 /backend/
 
 .vercel
+
+# Ignore .env files
+**/.env
+
+# Ignore sqlite3asql directory
+/sqlite3asql/
