@@ -5,6 +5,7 @@ import ImgGeneric from "./imagenGenerica";
 
 export default function ImagenEscultores({ titulo, foto, bandera, enlace }) {
   return (
+    <>
     <div className={style.escultorContenedor}>
       <ImgGeneric
         className={style.escultorBandera}
@@ -20,5 +21,6 @@ export default function ImagenEscultores({ titulo, foto, bandera, enlace }) {
         <Image src={foto} alt="navegacion" width={200} height={200} />
       </Link>
     </div>
+    </>
   );
 }

@@ -3,11 +3,12 @@ import Facebook from "/public/facebook.svg";
 import Instagram from "/public/instagram.svg";
 import Twitter from "/public/twitter.svg";
 import WhatsApp from "/public/whatsapp.svg";
+import "../globals.css";
 
 export default function SocialMediaFooter() {
   return (
     <>
-      <h4 className="footerTitleSocial">Siganos</h4>
+      <h4 className="footerTitleSocial">Síganos</h4>
       <div className="footerSocial">
         <a
           href="https://www.facebook.com/bienaldelchaco"

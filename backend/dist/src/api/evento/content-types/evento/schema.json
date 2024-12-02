@@ -1,0 +1,46 @@
+{
+    "kind": "collectionType",
+    "collectionName": "eventos",
+    "info": {
+        "singularName": "evento",
+        "pluralName": "eventos",
+        "displayName": "Evento",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "nombre": {
+            "type": "string",
+            "required": true
+        },
+        "fecha_hora": {
+            "type": "datetime"
+        },
+        "lugar": {
+            "type": "string",
+            "required": true
+        },
+        "descripcion": {
+            "type": "text",
+            "required": true
+        },
+        "tematica": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::tematica.tematica",
+            "inversedBy": "eventos"
+        },
+        "esculturas": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::escultura.escultura",
+            "mappedBy": "evento"
+        },
+        "imagen": {
+            "type": "string"
+        }
+    }
+}

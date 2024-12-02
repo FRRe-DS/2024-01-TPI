@@ -1,0 +1,42 @@
+{
+    "kind": "collectionType",
+    "collectionName": "votos",
+    "info": {
+        "singularName": "voto",
+        "pluralName": "votos",
+        "displayName": "Voto",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "evento": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::evento.evento"
+        },
+        "user": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "plugin::users-permissions.user"
+        },
+        "escultura": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::escultura.escultura"
+        },
+        "puntuacion": {
+            "type": "integer",
+            "max": 5,
+            "min": 1
+        },
+        "email": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::email.email",
+            "inversedBy": "votos"
+        }
+    }
+}
