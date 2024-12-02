@@ -60,6 +60,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columnas con el mismo ancho */
   gap: 20px; /* Espacio entre las imágenes */
+  margin-bottom: 30px;
 }
 
 .rootNavContenedor {

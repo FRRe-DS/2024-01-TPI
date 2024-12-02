@@ -87,7 +87,7 @@ export default function InfoExtra() {
         className={`predio ${active === "predio" ? "visible" : "oculto"}`}
         id="predio"
       >
-        <ImgPredio titulo="Predio" imagen={predio} dimensions={200} />
+        <ImgPredio imagen={predio} dimensions={200} />
       </div>
     </>
   );

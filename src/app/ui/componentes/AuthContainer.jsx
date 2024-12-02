@@ -48,7 +48,7 @@ export default function Page() {
     if (token) {
         return (
             <>
-                <li>{token}</li>
+                <li className="rootLista">{token}</li>
                 <p><Link href={'/misEsculturas'}>{role !== 'null' ? 'Mis esculturas' : ''}</Link></p>
                 <button onClick={logout}>Cerrar sesión</button>
             </>
@@ -56,10 +56,10 @@ export default function Page() {
     } else {
         return (
             <>
-                <li>
+                <li className="rootLista">
                     <Link className="rootHeaderUsuario" href="/login">Iniciar sesión</Link>
                 </li>
-                <li>
+                <li className="rootLista">
                     <Link className="rootHeaderUsuario" href="/registrarse">Registrarse</Link>
                 </li>
             </>

@@ -46,18 +46,19 @@ main {
 .rootHeaderUsuario{
     display: inline-block;
     color: #f4f4f4;
-    padding:1%;
-    border-radius: 5px;
+    padding:2%;
     text-decoration: none;
     margin:2%;
+}
+.rootLista{
+    list-style-type: none;
 }
 
 .rootHeaderUsuario:hover{
     border: none;
     padding: 2%;
     color: #f4f4f4;
-    border-radius: 5px;
-    text-decoration: none;
+    text-decoration:underline;
 }
 
 .rootHeaderRetorno{

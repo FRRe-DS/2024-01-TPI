@@ -55,6 +55,7 @@
 .formMensaje {
     text-align: center;
     font-size: 18px;
-    margin: 10px;
+    margin-top: 30px;
+    color: red;
+    text-decoration:double;
 }
-
