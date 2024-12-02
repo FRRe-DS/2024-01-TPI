@@ -16,11 +16,9 @@ export function RootHeader() {
       <ul className="rootHeaderFormContainer">
         <AuthContainer/>
       </ul>
-      <div>
-        <Link className="rootHeaderRetorno" href="/">
-          <h1 className="rootHeaderTitulo">Bienal del Chaco</h1>
-        </Link>
-      </div>
+      <Link className="rootHeaderRetorno" href="/">
+        <h1 className="rootHeaderTitulo">Bienal del Chaco</h1>
+      </Link>
     </header>
   );
 }

@@ -7,7 +7,7 @@ export function RootFooter() {
     <footer className="rootFooter">
       <SocialMediaFooter />
       <Link className="link-panel" target="_blank" rel="noopener noreferrer" href="http://localhost:1337/">Panel Admin</Link>
-      <p>© 2024 Bienal del Chaco</p>
+      <div className="footerText">© 2024 Bienal del Chaco</div>
     </footer>
   );
 }

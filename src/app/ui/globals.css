@@ -19,15 +19,17 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--color-primary);
     color: #fff;
     padding: 10px 20px;
 }
   
 .rootLogoPrincipal {
-    width: 15%;
-    height: auto;
-    order: 0;
+    width: auto;
+    order: 1;
+    margin-right: 20px;
+
 }
 
 /* Header */
@@ -37,13 +39,13 @@ main {
 
 .rootHeaderFormContainer{
     width: 20%;
-    order: 2;
+    margin-left: auto;
+    order: 3;
 }
 
 .rootHeaderUsuario{
     display: inline-block;
-    background-color: #f4f4f4;
-    color:black;
+    color: #f4f4f4;
     padding:1%;
     border-radius: 5px;
     text-decoration: none;
@@ -53,8 +55,7 @@ main {
 .rootHeaderUsuario:hover{
     border: none;
     padding: 2%;
-    background-color: #afcae9;
-    color:black;
+    color: #f4f4f4;
     border-radius: 5px;
     text-decoration: none;
 }
@@ -62,7 +63,7 @@ main {
 .rootHeaderRetorno{
     color: #fff;
     text-decoration: none;
-    order: 1;
+    order: 2;
 }
 
 .rootHeaderRetorno:hover{
@@ -86,3 +87,19 @@ main {
     text-decoration: none;
     border: 1px solid azure;
   }
+
+.footerSocial {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.link-panel{
+    border:none;
+}
+
+.footerText {
+    margin-top: 10px;
+}
