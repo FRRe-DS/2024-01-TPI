@@ -2,5 +2,6 @@
   "/page": "app/page.js",
   "/login/page": "app/login/page.js",
   "/registrarse/page": "app/registrarse/page.js",
+  "/escultores/[slug]/page": "app/escultores/[slug]/page.js",
   "/escultores/page": "app/escultores/page.js"
 }
