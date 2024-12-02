@@ -767,3 +767,74 @@ h2.react-datepicker__current-month {
   vertical-align: -0.125em;
 }
 
+/*!***************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/eventos/page.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************/
+.page_cuerpoEventos__3WR_9 {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.page_agendaEventos__JaoV8 {
+  font-family: "Montserrat", sans-serif;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.page_tituloEventos__aPyES {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.page_calendarContainer__M5h4h {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.page_calendar__OoSDb {
+  flex-shrink: 0;
+  order: 2;
+}
+
+.page_eventDetails__2nB2B {
+  flex-grow: 1;
+  order: 1;
+}
+
+.page_tituloFechaSeleccionada__0o1WY {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.page_eventList__zcdxj {
+  margin-top: 10px;
+}
+
+.page_listaEventos__AEpc_ {
+  list-style-type: none;
+  padding: 0;
+}
+
+.page_elementoEvento__Qj7MB {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.page_mensajeSinEventos__Uy6gZ {
+  font-size: 1rem;
+  color: #777;
+  margin-top: 10px;
+}
