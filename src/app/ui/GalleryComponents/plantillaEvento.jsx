@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./plantillaEvento.module.css";
 
 export default function Page({
   nombre,
@@ -14,7 +15,8 @@ export default function Page({
   const todasEsculturas = esculturas == null ? "" : esculturas.esculturas;
 
   return (
-    <div className="evento">
+    <div className={styles.eventoContainer}>
+      <div className={styles.eventoDescripBox}>
       <h2>{nombre}</h2>
       <img src={foto} alt={nombre} />
       <p>
@@ -29,7 +31,8 @@ export default function Page({
       <p>
         <strong>Temática:</strong> {tematica}
       </p>
-      <div>
+      </div>
+      <div className={styles.eventoEsculturas}>
         <h3>Esculturas relacionadas</h3>
         <ul>
           {todasEsculturas == "" ? "" : todasEsculturas.map((escultura) => (

@@ -8,6 +8,7 @@ import { getEventos } from "../lib/getElementos";
 import Link from "next/link";
 import "react-datepicker/dist/es/index.js"; //Importación de react-datepicker
 import "react-datepicker/dist/react-datepicker.css"; //CSS de react-datepicker
+import styles from "./page.module.css";
 
 export default function AgendaEventos() {
   const [selectedDate, setSelectedDate] = useState(new Date());
