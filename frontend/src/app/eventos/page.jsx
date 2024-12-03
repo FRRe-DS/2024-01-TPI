@@ -1,13 +1,12 @@
-// Esto marca el componente como Client Component
-// Se usa porque Next no permite el uso de hooks
 "use client";
 
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import { getEventos } from "../lib/getElementos";
 import Link from "next/link";
-import "react-datepicker/dist/es/index.js"; //Importación de react-datepicker
-import "react-datepicker/dist/react-datepicker.css"; //CSS de react-datepicker
+import "react-datepicker/dist/es/index.js"; // Importación de react-datepicker
+import "react-datepicker/dist/react-datepicker.css"; // CSS de react-datepicker
+import styles from "./page.module.css";
 
 export default function AgendaEventos() {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -32,39 +31,52 @@ export default function AgendaEventos() {
   useEffect(() => {
     const selectedDateString = selectedDate.toISOString().split("T")[0];
 
-    let filterEvents = events.filter(
-      (event) => event.fecha_hora.split("T")[0] == selectedDateString
+    const filterEvents = events.filter(
+      (event) => event.fecha_hora.split("T")[0] === selectedDateString
     );
 
     setFilteredEvents(filterEvents);
   }, [selectedDate, events]);
 
-  return (
-    <div className="agenda-eventos">
-      <h2>Eventos</h2>
-      <div className="calendar">
-        <DatePicker
-          selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
-          dateFormat="dd/MM/yyyy"
-          inline
-        />
-      </div>
+  const formattedDate = selectedDate.toLocaleDateString(undefined, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
 
-      <div className="event-list">
-        <h3>Eventos para el {selectedDate.toLocaleDateString()}</h3>
-        {filteredEvents.length > 0 ? (
-          <ul>
-            {filteredEvents.map((event) => (
-              <li key={event.documentId}>
-                <Link href={"eventos/" + event.documentId}>{event.nombre}</Link>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No hay eventos para esta fecha</p>
-        )}
+  return (
+    <main className={styles.cuerpoEventos}>  
+      <div className={styles.calendarContainer}>
+        <div className={styles.calendar}>
+          <DatePicker
+            selected={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
+            dateFormat="dd/MM/yyyy"
+            inline
+          />
+        </div>
+        <div className={styles.eventDetails}>
+          <h3 className={styles.tituloFechaSeleccionada}>
+            Eventos para el {formattedDate}
+          </h3>
+          <hr className={styles.divisor} />
+          <div className={styles.eventList}>
+            {filteredEvents.length > 0 ? (
+              <ul className={styles.listaEventos}>
+                {filteredEvents.map((event) => (
+                  <li key={event.documentId} className={styles.elementoEvento}>
+                    <Link href={"eventos/" + event.documentId}>
+                      {event.nombre}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className={styles.mensajeSinEventos}>No hay eventos</p>
+            )}
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
   );
 }

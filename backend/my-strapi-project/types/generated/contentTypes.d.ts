@@ -495,6 +495,7 @@ export interface ApiEventoEvento extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::escultura.escultura'
     >;
+    fecha_finalizacion: Schema.Attribute.DateTime;
     fecha_hora: Schema.Attribute.DateTime;
     imagen: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -581,6 +582,7 @@ export interface ApiTematicaTematica extends Struct.CollectionTypeSchema {
 export interface ApiTokenToken extends Struct.CollectionTypeSchema {
   collectionName: 'tokens';
   info: {
+    description: '';
     displayName: 'token';
     pluralName: 'tokens';
     singularName: 'token';
@@ -592,7 +594,7 @@ export interface ApiTokenToken extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    escultura: Schema.Attribute.String;
+    escultura: Schema.Attribute.String & Schema.Attribute.Unique;
     expiresAt: Schema.Attribute.DateTime;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::token.token'> &

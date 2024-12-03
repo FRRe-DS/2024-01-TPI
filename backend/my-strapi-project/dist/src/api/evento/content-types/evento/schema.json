@@ -41,6 +41,9 @@
         },
         "imagen": {
             "type": "string"
+        },
+        "fecha_finalizacion": {
+            "type": "datetime"
         }
     }
 }

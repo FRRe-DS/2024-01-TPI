@@ -11,7 +11,7 @@ export function filtrarEsculturas(tematica){
             const {data, meta} = res;
             const esculturas =  data.map(escultura=>{
                 const {documentId, nombre} = escultura;
-                const imagen = `${API_URL}${escultura.imagen_despues.url}`;
+                const imagen = `${API_URL}${escultura.img_despues}`;
                 return {documentId, nombre, imagen};
             })
             return {esculturas, meta : meta.pagination};

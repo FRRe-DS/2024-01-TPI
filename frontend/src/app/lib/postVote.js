@@ -1,4 +1,5 @@
 import { query } from "./strapi";
+import {getUser} from './connectUser';
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
 
@@ -28,6 +29,33 @@ export async function postVote(data){
   return datos;
 }
 
+export async function postVoteUserRegister(data){
+  const eventoId = await getEventoFromEscultura(data.escultura);
+  data.evento = eventoId;
+
+  const correo = await getUser(data.email);
+  data.email = correo.documentId;
+
+  console.log(data);
+
+  const response = await fetch(`${API_URL}/api/votos`, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${API_TOKEN}`,
+    },
+    body: JSON.stringify(
+      {
+        data: data
+      }
+    ),
+  });
+
+  const datos = await response.json();
+
+  return datos;
+}
+
 async function getEventoFromEscultura(id){
     const response = await query(`esculturas/${id}?populate=evento`);
     
@@ -51,7 +79,6 @@ async function crearCorreo(email){
     },
     body: JSON.stringify({
       data: {
-        // Asegúrate de que los datos aquí coincidan con el modelo definido en Strapi
         correo: email,
       },
     }),
