@@ -16,9 +16,6 @@
       "type": "string",
       "required": true
     },
-    "fecha_hora": {
-      "type": "datetime"
-    },
     "lugar": {
       "type": "string",
       "required": true
@@ -42,8 +39,17 @@
     "imagen": {
       "type": "string"
     },
+    "fecha": {
+      "type": "date"
+    },
+    "hora_inicio": {
+      "type": "time"
+    },
+    "hora_fin": {
+      "type": "time"
+    },
     "fecha_finalizacion": {
-      "type": "datetime"
+      "type": "date"
     }
   }
 }
