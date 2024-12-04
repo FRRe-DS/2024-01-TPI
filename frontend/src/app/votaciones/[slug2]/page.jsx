@@ -36,8 +36,13 @@ export default function Page() {
         });
     } else {
       // Lógica para emitir la votación si ya esta logueado
-      postVoteUserRegister(voteData);
-      router.push("/votaciones/exito");
+      postVoteUserRegister(voteData)
+        .then(() => {
+          router.push("/votaciones/exito");
+        })
+        .catch((err) => {
+          console.log("Error al votar", err);
+        });
     }
   };
   const validarURL = async () => {

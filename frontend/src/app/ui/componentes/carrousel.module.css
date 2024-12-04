@@ -1,0 +1,114 @@
+/* carrousel */
+.carouselContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    overflow: hidden;
+    position: relative;  /* Esto es importante para posicionar las flechas */
+    margin-left: 200px;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Oculta el scrollbar en Firefox */
+    padding: 10px 0;
+    scroll-behavior: smooth;  /* Añadido para un desplazamiento más suave */
+  }
+  
+  .carousel::-webkit-scrollbar {
+    display: none; /* Oculta el scrollbar en Chrome/Safari */
+  }
+  
+  .eventCard {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 250px;
+  }
+  
+  .eventCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .eventImage {
+    border-radius: 8px;
+    margin-bottom: 16px;
+    object-fit: cover;
+    width: 100%;
+    height: 140px;
+  }
+  
+  .eventInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .eventTitle {
+    display: -webkit-box;          /* Usamos una caja flexible de tipo webkit */
+    -webkit-line-clamp: 3;         /* Limita a una sola línea */
+    -webkit-box-orient: vertical;  /* Hace que el texto se apile de manera vertical */
+    overflow: hidden;              /* Oculta el texto que desborda */
+    text-overflow: ellipsis;       /* Muestra puntos suspensivos (...) cuando el texto se corta */
+    white-space: normal;           /* Permite que el texto se ajuste */
+    width: 200px;                  /* Establece el ancho máximo que el texto puede ocupar */
+  }
+  
+  .eventDate {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .noEvents {
+    font-size: 18px;
+    color: #aaa;
+    text-align: center;
+  }
+  
+  /* Estilos de las flechas de navegación */
+  .arrowButton {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    padding: 10px;
+    color: #333;
+  }
+  
+  .leftArrow {
+    left: 0;
+  }
+  
+  .rightArrow {
+    right: 0;
+  }
+  
+  .arrowButton:hover {
+    color: #007bff;  /* Cambia el color de la flecha al pasar el mouse */
+  }
+
+  .links {
+    text-decoration: none;  /* Elimina el subrayado predeterminado */
+    color: inherit;         /* Hereda el color del elemento padre */
+    outline: none;          /* Elimina el borde al hacer foco */
+  }
+  
+  
+  
+  

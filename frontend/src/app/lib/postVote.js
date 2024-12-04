@@ -33,8 +33,10 @@ export async function postVoteUserRegister(data){
   const eventoId = await getEventoFromEscultura(data.escultura);
   data.evento = eventoId;
 
-  const correo = await getUser(data.email);
-  data.email = correo.documentId;
+  const {email} = await getUser(data.email);
+
+  const correoId = await crearCorreo(email);
+  data.email = correoId;
 
   console.log(data);
 
