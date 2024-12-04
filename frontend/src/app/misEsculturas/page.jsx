@@ -1,4 +1,5 @@
 'use client'
+
 import { useState, useEffect } from 'react';
 import { getSculptFromUser } from '../lib/connectUser';
 import QRCode from 'react-qr-code';
@@ -35,7 +36,6 @@ async function generarURL(esculturaId) {
 export default function Page() {
     const [esculturas, setEsculturas] = useState(null);
     const [urls, setUrls] = useState({});
-    
 
     useEffect(() => {
         const getSculp = async () => {
@@ -51,7 +51,6 @@ export default function Page() {
                     })
                 );
         
-                // Convertir el resultado en un objeto con id como clave
                 const urlsObject = urls.reduce((acc, { id, url }) => {
                     acc[id] = url;
                     return acc;

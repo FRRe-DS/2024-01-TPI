@@ -1,10 +1,10 @@
 import {query} from './strapi';
 
 export function getEscultura(documentId){
-    return query(`esculturas/${documentId}?populate[escultor][pais][fields][0]=nombre&populate[tematica][fields][0]=nombre`)
+    return query(`esculturas/${documentId}?populate[escultor][populate][pais][fields][0]=nombre&populate[tematica][fields][0]=nombre`)
         .then(res=> {
             const {nombre, descripcion, fecha_finalizacion} = res.data;
-            const imagen_antes = res.data.img_antes == null ? '' : res.data.img_antes.url;
+            const imagen_antes = res.data.img_antes == null ? '' : res.data.img_antes;
             const imagen_durante = res.data.img_durante == null ? '' : res.data.img_durante;
             const imagen_despues = res.data.img_despues == null ? '' : res.data.img_despues;
             const escultor = res.data.escultor.nombre + ' ' + res.data.escultor.apellidos;

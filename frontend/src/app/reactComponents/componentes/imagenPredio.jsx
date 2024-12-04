@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "../../estilosHome/infoExtra.css";
+import "../estilos/infoExtra.css";
 
 export default function ImgPredio({ titulo, imagen, dimensions }) {
   return (

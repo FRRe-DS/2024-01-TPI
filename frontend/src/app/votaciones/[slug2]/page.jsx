@@ -2,7 +2,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { getEscultura } from "../../lib/getElement";
-import { postVote } from "../../lib/postVote";
+import { postVote, postVoteUserRegister } from "../../lib/postVote";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -27,7 +27,6 @@ export default function Page() {
   const handleVote = (voteData) => {
     if (!jwt) {
       // logica para emitir un voto sin estar logeado
-      
       postVote(voteData)
         .then(() => {
           router.push("/votaciones/exito");
@@ -36,15 +35,23 @@ export default function Page() {
           console.log("Error al votar", err);
         });
     } else {
-      // Lógica para emitir la votación
-      router.push("/votaciones/exito");
+      // Lógica para emitir la votación si ya esta logueado
+      postVoteUserRegister(voteData)
+        .then(() => {
+          router.push("/votaciones/exito");
+        })
+        .catch((err) => {
+          console.log("Error al votar", err);
+        });
     }
   };
   const validarURL = async () => {
     if (codigoAdicional) {
       console.log("codigoAdicional", codigoAdicional);
+
       const infoToken = await getToken(esculturaId);
       const codigoAlmacenado = infoToken ? infoToken.token : null;
+
       console.log("codigoAlmacenado", codigoAlmacenado);
       if (codigoAdicional !== codigoAlmacenado) {
         console.error("URL no válida");
@@ -53,8 +60,12 @@ export default function Page() {
         setUrlValida(true);
       }
     } else {
-      setUrlValida(false);
-    }
+      if (jwt) {
+        setUrlValida(true);
+      } else {
+        setUrlValida(false);
+      }
+    } 
   };
 
   useEffect(() => {
@@ -89,7 +100,7 @@ export default function Page() {
           const email = e.target.email ? e.target.email.value : null;
           const voteData = {
             puntuacion: PuntajeSeleccionado,
-            email: email,
+            email: email ? email : jwt,
             escultura: esculturaId
           };
           handleVote(voteData);
@@ -104,7 +115,6 @@ export default function Page() {
           <input type="email" name="email" placeholder="Email" required />
         )}
         </div>
-        <p className={styles.votacionCardDescrip}>{escultura.descripcion == null ? "" : escultura.descripcion}</p>
         <p className={styles.votacionCardEscultor}>Escultor: {escultura.escultor}</p>
         <label className={styles.votacionCardPuntaje} htmlFor="puntaje">Puntaje: </label>
         <div className={styles.estrellas}>

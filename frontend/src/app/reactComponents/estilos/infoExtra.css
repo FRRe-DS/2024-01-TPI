@@ -52,7 +52,7 @@
     border: 1px solid #ddd;
     background-color: var(--color-highlight);
     border-radius: 8px;
-    height: 450px;
+    height: 700px;
     align-items: center;
     justify-content: center;
     max-width: 100%; /* Limitar el ancho de las secciones */
@@ -105,7 +105,8 @@
 
 /* Ajustes de iframe en la sección de mapa */
 .mapResponsive iframe {
-    width: 100%; /* Ajuste para que ocupe el ancho completo */
+    width: 100%;
+    height: 100%; /* Ajuste para que ocupe el ancho completo */
     border-radius: 8px; /* Borde redondeado */
     border: 1px solid #ccc;
 }
@@ -122,8 +123,8 @@
     display:flex;
     align-items: center;
     margin: 0 auto;
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
     border-radius: 8px;
     border: 1px solid #ccc;
 

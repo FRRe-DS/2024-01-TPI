@@ -3,7 +3,7 @@
 import ImgPredio from "./imagenPredio.jsx";
 import predio from "/public/plano-predio.svg";
 import { useState } from "react";
-import "../../estilosHome/infoExtra.css";
+import "../estilos/infoExtra.css";
 
 export default function InfoExtra() {
   const [active, setActive] = useState("info");
@@ -87,7 +87,7 @@ export default function InfoExtra() {
         className={`predio ${active === "predio" ? "visible" : "oculto"}`}
         id="predio"
       >
-        <ImgPredio titulo="Predio" imagen={predio} dimensions={200} />
+        <ImgPredio imagen={predio} dimensions={200} />
       </div>
     </>
   );

@@ -11,7 +11,6 @@ export default function Page({
 }) {
   const fecha = fecha_hora.split("T");
   const hora = fecha[1].split(":");
-  console.log(esculturas)
 
   return (
     <div className="evento">

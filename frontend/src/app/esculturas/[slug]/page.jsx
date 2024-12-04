@@ -1,5 +1,5 @@
 'use client'
-import PlantillaPage from "../../ui/GalleryComponents/plantillaEscultura.jsx";
+import PlantillaPage from "../../reactComponents/componentes/plantillaEscultura.jsx";
 import {getEscultura} from "../../lib/getElement.js";
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react';

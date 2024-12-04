@@ -1,7 +1,7 @@
-import ImagenEscultores from "../ui/GalleryComponents/imagenEscultores";
+import ImagenEscultores from "../reactComponents/componentes/imagenEscultores";
 import { getEscultores } from "../lib/getElementos";
 import styles from "./page.module.css";
-import { Pagination } from "../ui/componentes/Pagination";
+import { Pagination } from "../reactComponents/componentes/Pagination";
 
 const PAGE_SIZE = 6;
 

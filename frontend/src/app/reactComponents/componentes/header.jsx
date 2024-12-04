@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Logo from "/public/BienalLogo.png";
 import Link from "next/link";
-import "../globals.css";
+import "../estilos/globals.css";
 import AuthContainer from "./AuthContainer";
 
 export function RootHeader() {
@@ -16,11 +16,9 @@ export function RootHeader() {
       <ul className="rootHeaderFormContainer">
         <AuthContainer/>
       </ul>
-      <div>
-        <Link className="rootHeaderRetorno" href="/">
-          <h1 className="rootHeaderTitulo">Bienal del Chaco</h1>
-        </Link>
-      </div>
+      <Link className="rootHeaderRetorno" href="/">
+        <h1 className="rootHeaderTitulo">Bienal del Chaco</h1>
+      </Link>
     </header>
   );
 }

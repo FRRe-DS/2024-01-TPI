@@ -1,4 +1,4 @@
-@import "../estilosHome/variables.css";
+@import "./variables.css";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
@@ -19,15 +19,17 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--color-primary);
     color: #fff;
     padding: 10px 20px;
 }
   
 .rootLogoPrincipal {
-    width: 15%;
-    height: auto;
-    order: 0;
+    width: auto;
+    order: 1;
+    margin-right: 20px;
+
 }
 
 /* Header */
@@ -37,32 +39,32 @@ main {
 
 .rootHeaderFormContainer{
     width: 20%;
-    order: 2;
+    margin-left: auto;
+    order: 3;
 }
 
 .rootHeaderUsuario{
     display: inline-block;
-    background-color: #f4f4f4;
-    color:black;
-    padding:1%;
-    border-radius: 5px;
+    color: #f4f4f4;
+    padding:2%;
     text-decoration: none;
     margin:2%;
+}
+.rootLista{
+    list-style-type: none;
 }
 
 .rootHeaderUsuario:hover{
     border: none;
     padding: 2%;
-    background-color: #afcae9;
-    color:black;
-    border-radius: 5px;
-    text-decoration: none;
+    color: #f4f4f4;
+    text-decoration:underline;
 }
 
 .rootHeaderRetorno{
     color: #fff;
     text-decoration: none;
-    order: 1;
+    order: 2;
 }
 
 .rootHeaderRetorno:hover{
@@ -86,3 +88,19 @@ main {
     text-decoration: none;
     border: 1px solid azure;
   }
+
+.footerSocial {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.link-panel{
+    border:none;
+}
+
+.footerText {
+    margin-top: 10px;
+}

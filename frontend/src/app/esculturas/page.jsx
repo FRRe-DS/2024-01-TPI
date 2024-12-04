@@ -1,7 +1,7 @@
-import ImagenArte from "../ui/GalleryComponents/imageArte.jsx";
+import ImagenArte from "../reactComponents/componentes/imageArte.jsx";
 import styles from "./page.module.css";
 import { getEsculturas } from "../lib/getElementos";
-import { Pagination } from "../ui/componentes/Pagination";
+import { Pagination } from "../reactComponents/componentes/Pagination.jsx";
 
 const PAGE_SIZE = 3;
 

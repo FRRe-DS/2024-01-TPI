@@ -4,7 +4,8 @@
   "info": {
     "singularName": "token",
     "pluralName": "tokens",
-    "displayName": "token"
+    "displayName": "token",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,7 +25,8 @@
       "default": false
     },
     "escultura": {
-      "type": "string"
+      "type": "string",
+      "unique": true
     }
   }
 }

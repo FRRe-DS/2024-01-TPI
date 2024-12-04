@@ -1,5 +1,5 @@
 'use client'
-import PlantillaEscultoresPage from "../../ui/GalleryComponents/plantillaEscultores";
+import PlantillaEscultoresPage from "../../reactComponents/componentes/plantillaEscultores";
 import { getEscultor } from "../../lib/getElement";
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react';

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./plantillaEscultura.module.css";
+import styles from "../estilos/plantillaEscultura.module.css";
 
 export default function PlantillaPage({
   titulo,

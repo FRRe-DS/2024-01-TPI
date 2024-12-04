@@ -1,20 +1,17 @@
 import {query} from './strapi';
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-export function filtrarEsculturas(tematica){
-    const nuevaTematica = tematica.toLowerCase().replace(" ", "+");
-
-    let url = `esculturas?filters[tematica][nombre][$contains]=${nuevaTematica}&populate[imagen_despues][fields][0]=url`;
+export function filtrarEventos(fecha){
+    let url = `eventos?filters[fecha_hora][$gte]=${fecha}&pagination[pageSize]=5`;
 
     return query(url)
         .then(res=> {
             const {data, meta} = res;
-            const esculturas =  data.map(escultura=>{
-                const {documentId, nombre} = escultura;
-                const imagen = `${API_URL}${escultura.imagen_despues.url}`;
-                return {documentId, nombre, imagen};
+            const eventos =  data.map(evento=>{
+                const {documentId, nombre, fecha_hora, fecha_finalizacion, imagen} = evento;
+                return {documentId, nombre, imagen, fecha_hora, fecha_finalizacion, imagen};
             })
-            return {esculturas, meta : meta.pagination};
+            return {eventos: eventos, meta : meta.pagination};
         });
 }
 

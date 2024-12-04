@@ -47,7 +47,7 @@
     color: #ddd;
     cursor: pointer;
     box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
-    background: #585757;
+    background: #3e3e3e;
     border: none;
     border-radius: 4px;
     font-size: 16px;
@@ -60,5 +60,8 @@
 .formMensaje{
     text-align: center;
     font-size: 18px;
-    margin: 10px;
+    margin-top: 30px;
+    color: red;
+    text-decoration:double;
 }
+

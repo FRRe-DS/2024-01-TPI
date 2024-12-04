@@ -1,17 +1,29 @@
-// Esto marca el componente como Client Component
-// Se usa porque Next no permite el uso de hooks
 "use client";
 
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import { getEventos } from "../lib/getElementos";
+import { filtrarEventos } from "../lib/filtrarEsculturas";
+import Carrousel from '../reactComponents/componentes/Carrousel';
 import Link from "next/link";
-import "react-datepicker/dist/es/index.js"; //Importación de react-datepicker
-import "react-datepicker/dist/react-datepicker.css"; //CSS de react-datepicker
+import "react-datepicker/dist/es/index.js"; // Importación de react-datepicker
+import "react-datepicker/dist/react-datepicker.css"; // CSS de react-datepicker
+import styles from "./page.module.css";
+
+function getCurrentDateFormatted() {
+  const today = new Date();
+
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const day = String(today.getDate()).padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
+}
 
 export default function AgendaEventos() {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [events, setEvents] = useState([]);
+  const [eventosRec, setEvRc] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
 
   // Cargar eventos desde el servidor
@@ -20,6 +32,10 @@ export default function AgendaEventos() {
       try {
         const eventos = await getEventos(); // Esperar a que la promesa se resuelva
         setEvents(eventos); // Guardar los eventos en el estado
+        // const fecha = getCurrentDateFormatted();
+        const evrec = await filtrarEventos('2024-01-01');
+        setEvRc(evrec.eventos);
+        console.log(evrec.eventos)
       } catch (error) {
         console.error("Error al obtener los eventos:", error);
       }
@@ -32,39 +48,62 @@ export default function AgendaEventos() {
   useEffect(() => {
     const selectedDateString = selectedDate.toISOString().split("T")[0];
 
-    let filterEvents = events.filter(
-      (event) => event.fecha_hora.split("T")[0] == selectedDateString
+    const filterEvents = events.filter(
+      (event) => event.fecha_hora.split("T")[0] === selectedDateString
     );
 
     setFilteredEvents(filterEvents);
   }, [selectedDate, events]);
 
-  return (
-    <div className="agenda-eventos">
-      <h2>Eventos</h2>
-      <div className="calendar">
-        <DatePicker
-          selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
-          dateFormat="dd/MM/yyyy"
-          inline
-        />
-      </div>
+  const formattedDate = selectedDate.toLocaleDateString(undefined, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
 
-      <div className="event-list">
-        <h3>Eventos para el {selectedDate.toLocaleDateString()}</h3>
-        {filteredEvents.length > 0 ? (
-          <ul>
-            {filteredEvents.map((event) => (
-              <li key={event.documentId}>
-                <Link href={"eventos/" + event.documentId}>{event.nombre}</Link>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No hay eventos para esta fecha</p>
-        )}
+  if (!eventosRec) {
+    return <p>Cargando eventos...</p>;
+  }
+  else {
+
+  return (
+    <main className={styles.cuerpoEventos}> 
+      <h1 className={styles.titulo}>Agenda de eventos</h1>
+      <Carrousel eventosRec={eventosRec}></Carrousel>
+
+
+      <div className={styles.calendarContainer}>
+        <div className={styles.calendar}>
+          <DatePicker
+            selected={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
+            dateFormat="dd/MM/yyyy"
+            inline
+          />
+        </div>
+        <div className={styles.eventDetails}>
+          <h3 className={styles.tituloFechaSeleccionada}>
+            Eventos para el {formattedDate}
+          </h3>
+          <hr className={styles.divisor} />
+          <div className={styles.eventList}>
+            {filteredEvents.length > 0 ? (
+              <ul className={styles.listaEventos}>
+                {filteredEvents.map((event) => (
+                  <li key={event.documentId} className={styles.elementoEvento}>
+                    <Link href={"eventos/" + event.documentId}>
+                      {event.nombre}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className={styles.mensajeSinEventos}>No hay eventos</p>
+            )}
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
   );
+}
 }
