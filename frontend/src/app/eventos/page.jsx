@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import { getEventos } from "../lib/getElementos";
 import { filtrarEventos } from "../lib/filtrarEsculturas";
-import Carrousel from '../ui/componentes/Carrousel';
+import Carrousel from '../reactComponents/componentes/Carrousel';
 import Link from "next/link";
 import "react-datepicker/dist/es/index.js"; // Importación de react-datepicker
 import "react-datepicker/dist/react-datepicker.css"; // CSS de react-datepicker

@@ -1,5 +1,5 @@
 import { useRef } from "react";  // Para usar referencias y manipular el scroll
-import styles from './carrousel.module.css'
+import styles from '../estilos/carrousel.module.css'
 import Link from "next/link";
 import Image from "next/image";
 

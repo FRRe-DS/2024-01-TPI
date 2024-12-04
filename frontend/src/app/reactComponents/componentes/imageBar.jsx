@@ -3,7 +3,7 @@ import ImagenesRedireccion from "./imageRedireccion";
 import esculturas from "/public/Art.jpg";
 import escult from "/public/Escultor.jpg";
 import evento from "/public/Event.jpg";
-import style from "../../page.module.css";
+import style from "../estilos/page.module.css";
 
 export default function ImageBar() {
   return (

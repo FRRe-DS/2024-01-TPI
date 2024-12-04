@@ -1,4 +1,4 @@
-import style from "./imagenEscultores.module.css";
+import style from "../estilos/imagenEscultores.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import ImgGeneric from "./imagenGenerica";

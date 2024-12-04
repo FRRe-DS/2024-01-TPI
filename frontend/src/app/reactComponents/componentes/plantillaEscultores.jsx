@@ -1,7 +1,7 @@
 import ImgGeneric from "./imagenGenerica";
 import ImagenArte from "./imageArte";
 import Link from "next/link";
-import styles from "./plantillaEscultores.module.css";
+import styles from "../estilos/plantillaEscultores.module.css";
 
 export default function PlantillaEscultoresPage({
   foto,

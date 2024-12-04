@@ -3,7 +3,7 @@ import Facebook from "/public/facebook.svg";
 import Instagram from "/public/instagram.svg";
 import Twitter from "/public/twitter.svg";
 import WhatsApp from "/public/whatsapp.svg";
-import "../globals.css";
+import "../estilos/globals.css";
 
 export default function SocialMediaFooter() {
   return (

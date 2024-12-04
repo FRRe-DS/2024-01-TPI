@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./imageArte.module.css";
+import styles from "../estilos/imageArte.module.css";
 
 export default function ImagenArte({ 
   titulo, 

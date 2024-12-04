@@ -1,5 +1,5 @@
-import SocialMediaFooter from "../SocialMediaBar/socialMedia";
-import "../globals.css";
+import SocialMediaFooter from "./socialMedia";
+import "../estilos/globals.css";
 import Link from "next/link";
 
 export function RootFooter() {

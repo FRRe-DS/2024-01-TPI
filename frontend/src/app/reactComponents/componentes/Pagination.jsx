@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from'../../ui/componentes/paginacion.module.css';
+import styles from'../estilos/paginacion.module.css';
 
 export function Pagination({ page, pageSize, pageCount, total }) {
     const isFirstPage = page === 1;

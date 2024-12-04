@@ -1,7 +1,7 @@
-import ImageBar from "./ui/ImagenesRender/imageBar";
-import InfoExtra from "./ui/componentes/InfoExtra";
-import styles from "./page.module.css";
-import "./ui/globals.css";
+import ImageBar from "./reactComponents/componentes/imageBar";
+import InfoExtra from "./reactComponents/componentes/InfoExtra";
+import styles from "./reactComponents/estilos/page.module.css";
+import "./reactComponents/estilos/globals.css";
 
 export default function Home() {
   return (

@@ -1,5 +1,5 @@
 "use client";
-import PlantillaEvento from "../../ui/GalleryComponents/plantillaEvento";
+import PlantillaEvento from "../../reactComponents/componentes/plantillaEvento";
 import { getEvento } from "../../lib/getElement";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";

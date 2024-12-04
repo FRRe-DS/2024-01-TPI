@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
-import "./ui/globals.css";
-import { RootFooter } from "./ui/componentes/footer";
-import { RootHeader } from "./ui/componentes/header";
+import "./reactComponents/estilos/globals.css";
+import { RootFooter } from "./reactComponents/componentes/footer";
+import { RootHeader } from "./reactComponents/componentes/header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
