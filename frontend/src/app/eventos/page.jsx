@@ -30,10 +30,11 @@ export default function AgendaEventos() {
   useEffect(() => {
     const fetchEventos = async () => {
       try {
-        const eventos = await getEventos(); // Esperar a que la promesa se resuelva
-        setEvents(eventos); // Guardar los eventos en el estado
-        // const fecha = getCurrentDateFormatted();
-        const evrec = await filtrarEventos('2024-01-01');
+        const eventos = await getEventos(); 
+        setEvents(eventos); 
+        console.log(eventos)
+        const fecha = getCurrentDateFormatted();
+        const evrec = await filtrarEventos(fecha);
         setEvRc(evrec.eventos);
         console.log(evrec.eventos)
       } catch (error) {
@@ -49,7 +50,7 @@ export default function AgendaEventos() {
     const selectedDateString = selectedDate.toISOString().split("T")[0];
 
     const filterEvents = events.filter(
-      (event) => event.fecha_hora.split("T")[0] === selectedDateString
+      (event) => event.fecha === selectedDateString
     );
 
     setFilteredEvents(filterEvents);
@@ -68,7 +69,7 @@ export default function AgendaEventos() {
 
   return (
     <main className={styles.cuerpoEventos}> 
-      <h1 className={styles.titulo}>Agenda de eventos</h1>
+      <h1 className={styles.titulo}>Eventos recientes</h1>
       <Carrousel eventosRec={eventosRec}></Carrousel>
 
 
@@ -91,9 +92,10 @@ export default function AgendaEventos() {
               <ul className={styles.listaEventos}>
                 {filteredEvents.map((event) => (
                   <li key={event.documentId} className={styles.elementoEvento}>
-                    <Link href={"eventos/" + event.documentId}>
+                    <Link className={styles.links} href={"eventos/" + event.documentId}>
                       {event.nombre}
                     </Link>
+                    <p className={styles.hora}>{event.hora_inicio.substring(0,5)} {event.hora_fin? `- ${event.hora_fin.substring(0,5)}`:''}</p>
                   </li>
                 ))}
               </ul>

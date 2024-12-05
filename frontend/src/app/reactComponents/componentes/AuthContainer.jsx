@@ -49,7 +49,7 @@ export default function Page() {
             <>
                 <li className="rootLista">{token}</li>
                 <p><Link href={'/misEsculturas'}>{role !== 'null' ? 'Mis esculturas' : ''}</Link></p>
-                <button onClick={logout}>Cerrar sesión</button>
+                <Link className="rootCerrarSesion" onClick={logout}>Cerrar Sesión</Link>
             </>
         );
     } else {

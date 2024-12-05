@@ -3,6 +3,16 @@ import styles from '../estilos/carrousel.module.css'
 import Link from "next/link";
 import Image from "next/image";
 
+function formatearFecha(fecha) {
+  const meses = [
+      'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+      'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
+  ];
+  console.log(fecha)
+  const [año, mes, día] = fecha.split('-');
+  return `${día} de ${meses[parseInt(mes, 10) - 1]}`;
+}
+
 const Carousel = ({ eventosRec }) => {
   const carouselRef = useRef(null);
 
@@ -38,8 +48,8 @@ const Carousel = ({ eventosRec }) => {
                 width="200"
                 height="200"
               />
-              <p className={styles.eventDate}>{evento.fecha_hora}</p>
-              <p className={styles.eventDate}>{evento.fecha_finalizacion}</p>
+              <p className={styles.eventDate}>{formatearFecha(evento.fecha)}</p>
+              <p className={styles.eventDate}>{evento.fecha_finalizacion? formatearFecha(evento.fecha_finalizacion):''}</p>
             </div>
           </Link>
         ))}

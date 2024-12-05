@@ -32,16 +32,14 @@ export function getEscultor(documentId){
 export function getEvento(documentId){
     return query(`eventos/${documentId}?populate=esculturas&populate=tematica`)
         .then(res=> {
-            const {documentId, nombre, descripcion, fecha_hora, lugar } = res.data;
+            const {documentId, nombre, descripcion, fecha, lugar, hora_inicio, hora_fin, fecha_finalizacion, imagen } = res.data;
             
-            const imagen = res.data.imagen == null ? '' : res.data.imagen;
             const tematica = res.data.tematica.nombre;
             const esculturas = res.data.esculturas.map(escultura=>{
-                const {documentId, nombre} = escultura;
-                const imagen = escultura.img_despues;
-                return {documentId, nombre, imagen};
+                const {documentId, nombre, img_despues} = escultura;
+                return {documentId, nombre, imagen, img_despues};
             });
             
-            return {documentId, nombre, descripcion, fecha_hora, lugar, imagen, tematica, esculturas};
+            return {documentId, nombre, descripcion, fecha, lugar, imagen, tematica, esculturas, hora_inicio, hora_fin, fecha_finalizacion};
         });
 }

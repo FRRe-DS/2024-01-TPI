@@ -7,7 +7,7 @@
     background-color: #f8f9fa;
     overflow: hidden;
     position: relative;  /* Esto es importante para posicionar las flechas */
-    margin-left: 200px;
+    max-width: 900px;
   }
   
   .carousel {
@@ -35,6 +35,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 250px;
+    height: 300px;
   }
   
   .eventCard:hover {
@@ -79,7 +80,9 @@
   
   /* Estilos de las flechas de navegación */
   .arrowButton {
-    background-color: transparent;
+    background-color: #216ba5;
+    border-radius: 50%;
+    text-align: center;
     border: none;
     font-size: 24px;
     cursor: pointer;
@@ -87,8 +90,9 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
-    padding: 10px;
-    color: #333;
+    color: #ffffff;
+    height: 40px;
+    width: 40px;
   }
   
   .leftArrow {
@@ -100,7 +104,7 @@
   }
   
   .arrowButton:hover {
-    color: #007bff;  /* Cambia el color de la flecha al pasar el mouse */
+    opacity: .8;
   }
 
   .links {

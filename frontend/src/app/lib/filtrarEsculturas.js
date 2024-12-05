@@ -2,14 +2,14 @@ import {query} from './strapi';
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export function filtrarEventos(fecha){
-    let url = `eventos?filters[fecha_hora][$gte]=${fecha}&pagination[pageSize]=5`;
+    let url = `eventos?filters[fecha][$gte]=${fecha}&pagination[pageSize]=5`;
 
     return query(url)
         .then(res=> {
             const {data, meta} = res;
             const eventos =  data.map(evento=>{
-                const {documentId, nombre, fecha_hora, fecha_finalizacion, imagen} = evento;
-                return {documentId, nombre, imagen, fecha_hora, fecha_finalizacion, imagen};
+                const {documentId, nombre, fecha, hora_inicio, hora_fin, fecha_finalizacion, imagen} = evento;
+                return {documentId, nombre, imagen, fecha, hora_inicio, hora_fin, fecha_finalizacion, imagen};
             })
             return {eventos: eventos, meta : meta.pagination};
         });

@@ -3,7 +3,6 @@ import PlantillaEvento from "../../reactComponents/componentes/plantillaEvento";
 import { getEvento } from "../../lib/getElement";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Suspense } from "react";
 
 export default function Page() {
   const pathname = usePathname();
@@ -28,7 +27,10 @@ export default function Page() {
             <PlantillaEvento
                 nombre={evento.nombre}
                 lugar={evento.lugar}
-                fecha_hora={evento.fecha_hora}
+                fecha={evento.fecha}
+                hora_inicio={evento.hora_inicio}
+                hora_fin={evento.hora_fin}
+                fecha_finalizacion={evento.fecha_finalizacion}
                 descripcion={evento.descripcion}
                 foto={evento.imagen}
                 tematica={evento.tematica}
