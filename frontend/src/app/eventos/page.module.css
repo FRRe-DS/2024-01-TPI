@@ -79,3 +79,15 @@
     color: #777;
     margin-top: .3rem;
   }
+
+@media (max-width: 768px) {
+  .calendarContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 2rem 0;
+    max-width: 500px;
+  }
+  
+}
