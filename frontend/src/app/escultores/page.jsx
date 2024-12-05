@@ -1,27 +1,29 @@
 import ImagenEscultores from "../reactComponents/componentes/imagenEscultores";
+import BotonVolver from "../reactComponents/componentes/BotonVolver";
 import { getEscultores } from "../lib/getElementos";
 import styles from "./page.module.css";
 import { Pagination } from "../reactComponents/componentes/Pagination";
 
 const PAGE_SIZE = 6;
 
-export default async function EscultoresPage({searchParams}) {
+export default async function EscultoresPage({ searchParams }) {
   const { page } = searchParams;
-  const {escultores, meta} = await getEscultores(PAGE_SIZE, page);
+  const { escultores, meta } = await getEscultores(PAGE_SIZE, page);
 
   return (
     <>
-      <div className={styles.escultoresSect}>
-        <h1 className={styles.escultoresHeader}> Escultores Seleccionados </h1>
+      <BotonVolver retorno="/" />
+      <section className={styles.escultoresSect}>
+        <h1 className={styles.escultoresHeader}> Escultores Participantes </h1>
         <p className={styles.escultoresText}>
           De todas partes del mundo, escultores se congregan para competir con
           sus obras
         </p>
-      </div>
+      </section>
       <div className={styles.escultoresPortada}>
         {escultores.map((escultor) => (
           <ImagenEscultores
-            titulo={escultor.nombre + " " + escultor.apellidos}
+            nombre={escultor.nombre + " " + escultor.apellidos}
             foto={escultor.imagen}
             bandera={escultor.bandera}
             enlace={`escultores/${escultor.documentId}`}
@@ -29,12 +31,12 @@ export default async function EscultoresPage({searchParams}) {
           />
         ))}
       </div>
-        <Pagination
-          page={meta.page}
-          pageSize={meta.pageSize}
-          pageCount={meta.pageCount}
-          total={meta.total}
-          ></Pagination>
+      <Pagination
+        page={meta.page}
+        pageSize={meta.pageSize}
+        pageCount={meta.pageCount}
+        total={meta.total}
+      ></Pagination>
     </>
   );
 }
