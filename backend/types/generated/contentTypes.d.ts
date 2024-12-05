@@ -495,7 +495,10 @@ export interface ApiEventoEvento extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::escultura.escultura'
     >;
-    fecha_hora: Schema.Attribute.DateTime;
+    fecha: Schema.Attribute.Date;
+    fecha_finalizacion: Schema.Attribute.Date;
+    hora_fin: Schema.Attribute.Time;
+    hora_inicio: Schema.Attribute.Time;
     imagen: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
