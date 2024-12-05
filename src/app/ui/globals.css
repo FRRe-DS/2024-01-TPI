@@ -50,15 +50,35 @@ main {
     text-decoration: none;
     margin:2%;
 }
-.rootLista{
-    list-style-type: none;
-}
 
 .rootHeaderUsuario:hover{
     border: none;
     padding: 2%;
     color: #f4f4f4;
     text-decoration:underline;
+}
+
+.rootLista{
+    list-style-type: none;
+    padding: 2%;
+}
+
+.rootCerrarSesion{
+    color: #f4f4f4;
+    padding:2%;
+    text-decoration: none;
+    background-color: var(--color-primary);
+}
+
+
+.rootCerrarSesion:hover {
+    font-family: "Montserrat", sans-serif ;
+    color: #f4f4f4;
+    background-color: var(--color-primary);
+    padding:2%;
+    text-decoration:underline;
+    cursor:pointer;
+
 }
 
 .rootHeaderRetorno{

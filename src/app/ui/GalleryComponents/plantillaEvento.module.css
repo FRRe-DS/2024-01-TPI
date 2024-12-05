@@ -1,14 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-.eventoContainer{
+.evento {
     font-family: "Montserrat", sans-serif;
-
+    background-color: #f5f5f5; /* Fondo claro */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+}
+  
+.eventoNombre {
+    color: #000000; /* Azul primario */
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+  
+.eventoImagen {
+    width: 70%;
+    height: auto;
+    border-radius: 10px;
+    margin: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.eventoDescripBox {
+.estilosEspecificaciones {
+    color: #000000;
+    font-size: 1rem;
+    margin-left: 30px;
 
 }
-
-.eventoEsculturas{
-    
+  
+.eventoParrafo {
+    margin-left: 30px;
+    margin-bottom: 20px;
 }
+
+.eventoEsculTitulo {
+    margin-left: 60px;
+    margin-top: 30px;
+
+}
+  
+  /* Lista de esculturas */
+.eventoListas {
+    list-style: none;
+    padding: 10px;
+    margin: 20px 0;
+}
+  
+.eventoElementoLista {
+    background-color: #ffffff; /* Fondo de las tarjetas */
+    border: 1px solid #dddddd; /* Borde claro */
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 800px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+.eventoImagenLista{
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    padding: 10px;
+    object-fit: cover;
+}
+  
+.eventoParrafoLista {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333333;
+}
+  
+.eventoLinkLista {
+    margin-left: auto;
+    background-color: #000000; /* Azul primario */
+    color: white; /* Texto blanco */
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.eventoLinkLista:hover {
+    margin-left: auto;
+    background-color: #000000; /* Azul primario */
+    color: white; /* Texto blanco */
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 0px 10px #767474;
+}
+  
+  /* Adaptabilidad para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .evento {
+      padding: 15px;
+    }
+  
+    .eventoElementoLista {
+      text-align: center;
+      gap: 10px;
+    }
+
+    .eventoImagenLista{
+        width: 80px;
+        height: 80px;
+      }
+  }
