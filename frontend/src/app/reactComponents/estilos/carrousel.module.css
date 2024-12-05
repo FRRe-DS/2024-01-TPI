@@ -114,6 +114,16 @@
     outline: none;          /* Elimina el borde al hacer foco */
   }
   
-  
-  
+@media (max-width: 768px) {
+  .carouselContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    overflow: hidden;
+    position: relative;  /* Esto es importante para posicionar las flechas */
+    max-width: 500px;
+  }
+  }
   
