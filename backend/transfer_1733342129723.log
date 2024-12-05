@@ -1,8 +1,0 @@
-[2024-12-04 16:55:29.746] warn: (Schema Integrity) api::evento.evento.attributes.fecha does not exist on destination
-[2024-12-04 16:55:29.749] warn: (Schema Integrity) api::evento.evento.attributes.hora_inicio does not exist on destination
-[2024-12-04 16:55:29.751] warn: (Schema Integrity) api::evento.evento.attributes.hora_fin does not exist on destination
-[2024-12-04 16:55:29.753] warn: (Schema Integrity) api::evento.evento.attributes.fecha_finalizacion does not exist on destination
-[2024-12-04 16:55:29.756] warn: (Schema Integrity) api::evento.evento.attributes.fecha_hora does not exist on source
-[2024-12-04 16:55:29.759] warn: (Schema Integrity) api::token.token.info.description does not exist on destination
-[2024-12-04 16:55:29.762] warn: (Schema Integrity) api::token.token.attributes.escultura.unique does not exist on destination
-[2024-12-04 16:55:39.031] error: [FATAL] Unresolved differences in schema
