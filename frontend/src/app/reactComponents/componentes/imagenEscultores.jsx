@@ -1,26 +1,34 @@
 import style from "../estilos/imagenEscultores.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import ImgGeneric from "./imagenGenerica";
 
-export default function ImagenEscultores({ titulo, foto, bandera, enlace }) {
+export default function ImagenEscultores({ nombre, foto, bandera, enlace }) {
   return (
     <>
-    <div className={style.escultorContenedor}>
-      <ImgGeneric
-        className={style.escultorBandera}
-        imagen={bandera}
-        dimensions={150}
-      />
-      <h1 className={style.escultorTitulo}>{titulo}</h1>
       <Link
         className={style.escultorRedireccion}
         href={enlace}
         rel="noopener no referrer"
       >
-        <Image src={foto} alt="navegacion" width={200} height={200} />
+        <div className={style.escultorContenedor}>
+          <div className={style.escultorTitulo}>
+            <Image
+              className={style.escultorBandera}
+              src={bandera}
+              width={50}
+              height={50}
+            />
+            <h1 className={style.escultorNombre}>{nombre}</h1>
+          </div>
+          <Image
+            className={style.escultorFoto}
+            src={foto}
+            alt="navegacion"
+            width={500}
+            height={500}
+          />
+        </div>
       </Link>
-    </div>
     </>
   );
 }
