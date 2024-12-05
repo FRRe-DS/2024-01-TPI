@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "../estilos/plantillaEvento.module.css";
 import pin_drop from "../../../../public/pin_drop.svg";
+import Image from "next/image";
 
 function formatearFecha(fecha) {
   const meses = [
@@ -36,14 +37,23 @@ export default function Page({
               {descripcion}
             </p>
             <p className={styles.eventoParrafo}>
-              {fecha_formateada} - {hora_inicio.substring(0,5)}hs
+              Desde el {fecha_formateada} - {hora_inicio.substring(0,5)}hs
             </p>
+            {fecha_finalizacion ? (
+              <p className={styles.eventoParrafo}>
+                Hasta el {formatearFecha(fecha_finalizacion)}
+              </p>
+              ): ''
+            }
             <p className={styles.eventoParrafo}>
-              <img src={pin_drop}></img>{lugar}
+              <Image src={pin_drop}></Image>{lugar}
             </p>
-            <p className={styles.eventoParrafo}>
-              <strong>Temática:</strong> {tematica}
-            </p>
+            {tematica ? (
+              <p className={styles.eventoParrafo}>
+                <strong>Temática:</strong> {tematica}
+              </p>
+              ): ''
+            }
         </div>
 
         <div className={styles.evento}>

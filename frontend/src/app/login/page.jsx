@@ -14,6 +14,7 @@ export default function Login() {
     setMessage(null);
     const formData = new FormData(event.target);
     const jsonData = Object.fromEntries(formData);
+    console.log(jsonData)
 
     const res = await connectUser(jsonData);
 

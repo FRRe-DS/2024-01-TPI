@@ -48,8 +48,8 @@ export default function Page() {
         return (
             <>
                 <li className="rootLista">{token}</li>
-                <p><Link href={'/misEsculturas'}>{role !== 'null' ? 'Mis esculturas' : ''}</Link></p>
-                <Link className="rootCerrarSesion" onClick={logout}>Cerrar Sesión</Link>
+                <p><Link className="links" href='/misEsculturas'>{role !== 'null' ? 'Mis esculturas' : ''}</Link></p>
+                <Link href='/' className="rootCerrarSesion" onClick={logout}>Cerrar Sesión</Link>
             </>
         );
     } else {

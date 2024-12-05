@@ -34,7 +34,7 @@ export function getEvento(documentId){
         .then(res=> {
             const {documentId, nombre, descripcion, fecha, lugar, hora_inicio, hora_fin, fecha_finalizacion, imagen } = res.data;
             
-            const tematica = res.data.tematica.nombre;
+            const tematica = res.data.tematica?.nombre;
             const esculturas = res.data.esculturas.map(escultura=>{
                 const {documentId, nombre, img_despues} = escultura;
                 return {documentId, nombre, imagen, img_despues};

@@ -2,10 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
+import Carrousel from '../reactComponents/componentes/Carrousel';
+import BotonVolver from "../reactComponents/componentes/BotonVolver";
+import Link from "next/link";
 import { getEventos } from "../lib/getElementos";
 import { filtrarEventos } from "../lib/filtrarEsculturas";
-import Carrousel from '../reactComponents/componentes/Carrousel';
-import Link from "next/link";
 import "react-datepicker/dist/es/index.js"; // Importación de react-datepicker
 import "react-datepicker/dist/react-datepicker.css"; // CSS de react-datepicker
 import styles from "./page.module.css";
@@ -68,44 +69,47 @@ export default function AgendaEventos() {
   else {
 
   return (
-    <main className={styles.cuerpoEventos}> 
-      <h1 className={styles.titulo}>Eventos recientes</h1>
-      <Carrousel eventosRec={eventosRec}></Carrousel>
+    <>
+      <BotonVolver retorno={"/"} />
+      <main className={styles.cuerpoEventos}> 
+        <h1 className={styles.titulo}>Eventos recientes</h1>
+        <Carrousel eventosRec={eventosRec}></Carrousel>
 
 
-      <div className={styles.calendarContainer}>
-        <div className={styles.calendar}>
-          <DatePicker
-            selected={selectedDate}
-            onChange={(date) => setSelectedDate(date)}
-            dateFormat="dd/MM/yyyy"
-            inline
-          />
-        </div>
-        <div className={styles.eventDetails}>
-          <h3 className={styles.tituloFechaSeleccionada}>
-            Eventos para el {formattedDate}
-          </h3>
-          <hr className={styles.divisor} />
-          <div className={styles.eventList}>
-            {filteredEvents.length > 0 ? (
-              <ul className={styles.listaEventos}>
-                {filteredEvents.map((event) => (
-                  <li key={event.documentId} className={styles.elementoEvento}>
-                    <Link className={styles.links} href={"eventos/" + event.documentId}>
-                      {event.nombre}
-                    </Link>
-                    <p className={styles.hora}>{event.hora_inicio.substring(0,5)} {event.hora_fin? `- ${event.hora_fin.substring(0,5)}`:''}</p>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className={styles.mensajeSinEventos}>No hay eventos</p>
-            )}
+        <div className={styles.calendarContainer}>
+          <div className={styles.calendar}>
+            <DatePicker
+              selected={selectedDate}
+              onChange={(date) => setSelectedDate(date)}
+              dateFormat="dd/MM/yyyy"
+              inline
+            />
+          </div>
+          <div className={styles.eventDetails}>
+            <h3 className={styles.tituloFechaSeleccionada}>
+              Eventos para el {formattedDate}
+            </h3>
+            <hr className={styles.divisor} />
+            <div className={styles.eventList}>
+              {filteredEvents.length > 0 ? (
+                <ul className={styles.listaEventos}>
+                  {filteredEvents.map((event) => (
+                    <li key={event.documentId} className={styles.elementoEvento}>
+                      <Link className={styles.links} href={"eventos/" + event.documentId}>
+                        {event.nombre}
+                      </Link>
+                      <p className={styles.hora}>{event.hora_inicio.substring(0,5)} {event.hora_fin? `- ${event.hora_fin.substring(0,5)}`:''}</p>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className={styles.mensajeSinEventos}>No hay eventos</p>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
 }

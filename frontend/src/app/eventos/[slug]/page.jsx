@@ -3,6 +3,7 @@ import PlantillaEvento from "../../reactComponents/componentes/plantillaEvento";
 import { getEvento } from "../../lib/getElement";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import BotonVolver from "../../reactComponents/componentes/BotonVolver";
 
 export default function Page() {
   const pathname = usePathname();
@@ -24,6 +25,7 @@ export default function Page() {
   } else {
     return (
         <section>
+          <BotonVolver retorno={"/eventos/"} />
             <PlantillaEvento
                 nombre={evento.nombre}
                 lugar={evento.lugar}

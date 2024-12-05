@@ -9,4 +9,15 @@ module.exports = {
           },
         ],
       },
+      reactStrictMode: true,
+      productionBrowserSourceMaps: true, // Habilita los source maps para producción.
+      webpack: (config, { isServer }) => {
+        if (!isServer) {
+          config.resolve.fallback = {
+            fs: false,
+            path: false,
+          };
+        }
+        return config;
+      },
   }

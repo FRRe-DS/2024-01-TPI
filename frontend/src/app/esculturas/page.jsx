@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import { getEsculturas } from "../lib/getElementos";
 import { Pagination } from "../reactComponents/componentes/Pagination.jsx";
 
-const PAGE_SIZE = 3;
+const PAGE_SIZE = 6;
 
 export default async function ArtPage({ searchParams }) {
   const { page } = searchParams;

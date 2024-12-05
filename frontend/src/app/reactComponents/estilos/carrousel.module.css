@@ -69,7 +69,8 @@
   
   .eventDate {
     font-size: 14px;
-    color: #666;
+    color: #3b3b3b;
+    font-weight: 500;
   }
   
   .noEvents {

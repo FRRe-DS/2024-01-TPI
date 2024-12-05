@@ -148,3 +148,13 @@ main {
 .footerText {
     margin-top: 10px;
 }
+
+.links{
+    color: #f4f4f4;
+    text-decoration: none;
+    padding: 2%;
+}
+
+.links:hover{
+    text-decoration: underline;
+}

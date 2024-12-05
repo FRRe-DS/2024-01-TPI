@@ -2,5 +2,11 @@
 
 .misEsculturasBox {
     font-family:"Montserrat", sans-serif;
+    max-width: 80vw;
     margin:auto;
+    margin-bottom: 40px;
+}
+
+.qr{
+    text-align: center;
 }
