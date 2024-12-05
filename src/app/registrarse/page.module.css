@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .formContainer {
     background-color: #ffffff;
     padding: 5%;
@@ -5,7 +7,7 @@
 
 .formBox{
     background-color: #ffffff; /* Fondo blanco para el formulario */
-    padding: 3% 1%;
+    padding: 3% 0%;
     width: 40%;
     height: 80%;
     margin: 0 auto;
@@ -33,6 +35,7 @@
 }
 
 .formButton {
+    font-family: "Montserrat", sans-serif;
     padding: 2%;
     margin-top: 4%;
     font-size: 14px; 
@@ -58,4 +61,11 @@
     margin-top: 30px;
     color: red;
     text-decoration:double;
+}
+
+@media (max-width: 768px) {
+    .formBox {
+    width: 70%;
+    height: 90%;
+    }
 }

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .formContainer {
   background-color: #ffffff;
@@ -39,6 +40,7 @@
 }
   
 .formButton {
+    font-family: "Montserrat", sans-serif;
     width: 40%;
     margin-top: 4%;
     margin-bottom: 6%;
@@ -65,3 +67,10 @@
     text-decoration:double;
 }
 
+@media (max-width: 768px) {
+    .formBox {
+    width: 70%;
+    height: 90%;
+    }
+}
+  
